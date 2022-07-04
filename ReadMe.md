@@ -31,7 +31,7 @@ source .venv/bin/activate
 after that it is always better to check for the update
 
 ```python
-python -m pip install --upgrade pip
+python -m pip install --upgrade pip setuptools wheel
 ```
 
 
