@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1100</width>
+    <width>1107</width>
     <height>700</height>
    </rect>
   </property>
@@ -29,34 +29,319 @@
   <property name="statusTip">
    <string>Maya Utility App v1.0.0</string>
   </property>
-  <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="widget" native="true">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>20</y>
-      <width>231</width>
-      <height>611</height>
-     </rect>
+  <property name="autoFillBackground">
+   <bool>true</bool>
+  </property>
+  <property name="dockNestingEnabled">
+   <bool>false</bool>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>true</bool>
+  </property>
+  <widget class="QWidget" name="MainWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="leftMargin">
+     <number>0</number>
     </property>
-   </widget>
-   <widget class="QWidget" name="widget_2" native="true">
-    <property name="geometry">
-     <rect>
-      <x>350</x>
-      <y>20</y>
-      <width>651</width>
-      <height>611</height>
-     </rect>
+    <property name="topMargin">
+     <number>0</number>
     </property>
-   </widget>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QWidget" name="top_header" native="true">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>64</height>
+       </size>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <layout class="QHBoxLayout" name="top_header_container">
+         <item>
+          <widget class="QPushButton" name="home_btn">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>43</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Home</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../assets.qrc">
+             <normaloff>:/icons/icons/home.svg</normaloff>:/icons/icons/home.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>24</width>
+             <height>24</height>
+            </size>
+           </property>
+           <property name="default">
+            <bool>false</bool>
+           </property>
+           <property name="flat">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="notification_btn">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>43</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Notifications</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../assets.qrc">
+             <normaloff>:/icons/icons/bell.svg</normaloff>:/icons/icons/bell.svg</iconset>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="profile_btn">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>43</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Profile</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../assets.qrc">
+             <normaloff>:/icons/icons/user.svg</normaloff>:/icons/icons/user.svg</iconset>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="infoWidget" native="true">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>200</height>
+       </size>
+      </property>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>1089</width>
+         <height>60</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>HighNoon</family>
+         <pointsize>38</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+         <underline>false</underline>
+        </font>
+       </property>
+       <property name="text">
+        <string>Maya Utility App</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="date">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>149</y>
+         <width>1089</width>
+         <height>52</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Digiface</family>
+         <pointsize>32</pointsize>
+         <weight>75</weight>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>04 July 2022</string>
+       </property>
+       <property name="scaledContents">
+        <bool>false</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="time">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>66</y>
+         <width>1089</width>
+         <height>77</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>LatoLatin Heavy</family>
+         <pointsize>48</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+         <underline>false</underline>
+         <strikeout>false</strikeout>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="acceptDrops">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>01:02:33</string>
+       </property>
+       <property name="textFormat">
+        <enum>Qt::PlainText</enum>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="textInteractionFlags">
+        <set>Qt::LinksAccessibleByMouse</set>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="frequentsWidget" native="true">
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="topMargin">
+        <number>90</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="frequents_title">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>MV Boli</family>
+           <pointsize>17</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Frequents Utilities</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="margin">
+          <number>0</number>
+         </property>
+         <property name="indent">
+          <number>22</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="frequents_link_container" native="true"/>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="copyrightWidget" native="true">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>40</height>
+       </size>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="copyright_info">
+         <property name="baseSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Times</family>
+           <pointsize>11</pointsize>
+           <weight>75</weight>
+           <italic>true</italic>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="lineWidth">
+          <number>0</number>
+         </property>
+         <property name="text">
+          <string>Copyright Ajay Singh (Maya) @ 2022. All the rights are reserved.</string>
+         </property>
+         <property name="scaledContents">
+          <bool>false</bool>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="openExternalLinks">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1100</width>
+     <width>1107</width>
      <height>21</height>
     </rect>
    </property>
@@ -240,6 +525,8 @@
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="../assets.qrc"/>
+ </resources>
  <connections/>
 </ui>
