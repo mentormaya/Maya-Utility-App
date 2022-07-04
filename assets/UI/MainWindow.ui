@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1100</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Maya Utility App v1.0.0</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../icon.ico</normaloff>../icon.ico</iconset>
+  </property>
+  <property name="windowOpacity">
+   <double>1.000000000000000</double>
+  </property>
+  <property name="toolTip">
+   <string>Maya Utility App v1.0.0</string>
+  </property>
+  <property name="statusTip">
+   <string>Maya Utility App v1.0.0</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>20</y>
+      <width>231</width>
+      <height>611</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QWidget" name="widget_2" native="true">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>20</y>
+      <width>651</width>
+      <height>611</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1100</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionNew"/>
+    <addaction name="actionOpen"/>
+    <addaction name="actionSave"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <addaction name="mainWindow"/>
+    <addaction name="actionRedo"/>
+    <addaction name="separator"/>
+    <addaction name="actionCopy"/>
+    <addaction name="actionCut"/>
+    <addaction name="actionPaste"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionInfo"/>
+    <addaction name="actionHelp_2"/>
+    <addaction name="actionAbout"/>
+    <addaction name="separator"/>
+    <addaction name="actionCreator"/>
+    <addaction name="actionAbout_Creator"/>
+   </widget>
+   <widget class="QMenu" name="menuUtilities">
+    <property name="title">
+     <string>Utilities</string>
+    </property>
+    <addaction name="actionNumber_Conversion"/>
+   </widget>
+   <widget class="QMenu" name="menuTAXES">
+    <property name="title">
+     <string>TAXES</string>
+    </property>
+    <addaction name="actionVAT_PAN_Search"/>
+   </widget>
+   <widget class="QMenu" name="menuNRB_IC">
+    <property name="title">
+     <string>NRB IC</string>
+    </property>
+    <addaction name="actionDashboard"/>
+    <addaction name="actionInput"/>
+    <addaction name="actionValidation"/>
+    <addaction name="separator"/>
+    <addaction name="actionReport"/>
+   </widget>
+   <widget class="QMenu" name="menuNRB_LMS">
+    <property name="title">
+     <string>NRB LMS</string>
+    </property>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuView"/>
+   <addaction name="menuUtilities"/>
+   <addaction name="menuTAXES"/>
+   <addaction name="menuNRB_IC"/>
+   <addaction name="menuNRB_LMS"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionNew">
+   <property name="text">
+    <string>New</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionHelp">
+   <property name="text">
+    <string>Help</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="mainWindow">
+   <property name="text">
+    <string>Undo</string>
+   </property>
+  </action>
+  <action name="actionRedo">
+   <property name="text">
+    <string>Redo</string>
+   </property>
+  </action>
+  <action name="actionCopy">
+   <property name="text">
+    <string>Copy</string>
+   </property>
+  </action>
+  <action name="actionCut">
+   <property name="text">
+    <string>Cut</string>
+   </property>
+  </action>
+  <action name="actionPaste">
+   <property name="text">
+    <string>Paste</string>
+   </property>
+  </action>
+  <action name="actionInfo">
+   <property name="text">
+    <string>Info</string>
+   </property>
+  </action>
+  <action name="actionHelp_2">
+   <property name="text">
+    <string>Help</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionCreator">
+   <property name="text">
+    <string>Creator</string>
+   </property>
+  </action>
+  <action name="actionAbout_Creator">
+   <property name="text">
+    <string>About Creator</string>
+   </property>
+  </action>
+  <action name="actionNumber_Conversion">
+   <property name="text">
+    <string>Number Conversion</string>
+   </property>
+  </action>
+  <action name="actionVAT_PAN_Search">
+   <property name="text">
+    <string>VAT/PAN Search</string>
+   </property>
+  </action>
+  <action name="actionDashboard">
+   <property name="text">
+    <string>Dashboard</string>
+   </property>
+  </action>
+  <action name="actionInput">
+   <property name="text">
+    <string>Input</string>
+   </property>
+  </action>
+  <action name="actionValidation">
+   <property name="text">
+    <string>Validation</string>
+   </property>
+  </action>
+  <action name="actionReport">
+   <property name="text">
+    <string>Report</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
