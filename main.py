@@ -1,5 +1,6 @@
 from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QFrame, QLabel, QPushButton, QSizeGrip, QVBoxLayout
 from PyQt5 import uic, QtGui, QtCore
+from PyQt5.QtCore import QPoint
 import sys
 
 CONFIG = {
@@ -39,16 +40,58 @@ class LoadUI(QMainWindow):
         self.credit_label.setText(f'{CONFIG["COPY_TEXT"]} {CONFIG["COPYRIGHT"]} {CONFIG["COPYRIGHT_YEAR"]}. {CONFIG["CREDIT_TEXT"]} {CONFIG["AUTHOR"]} All the rights are reserved.')
 
         #Frameless window to make custom titlebar
-        flags = QtCore.Qt.WindowFlags(QtCore.Qt.FramelessWindowHint | QtCore.Qt.WindowStaysOnTopHint)
-        self.setWindowFlags(flags)
+        self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
+        self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
+        self.offset = None
         
+        #making resizable from the right bottom corner
         grip_frame = self.findChild(QFrame, "grip_frame")
-        sizegrip = QSizeGrip(self)
-        grip_frame.addWidget(sizegrip)
+        sizegrip = QSizeGrip(grip_frame)
+        # grip_frame.addWidget(sizegrip)
         
+        #adding button click connect to minimize button
+        self.min_btn = self.findChild(QPushButton, "btn_minimize")
+        self.min_btn.clicked.connect(self.minimizeWindow)
+        
+        #adding button click connect to maximize button
+        self.max_btn = self.findChild(QPushButton, "btn_maximize")
+        self.max_btn.clicked.connect(self.maximizeWindow)
+        
+        #adding button click connect to exit button
+        self.btn_close = self.findChild(QPushButton, "btn_close")
+        self.btn_close.clicked.connect(self.closeWindow)
         
         #show the window
         self.show()
+    
+    def mousePressEvent(self, event):
+        self.oldPosition = event.globalPos()
+    
+    def mouseMoveEvent(self, event):
+        delta = QPoint(event.globalPos() - self.oldPosition)
+        self.move(self.x() + delta.x(), self.y() + delta.y())
+        self.oldPosition = event.globalPos()
+    
+    def minimizeWindow(self, event):
+        self.showMinimized()
+    
+    def maximizeWindow(self, event):
+        if self.isMaximized():
+            self.showNormal()
+        else:
+            self.showMaximized()
+    
+    def closeWindow(self, event):
+        self.close()
+    
+    def keyPressEvent(self, e):  
+        if e.key() == QtCore.Qt.Key_Escape:
+            self.close()
+        if e.key() == QtCore.Qt.Key_F11:
+            if self.isMaximized():
+                self.showNormal()
+            else:
+                self.showMaximized()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'd:\Creative\GitHub\Maya-Utility-App\assets\UI\Interface.ui'
+# Form implementation generated from reading ui file 'c:\Users\A00172\Desktop\New Utility\assets\UI\Interface.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -15,12 +15,16 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1104, 709)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("c:\\Users\\A00172\\Desktop\\New Utility\\assets\\UI\\../icon.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        MainWindow.setWindowIcon(icon)
+        MainWindow.setStyleSheet("background-color: rgba(255, 255, 255, 0);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0.266, y1:0.273, x2:0.805, y2:0.704818, stop:0 rgba(147, 101, 200, 255), stop:0.919753 rgba(86, 120, 200, 255));\n"
 "border-radius: 10;")
         self.centralwidget.setObjectName("centralwidget")
         self.drop_shadow_layout = QtWidgets.QVBoxLayout(self.centralwidget)
-        self.drop_shadow_layout.setContentsMargins(10, 10, 10, 10)
+        self.drop_shadow_layout.setContentsMargins(0, 0, 0, 0)
         self.drop_shadow_layout.setSpacing(0)
         self.drop_shadow_layout.setObjectName("drop_shadow_layout")
         self.drop_shadow_frame = QtWidgets.QFrame(self.centralwidget)
@@ -62,8 +66,8 @@ class Ui_MainWindow(object):
         self.app_title.setFont(font)
         self.app_title.setStyleSheet("")
         self.app_title.setObjectName("app_title")
-        self.verticalLayout_2.addWidget(self.app_title, 0, QtCore.Qt.AlignLeft)
-        self.horizontalLayout.addWidget(self.frame_title, 0, QtCore.Qt.AlignTop)
+        self.verticalLayout_2.addWidget(self.app_title, 0, QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.horizontalLayout.addWidget(self.frame_title, 0, QtCore.Qt.AlignVCenter)
         self.frame_btns = QtWidgets.QFrame(self.title_bar)
         self.frame_btns.setMaximumSize(QtCore.QSize(150, 16777215))
         self.frame_btns.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -72,11 +76,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.frame_btns)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.btn_minimize = QtWidgets.QPushButton(self.frame_btns)
-        self.btn_minimize.setMinimumSize(QtCore.QSize(24, 24))
-        self.btn_minimize.setMaximumSize(QtCore.QSize(24, 24))
+        self.btn_minimize.setMinimumSize(QtCore.QSize(20, 20))
+        self.btn_minimize.setMaximumSize(QtCore.QSize(20, 20))
         self.btn_minimize.setStyleSheet("QPushButton {\n"
 "    border:none;\n"
-"    border-radius: 12px;\n"
+"    border-radius: 10px;\n"
 "    background-color: rgb(85, 255, 127);\n"
 "}\n"
 "\n"
@@ -87,11 +91,11 @@ class Ui_MainWindow(object):
         self.btn_minimize.setObjectName("btn_minimize")
         self.horizontalLayout_2.addWidget(self.btn_minimize)
         self.btn_maximize = QtWidgets.QPushButton(self.frame_btns)
-        self.btn_maximize.setMinimumSize(QtCore.QSize(24, 24))
-        self.btn_maximize.setMaximumSize(QtCore.QSize(24, 24))
+        self.btn_maximize.setMinimumSize(QtCore.QSize(20, 20))
+        self.btn_maximize.setMaximumSize(QtCore.QSize(20, 20))
         self.btn_maximize.setStyleSheet("QPushButton {\n"
 "    border:none;\n"
-"    border-radius: 12px;\n"
+"    border-radius: 10px;\n"
 "    background-color: rgb(255, 146, 73);\n"
 "}\n"
 "\n"
@@ -102,11 +106,11 @@ class Ui_MainWindow(object):
         self.btn_maximize.setObjectName("btn_maximize")
         self.horizontalLayout_2.addWidget(self.btn_maximize)
         self.btn_close = QtWidgets.QPushButton(self.frame_btns)
-        self.btn_close.setMinimumSize(QtCore.QSize(24, 24))
-        self.btn_close.setMaximumSize(QtCore.QSize(24, 24))
+        self.btn_close.setMinimumSize(QtCore.QSize(20, 20))
+        self.btn_close.setMaximumSize(QtCore.QSize(20, 20))
         self.btn_close.setStyleSheet("QPushButton {\n"
 "    border:none;\n"
-"    border-radius: 12px;\n"
+"    border-radius: 10px;\n"
 "    background-color: rgb(255, 62, 62);\n"
 "}\n"
 "\n"
@@ -120,17 +124,61 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.title_bar)
         self.contents = QtWidgets.QFrame(self.drop_shadow_frame)
         self.contents.setStyleSheet("background-color:none;")
-        self.contents.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.contents.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.contents.setFrameShadow(QtWidgets.QFrame.Raised)
         self.contents.setObjectName("contents")
-        self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.contents)
+        self.gridLayout = QtWidgets.QGridLayout(self.contents)
+        self.gridLayout.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout.setSpacing(5)
+        self.gridLayout.setObjectName("gridLayout")
+        self.brand_frame = QtWidgets.QFrame(self.contents)
+        self.brand_frame.setMinimumSize(QtCore.QSize(25, 75))
+        self.brand_frame.setMaximumSize(QtCore.QSize(75, 75))
+        self.brand_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.brand_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.brand_frame.setObjectName("brand_frame")
+        self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.brand_frame)
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
-        self.frame = QtWidgets.QFrame(self.contents)
-        self.frame.setStyleSheet("background-color: rgba(0,0,0,0.8)")
-        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame.setObjectName("frame")
-        self.horizontalLayout_5.addWidget(self.frame)
+        self.brand_logo = QtWidgets.QLabel(self.brand_frame)
+        self.brand_logo.setObjectName("brand_logo")
+        self.horizontalLayout_5.addWidget(self.brand_logo)
+        self.gridLayout.addWidget(self.brand_frame, 0, 0, 1, 1)
+        self.top_bar_frame = QtWidgets.QFrame(self.contents)
+        self.top_bar_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.top_bar_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.top_bar_frame.setObjectName("top_bar_frame")
+        self.gridLayout.addWidget(self.top_bar_frame, 0, 1, 1, 2)
+        self.left_menu = QtWidgets.QFrame(self.contents)
+        self.left_menu.setMinimumSize(QtCore.QSize(175, 0))
+        self.left_menu.setMaximumSize(QtCore.QSize(175, 16777215))
+        self.left_menu.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.left_menu.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.left_menu.setObjectName("left_menu")
+        self.gridLayout.addWidget(self.left_menu, 0, 3, 3, 1)
+        self.left_menu_frame = QtWidgets.QFrame(self.contents)
+        self.left_menu_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.left_menu_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.left_menu_frame.setObjectName("left_menu_frame")
+        self.gridLayout.addWidget(self.left_menu_frame, 1, 0, 1, 1)
+        self.sub_menu_frame = QtWidgets.QFrame(self.contents)
+        self.sub_menu_frame.setMinimumSize(QtCore.QSize(175, 0))
+        self.sub_menu_frame.setMaximumSize(QtCore.QSize(175, 16777215))
+        self.sub_menu_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.sub_menu_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.sub_menu_frame.setObjectName("sub_menu_frame")
+        self.gridLayout.addWidget(self.sub_menu_frame, 1, 1, 2, 1)
+        self.content_frame = QtWidgets.QFrame(self.contents)
+        self.content_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.content_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.content_frame.setObjectName("content_frame")
+        self.gridLayout.addWidget(self.content_frame, 1, 2, 2, 1)
+        self.app_info_frame = QtWidgets.QFrame(self.contents)
+        self.app_info_frame.setMinimumSize(QtCore.QSize(0, 150))
+        self.app_info_frame.setMaximumSize(QtCore.QSize(16777215, 150))
+        self.app_info_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.app_info_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.app_info_frame.setObjectName("app_info_frame")
+        self.gridLayout.addWidget(self.app_info_frame, 2, 0, 1, 1)
         self.verticalLayout.addWidget(self.contents)
         self.credits_bar = QtWidgets.QFrame(self.drop_shadow_frame)
         self.credits_bar.setMinimumSize(QtCore.QSize(0, 30))
@@ -179,6 +227,13 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Maya Utility App v1.0.0"))
         self.app_title.setText(_translate("MainWindow", "Maya Utility App v1.0.0"))
+        self.btn_minimize.setToolTip(_translate("MainWindow", "Minimize"))
+        self.btn_minimize.setStatusTip(_translate("MainWindow", "Minimize"))
+        self.btn_maximize.setToolTip(_translate("MainWindow", "Maximize"))
+        self.btn_maximize.setStatusTip(_translate("MainWindow", "Maximize"))
+        self.btn_close.setToolTip(_translate("MainWindow", "Close"))
+        self.btn_close.setStatusTip(_translate("MainWindow", "Close"))
+        self.brand_logo.setText(_translate("MainWindow", "Menu"))
         self.credit_label.setText(_translate("MainWindow", "Copyright @ Ajay Singh [Maya] 2022. All the rights are reserved."))
