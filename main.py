@@ -65,6 +65,10 @@ class LoadUI(QMainWindow):
         self.btn_close = self.findChild(QPushButton, "btn_close")
         self.btn_close.clicked.connect(self.closeWindow)
         
+        #adding button click connect to convert button
+        self.convert_btn = self.findChild(QPushButton, "convert_btn")
+        self.convert_btn.clicked.connect(UI_Functions.convertNumber())
+        
         #show the window
         self.show()
     
