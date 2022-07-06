@@ -22,8 +22,9 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
-    <string notr="true">background-color: qlineargradient(spread:pad, x1:0.266, y1:0.273, x2:0.805, y2:0.704818, stop:0 rgba(147, 101, 200, 255), stop:0.919753 rgba(86, 120, 200, 255));
-border-radius: 10;</string>
+    <string notr="true">background-color: rgb(51, 51, 51);
+border-radius: 10;
+color: rgb(255,255,255)</string>
    </property>
    <layout class="QVBoxLayout" name="drop_shadow_layout">
     <property name="spacing">
@@ -133,7 +134,7 @@ border-radius: 10;</string>
                <property name="font">
                 <font>
                  <family>Ubuntu Mono</family>
-                 <pointsize>20</pointsize>
+                 <pointsize>18</pointsize>
                  <weight>75</weight>
                  <bold>true</bold>
                 </font>
@@ -347,6 +348,10 @@ QPushButton:hover {
           </item>
           <item row="0" column="1" colspan="2">
            <widget class="QFrame" name="top_bar_frame">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(37, 37, 38);
+padding: 2px;</string>
+            </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
             </property>
@@ -371,12 +376,63 @@ QPushButton:hover {
              </property>
              <item>
               <widget class="QFrame" name="welcome_text">
+               <property name="font">
+                <font>
+                 <pointsize>2</pointsize>
+                </font>
+               </property>
                <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
+                <enum>QFrame::NoFrame</enum>
                </property>
                <property name="frameShadow">
                 <enum>QFrame::Raised</enum>
                </property>
+               <layout class="QVBoxLayout" name="verticalLayout_3">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item alignment="Qt::AlignBottom">
+                 <widget class="QLabel" name="welcome_label">
+                  <property name="font">
+                   <font>
+                    <family>Helvetica</family>
+                    <pointsize>16</pointsize>
+                    <weight>75</weight>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Good Morning! Ajay Singh</string>
+                  </property>
+                 </widget>
+                </item>
+                <item alignment="Qt::AlignVCenter">
+                 <widget class="QLabel" name="quotes_label">
+                  <property name="font">
+                   <font>
+                    <family>Kalam Light</family>
+                    <pointsize>10</pointsize>
+                    <italic>false</italic>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Turn your wounds into wisdom</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
               </widget>
              </item>
              <item>
@@ -405,6 +461,10 @@ QPushButton:hover {
               <width>175</width>
               <height>16777215</height>
              </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(37, 37, 38);
+padding: 2px;</string>
             </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
@@ -438,6 +498,10 @@ QPushButton:hover {
               <height>16777215</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(37, 37, 38);
+padding: 2px;</string>
+            </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
             </property>
@@ -448,6 +512,9 @@ QPushButton:hover {
           </item>
           <item row="1" column="2" rowspan="2">
            <widget class="QFrame" name="content_frame">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(29, 29, 29);</string>
+            </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
             </property>
@@ -496,7 +563,9 @@ QPushButton:hover {
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color:none;</string>
+          <string notr="true">background-color: rgb(0, 122, 204);
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::NoFrame</enum>
@@ -554,6 +623,9 @@ QPushButton:hover {
                  <italic>true</italic>
                  <bold>true</bold>
                 </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true"/>
                </property>
                <property name="text">
                 <string>Copyright @ Ajay Singh [Maya] 2022. All the rights are reserved.</string>
