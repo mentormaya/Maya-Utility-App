@@ -3,6 +3,10 @@ from PyQt5 import uic, QtGui, QtCore
 from PyQt5.QtCore import QPoint
 import sys
 
+#importing assets
+from assets import *
+from ui_functions import *
+
 CONFIG = {
     ### App related constants
     "APP_NAME": "Maya Utility App",
