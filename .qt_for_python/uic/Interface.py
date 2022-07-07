@@ -926,6 +926,11 @@ class Ui_MainWindow(object):
         self.right_menu.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.right_menu.setFrameShadow(QtWidgets.QFrame.Raised)
         self.right_menu.setObjectName("right_menu")
+        self.verticalLayout_12 = QtWidgets.QVBoxLayout(self.right_menu)
+        self.verticalLayout_12.setObjectName("verticalLayout_12")
+        self.label_3 = QtWidgets.QLabel(self.right_menu)
+        self.label_3.setObjectName("label_3")
+        self.verticalLayout_12.addWidget(self.label_3)
         self.gridLayout.addWidget(self.right_menu, 0, 3, 3, 1)
         self.verticalLayout.addWidget(self.contents)
         self.credits_bar = QtWidgets.QFrame(self.drop_shadow_frame)
@@ -1020,5 +1025,6 @@ class Ui_MainWindow(object):
         self.lms_menu.setText(_translate("MainWindow", "Library"))
         self.lms_menu.setShortcut(_translate("MainWindow", "Ctrl+L"))
         self.label.setText(_translate("MainWindow", "Dashboard Submenu"))
+        self.label_3.setText(_translate("MainWindow", "Right - Side -Menu"))
         self.credit_label.setText(_translate("MainWindow", "Copyright @ Ajay Singh [Maya] 2022. All the rights are reserved."))
 import assets_rc

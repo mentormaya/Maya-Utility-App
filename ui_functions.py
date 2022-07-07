@@ -1,5 +1,10 @@
+import pyperclip
 from lib.Numbers import Number
 from PyQt5.QtWidgets import QLineEdit, QLabel, QPushButton
+
+SUB_MENU_MAX = 175
+SUB_MENU_MIN = 0
+SUB_MENU_CHECK = 100
 class UI_Functions:
     def __init__(self) -> None:
         pass
@@ -28,8 +33,20 @@ class UI_Functions:
         frame.findChild(QLabel, "words_nep_disp").setText(data["words_nep"])
         frame.findChild(QPushButton, "nep_words_copy_btn").clicked.connect(lambda: UI_Functions.copyToClipBoard(data["words_nep"]))
         frame.findChild(QPushButton, "copy_num_all_btn").clicked.connect(lambda: UI_Functions.copyToClipBoard(data))
+    
     def clearText(_input):
         _input.setText("")
     
     def copyToClipBoard(_content):
-        print(_content)
+        pyperclip.copy(_content)
+        print("Copied to ClipBoard")
+    
+    def toggleMenu(_menu):
+        w = _menu.size().width()
+        if w > SUB_MENU_CHECK:
+            _menu.setMaximumWidth(SUB_MENU_MIN)
+            _menu.setMinimumWidth(SUB_MENU_MIN)
+        else:
+            _menu.setMaximumWidth(SUB_MENU_MAX)
+            _menu.setMinimumWidth(SUB_MENU_MAX)
+            

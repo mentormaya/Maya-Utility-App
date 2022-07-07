@@ -69,6 +69,18 @@ class LoadUI(QMainWindow):
         self.btn_close = self.findChild(QPushButton, "btn_close")
         self.btn_close.clicked.connect(self.closeWindow)
         
+        #Adding Submenu Animation
+        self.submenu = self.findChild(QFrame, "sub_menu_frame")
+        #Adding right-side-menu Animation
+        self.right_menu = self.findChild(QFrame, "right_menu")
+        self.findChild(QPushButton, "options_btn").clicked.connect(lambda: UI_Functions.toggleMenu(self.right_menu))
+        
+        #copy to clipboard for dates
+        self.np_date = self.findChild(QLabel, "nepali_date")
+        self.findChild(QPushButton, "npdt_copy_btn").clicked.connect(lambda: UI_Functions.copyToClipBoard(self.np_date.text()))
+        self.int_date = self.findChild(QLabel, "int_date")
+        self.findChild(QPushButton, "intdt_copy_btn").clicked.connect(lambda: UI_Functions.copyToClipBoard(self.int_date.text()))
+        
         #adding button click connect to convert button
         self.convert_btn = self.findChild(QPushButton, "convert_btn")
         num_input = self.findChild(QLineEdit, "num_input")
