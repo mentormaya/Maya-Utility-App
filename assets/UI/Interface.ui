@@ -611,13 +611,38 @@ border-radius: 0px;</string>
                    <layout class="QHBoxLayout" name="horizontalLayout_9">
                     <item>
                      <widget class="QLabel" name="number_input_label">
+                      <property name="font">
+                       <font>
+                        <family>Helvetica</family>
+                        <pointsize>12</pointsize>
+                       </font>
+                      </property>
                       <property name="text">
                        <string>Enter your number:</string>
                       </property>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLineEdit" name="num_input"/>
+                     <widget class="QLineEdit" name="num_input">
+                      <property name="font">
+                       <font>
+                        <family>Helvetica</family>
+                        <pointsize>12</pointsize>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true"/>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="placeholderText">
+                       <string notr="true"/>
+                      </property>
+                      <property name="clearButtonEnabled">
+                       <bool>false</bool>
+                      </property>
+                     </widget>
                     </item>
                     <item>
                      <widget class="QPushButton" name="clear_btn">
@@ -630,6 +655,20 @@ border-radius: 0px;</string>
                       <property name="icon">
                        <iconset resource="../assets.qrc">
                         <normaloff>:/icons/icons/x.svg</normaloff>:/icons/icons/x.svg</iconset>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="copy_num_all_btn">
+                      <property name="cursor">
+                       <cursorShape>PointingHandCursor</cursorShape>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="icon">
+                       <iconset resource="../assets.qrc">
+                        <normaloff>:/icons/icons/copy.svg</normaloff>:/icons/icons/copy.svg</iconset>
                       </property>
                      </widget>
                     </item>
@@ -692,115 +731,76 @@ background-color: rgb(152, 152, 151);</string>
                       <property name="horizontalSpacing">
                        <number>10</number>
                       </property>
-                      <item row="0" column="0">
-                       <widget class="QLabel" name="num_lbl">
-                        <property name="text">
-                         <string>Number:</string>
-                        </property>
-                       </widget>
-                      </item>
-                      <item row="0" column="1">
-                       <widget class="QLineEdit" name="number_disp"/>
-                      </item>
-                      <item row="0" column="2">
-                       <widget class="QPushButton" name="num_copy_btn">
-                        <property name="cursor">
-                         <cursorShape>PointingHandCursor</cursorShape>
-                        </property>
-                        <property name="text">
-                         <string>Copy</string>
-                        </property>
-                       </widget>
-                      </item>
-                      <item row="1" column="0">
-                       <widget class="QLabel" name="eng_lbl">
-                        <property name="text">
-                         <string>English:</string>
-                        </property>
-                       </widget>
-                      </item>
-                      <item row="1" column="1">
-                       <widget class="QLineEdit" name="english_disp"/>
-                      </item>
-                      <item row="1" column="2">
-                       <widget class="QPushButton" name="eng_copy_btn">
-                        <property name="cursor">
-                         <cursorShape>PointingHandCursor</cursorShape>
-                        </property>
-                        <property name="text">
-                         <string>Copy</string>
-                        </property>
-                       </widget>
-                      </item>
-                      <item row="2" column="0">
-                       <widget class="QLabel" name="nepali_lbl">
-                        <property name="text">
-                         <string>Nepali:</string>
-                        </property>
-                       </widget>
-                      </item>
-                      <item row="2" column="1">
-                       <widget class="QLineEdit" name="nepali_disp"/>
-                      </item>
-                      <item row="2" column="2">
-                       <widget class="QPushButton" name="nep_copy_btn">
-                        <property name="cursor">
-                         <cursorShape>PointingHandCursor</cursorShape>
-                        </property>
-                        <property name="text">
-                         <string>Copy</string>
-                        </property>
-                       </widget>
-                      </item>
                       <item row="3" column="0">
                        <widget class="QLabel" name="decimal_lbl">
+                        <property name="font">
+                         <font>
+                          <family>Helvetica</family>
+                          <pointsize>12</pointsize>
+                         </font>
+                        </property>
                         <property name="text">
                          <string>Decimal:</string>
                         </property>
                        </widget>
                       </item>
-                      <item row="3" column="1">
-                       <widget class="QLineEdit" name="decimal_disp"/>
+                      <item row="1" column="0">
+                       <widget class="QLabel" name="eng_lbl">
+                        <property name="font">
+                         <font>
+                          <family>Helvetica</family>
+                          <pointsize>12</pointsize>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>English:</string>
+                        </property>
+                       </widget>
                       </item>
-                      <item row="3" column="2">
-                       <widget class="QPushButton" name="decimal_copy_btn">
+                      <item row="8" column="2">
+                       <widget class="QPushButton" name="nep_words_copy_btn">
+                        <property name="font">
+                         <font>
+                          <pointsize>8</pointsize>
+                         </font>
+                        </property>
                         <property name="cursor">
                          <cursorShape>PointingHandCursor</cursorShape>
                         </property>
                         <property name="text">
-                         <string>Copy</string>
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset resource="../assets.qrc">
+                          <normaloff>:/icons/icons/copy.svg</normaloff>:/icons/icons/copy.svg</iconset>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="1">
+                       <widget class="QLineEdit" name="nepali_disp">
+                        <property name="enabled">
+                         <bool>false</bool>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>Helvetica</family>
+                          <pointsize>12</pointsize>
+                         </font>
                         </property>
                        </widget>
                       </item>
                       <item row="4" column="0">
                        <widget class="QLabel" name="whole_lbl">
+                        <property name="font">
+                         <font>
+                          <family>Helvetica</family>
+                          <pointsize>12</pointsize>
+                         </font>
+                        </property>
                         <property name="text">
                          <string>Whole:</string>
                         </property>
                        </widget>
-                      </item>
-                      <item row="4" column="1">
-                       <widget class="QLineEdit" name="whole_disp"/>
-                      </item>
-                      <item row="4" column="2">
-                       <widget class="QPushButton" name="whole_copy_btn">
-                        <property name="cursor">
-                         <cursorShape>PointingHandCursor</cursorShape>
-                        </property>
-                        <property name="text">
-                         <string>Copy</string>
-                        </property>
-                       </widget>
-                      </item>
-                      <item row="5" column="0">
-                       <widget class="QLabel" name="lakh_lbl">
-                        <property name="text">
-                         <string>Lakh Format:</string>
-                        </property>
-                       </widget>
-                      </item>
-                      <item row="5" column="1">
-                       <widget class="QLineEdit" name="lakh_format_disp"/>
                       </item>
                       <item row="5" column="2">
                        <widget class="QPushButton" name="lakh_copy_btn">
@@ -808,39 +808,135 @@ background-color: rgb(152, 152, 151);</string>
                          <cursorShape>PointingHandCursor</cursorShape>
                         </property>
                         <property name="text">
-                         <string>Copy</string>
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset resource="../assets.qrc">
+                          <normaloff>:/icons/icons/copy.svg</normaloff>:/icons/icons/copy.svg</iconset>
                         </property>
                        </widget>
                       </item>
-                      <item row="6" column="0">
-                       <widget class="QLabel" name="million_lbl">
-                        <property name="text">
-                         <string>Million Format:</string>
-                        </property>
-                       </widget>
-                      </item>
-                      <item row="6" column="1">
-                       <widget class="QLineEdit" name="million_format_disp"/>
-                      </item>
-                      <item row="6" column="2">
-                       <widget class="QPushButton" name="million_copy_btn">
+                      <item row="0" column="2">
+                       <widget class="QPushButton" name="num_copy_btn">
                         <property name="cursor">
                          <cursorShape>PointingHandCursor</cursorShape>
                         </property>
                         <property name="text">
-                         <string>Copy</string>
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset resource="../assets.qrc">
+                          <normaloff>:/icons/icons/copy.svg</normaloff>:/icons/icons/copy.svg</iconset>
                         </property>
                        </widget>
                       </item>
-                      <item row="7" column="0">
-                       <widget class="QLabel" name="words_eng_lbl">
+                      <item row="8" column="1">
+                       <widget class="QLabel" name="words_nep_disp">
+                        <property name="font">
+                         <font>
+                          <family>Helvetica</family>
+                          <pointsize>12</pointsize>
+                         </font>
+                        </property>
                         <property name="text">
-                         <string>Words Million Eng:</string>
+                         <string/>
+                        </property>
+                        <property name="wordWrap">
+                         <bool>true</bool>
                         </property>
                        </widget>
                       </item>
-                      <item row="7" column="1">
-                       <widget class="QLineEdit" name="words_eng_disp"/>
+                      <item row="8" column="0">
+                       <widget class="QLabel" name="words_nep_lbl">
+                        <property name="font">
+                         <font>
+                          <family>Helvetica</family>
+                          <pointsize>12</pointsize>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>Words Lakh Nep:</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="2">
+                       <widget class="QPushButton" name="nep_copy_btn">
+                        <property name="cursor">
+                         <cursorShape>PointingHandCursor</cursorShape>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset resource="../assets.qrc">
+                          <normaloff>:/icons/icons/copy.svg</normaloff>:/icons/icons/copy.svg</iconset>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="5" column="0">
+                       <widget class="QLabel" name="lakh_lbl">
+                        <property name="font">
+                         <font>
+                          <family>Helvetica</family>
+                          <pointsize>12</pointsize>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>Lakh Format:</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="0">
+                       <widget class="QLabel" name="nepali_lbl">
+                        <property name="font">
+                         <font>
+                          <family>Helvetica</family>
+                          <pointsize>12</pointsize>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>Nepali:</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="0" column="1">
+                       <widget class="QLineEdit" name="number_disp">
+                        <property name="enabled">
+                         <bool>false</bool>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>Helvetica</family>
+                          <pointsize>12</pointsize>
+                         </font>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="0" column="0">
+                       <widget class="QLabel" name="num_lbl">
+                        <property name="font">
+                         <font>
+                          <family>Helvetica</family>
+                          <pointsize>12</pointsize>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>Number:</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="3" column="1">
+                       <widget class="QLineEdit" name="decimal_disp">
+                        <property name="enabled">
+                         <bool>false</bool>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>Helvetica</family>
+                          <pointsize>12</pointsize>
+                         </font>
+                        </property>
+                       </widget>
                       </item>
                       <item row="7" column="2">
                        <widget class="QPushButton" name="eng_words_copy_btn">
@@ -848,47 +944,161 @@ background-color: rgb(152, 152, 151);</string>
                          <cursorShape>PointingHandCursor</cursorShape>
                         </property>
                         <property name="text">
-                         <string>Copy</string>
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset resource="../assets.qrc">
+                          <normaloff>:/icons/icons/copy.svg</normaloff>:/icons/icons/copy.svg</iconset>
                         </property>
                        </widget>
                       </item>
-                      <item row="8" column="0">
-                       <widget class="QLabel" name="words_nep_lbl">
+                      <item row="7" column="0">
+                       <widget class="QLabel" name="words_eng_lbl">
+                        <property name="font">
+                         <font>
+                          <family>Helvetica</family>
+                          <pointsize>12</pointsize>
+                         </font>
+                        </property>
                         <property name="text">
-                         <string>Words Lakh Nep:</string>
+                         <string>Words Million Eng:</string>
                         </property>
                        </widget>
                       </item>
-                      <item row="8" column="1">
-                       <widget class="QLineEdit" name="words_nep_disp"/>
+                      <item row="4" column="1">
+                       <widget class="QLineEdit" name="whole_disp">
+                        <property name="enabled">
+                         <bool>false</bool>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>Helvetica</family>
+                          <pointsize>12</pointsize>
+                         </font>
+                        </property>
+                       </widget>
                       </item>
-                      <item row="8" column="2">
-                       <widget class="QPushButton" name="nep_words_copy_btn">
+                      <item row="6" column="0">
+                       <widget class="QLabel" name="million_lbl">
+                        <property name="font">
+                         <font>
+                          <family>Helvetica</family>
+                          <pointsize>12</pointsize>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>Million Format:</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="4" column="2">
+                       <widget class="QPushButton" name="whole_copy_btn">
                         <property name="cursor">
                          <cursorShape>PointingHandCursor</cursorShape>
                         </property>
                         <property name="text">
-                         <string>Copy</string>
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset resource="../assets.qrc">
+                          <normaloff>:/icons/icons/copy.svg</normaloff>:/icons/icons/copy.svg</iconset>
                         </property>
                        </widget>
                       </item>
-                      <item row="9" column="0">
-                       <widget class="QLabel" name="label_12">
+                      <item row="7" column="1">
+                       <widget class="QLabel" name="words_eng_disp">
+                        <property name="font">
+                         <font>
+                          <family>Helvetica</family>
+                          <pointsize>12</pointsize>
+                         </font>
+                        </property>
                         <property name="text">
-                         <string>TextLabel</string>
+                         <string/>
+                        </property>
+                        <property name="wordWrap">
+                         <bool>true</bool>
                         </property>
                        </widget>
                       </item>
-                      <item row="9" column="1">
-                       <widget class="QLineEdit" name="lineEdit_10"/>
+                      <item row="5" column="1">
+                       <widget class="QLineEdit" name="lakh_format_disp">
+                        <property name="enabled">
+                         <bool>false</bool>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>Helvetica</family>
+                          <pointsize>12</pointsize>
+                         </font>
+                        </property>
+                       </widget>
                       </item>
-                      <item row="9" column="2">
-                       <widget class="QPushButton" name="pushButton_10">
+                      <item row="6" column="1">
+                       <widget class="QLineEdit" name="million_format_disp">
+                        <property name="enabled">
+                         <bool>false</bool>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>Helvetica</family>
+                          <pointsize>12</pointsize>
+                         </font>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="1" column="2">
+                       <widget class="QPushButton" name="eng_copy_btn">
                         <property name="cursor">
                          <cursorShape>PointingHandCursor</cursorShape>
                         </property>
                         <property name="text">
-                         <string>Copy</string>
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset resource="../assets.qrc">
+                          <normaloff>:/icons/icons/copy.svg</normaloff>:/icons/icons/copy.svg</iconset>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="6" column="2">
+                       <widget class="QPushButton" name="million_copy_btn">
+                        <property name="cursor">
+                         <cursorShape>PointingHandCursor</cursorShape>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset resource="../assets.qrc">
+                          <normaloff>:/icons/icons/copy.svg</normaloff>:/icons/icons/copy.svg</iconset>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="3" column="2">
+                       <widget class="QPushButton" name="decimal_copy_btn">
+                        <property name="cursor">
+                         <cursorShape>PointingHandCursor</cursorShape>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset resource="../assets.qrc">
+                          <normaloff>:/icons/icons/copy.svg</normaloff>:/icons/icons/copy.svg</iconset>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="1" column="1">
+                       <widget class="QLineEdit" name="english_disp">
+                        <property name="enabled">
+                         <bool>false</bool>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>Helvetica</family>
+                          <pointsize>12</pointsize>
+                         </font>
                         </property>
                        </widget>
                       </item>
@@ -1018,7 +1228,7 @@ padding: 2px;</string>
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QGroupBox" name="">
+                 <widget class="QGroupBox" name="groupBox">
                   <layout class="QGridLayout" name="dates_grid">
                    <item row="0" column="0">
                     <widget class="QLabel" name="nepali_date">

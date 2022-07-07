@@ -1,4 +1,8 @@
-from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QFrame, QLabel, QPushButton, QSizeGrip, QVBoxLayout
+'''
+    this is the comment
+    for long run
+'''
+from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QFrame, QLabel, QPushButton, QSizeGrip, QVBoxLayout, QLineEdit
 from PyQt5 import uic, QtGui, QtCore
 from PyQt5.QtCore import QPoint
 import sys
@@ -67,7 +71,15 @@ class LoadUI(QMainWindow):
         
         #adding button click connect to convert button
         self.convert_btn = self.findChild(QPushButton, "convert_btn")
-        self.convert_btn.clicked.connect(UI_Functions.convertNumber())
+        num_input = self.findChild(QLineEdit, "num_input")
+        self.number_output = self.findChild(QFrame, "output_number")
+        # num_input.setText("113565645.15")
+        # print(num_input.text()) 
+        self.convert_btn.clicked.connect(lambda: UI_Functions.convertNumber(num_input.text(), self.utilites_number))
+        
+        #adding button click connect to clear number button
+        self.clear_num_btn = self.findChild(QPushButton, "clear_btn")
+        self.clear_num_btn.clicked.connect(lambda: UI_Functions.clearText(num_input))
         
         #show the window
         self.show()

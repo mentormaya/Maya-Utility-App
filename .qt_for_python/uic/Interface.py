@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'd:\Creative\GitHub\Maya-Utility-App\assets\UI\Interface.ui'
+# Form implementation generated from reading ui file 'c:\Users\A00172\Desktop\New Utility\assets\UI\Interface.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -16,7 +16,7 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1104, 709)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("d:\\Creative\\GitHub\\Maya-Utility-App\\assets\\UI\\../icon.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("c:\\Users\\A00172\\Desktop\\New Utility\\assets\\UI\\../icon.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet("background-color: rgba(255, 255, 255, 0);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -24,10 +24,9 @@ class Ui_MainWindow(object):
 "border-radius: 10;\n"
 "color: rgb(255,255,255)")
         self.centralwidget.setObjectName("centralwidget")
-        self.drop_shadow_layout = QtWidgets.QVBoxLayout(self.centralwidget)
-        self.drop_shadow_layout.setContentsMargins(0, 0, 0, 0)
-        self.drop_shadow_layout.setSpacing(0)
-        self.drop_shadow_layout.setObjectName("drop_shadow_layout")
+        self.gridLayout_2 = QtWidgets.QGridLayout(self.centralwidget)
+        self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout_2.setObjectName("gridLayout_2")
         self.drop_shadow_frame = QtWidgets.QFrame(self.centralwidget)
         self.drop_shadow_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.drop_shadow_frame.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -60,7 +59,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.app_title = QtWidgets.QLabel(self.frame_title)
         font = QtGui.QFont()
-        font.setFamily("Ubuntu Mono")
+        font.setFamily("Helvetica")
         font.setPointSize(18)
         font.setBold(True)
         font.setWeight(75)
@@ -77,11 +76,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.frame_btns)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.btn_minimize = QtWidgets.QPushButton(self.frame_btns)
-        self.btn_minimize.setMinimumSize(QtCore.QSize(20, 20))
-        self.btn_minimize.setMaximumSize(QtCore.QSize(20, 20))
+        self.btn_minimize.setMinimumSize(QtCore.QSize(16, 16))
+        self.btn_minimize.setMaximumSize(QtCore.QSize(16, 16))
         self.btn_minimize.setStyleSheet("QPushButton {\n"
 "    border:none;\n"
-"    border-radius: 10px;\n"
+"    border-radius: 8px;\n"
 "    background-color: rgb(85, 255, 127);\n"
 "}\n"
 "\n"
@@ -92,11 +91,11 @@ class Ui_MainWindow(object):
         self.btn_minimize.setObjectName("btn_minimize")
         self.horizontalLayout_2.addWidget(self.btn_minimize)
         self.btn_maximize = QtWidgets.QPushButton(self.frame_btns)
-        self.btn_maximize.setMinimumSize(QtCore.QSize(20, 20))
-        self.btn_maximize.setMaximumSize(QtCore.QSize(20, 20))
+        self.btn_maximize.setMinimumSize(QtCore.QSize(16, 16))
+        self.btn_maximize.setMaximumSize(QtCore.QSize(16, 16))
         self.btn_maximize.setStyleSheet("QPushButton {\n"
 "    border:none;\n"
-"    border-radius: 10px;\n"
+"    border-radius: 8px;\n"
 "    background-color: rgb(255, 146, 73);\n"
 "}\n"
 "\n"
@@ -107,11 +106,11 @@ class Ui_MainWindow(object):
         self.btn_maximize.setObjectName("btn_maximize")
         self.horizontalLayout_2.addWidget(self.btn_maximize)
         self.btn_close = QtWidgets.QPushButton(self.frame_btns)
-        self.btn_close.setMinimumSize(QtCore.QSize(20, 20))
-        self.btn_close.setMaximumSize(QtCore.QSize(20, 20))
+        self.btn_close.setMinimumSize(QtCore.QSize(16, 16))
+        self.btn_close.setMaximumSize(QtCore.QSize(16, 16))
         self.btn_close.setStyleSheet("QPushButton {\n"
 "    border:none;\n"
-"    border-radius: 10px;\n"
+"    border-radius: 8px;\n"
 "    background-color: rgb(255, 62, 62);\n"
 "}\n"
 "\n"
@@ -130,8 +129,106 @@ class Ui_MainWindow(object):
         self.contents.setObjectName("contents")
         self.gridLayout = QtWidgets.QGridLayout(self.contents)
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
-        self.gridLayout.setSpacing(5)
+        self.gridLayout.setHorizontalSpacing(0)
+        self.gridLayout.setVerticalSpacing(5)
         self.gridLayout.setObjectName("gridLayout")
+        self.app_info_frame = QtWidgets.QFrame(self.contents)
+        self.app_info_frame.setMinimumSize(QtCore.QSize(0, 150))
+        self.app_info_frame.setMaximumSize(QtCore.QSize(16777215, 150))
+        self.app_info_frame.setStyleSheet("border-radius: 0px;\n"
+"border-top: 1px solid rgb(133, 133, 133);")
+        self.app_info_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.app_info_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.app_info_frame.setObjectName("app_info_frame")
+        self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.app_info_frame)
+        self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_5.setSpacing(0)
+        self.verticalLayout_5.setObjectName("verticalLayout_5")
+        self.settings_menu = QtWidgets.QPushButton(self.app_info_frame)
+        font = QtGui.QFont()
+        font.setBold(True)
+        font.setWeight(75)
+        self.settings_menu.setFont(font)
+        self.settings_menu.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.settings_menu.setStyleSheet("QPushButton{\n"
+"    background-color: rgba(223, 223, 221, 150);\n"
+"    color: rgb(0,0,0);\n"
+"    padding: 10px;\n"
+"    margin: 5px;\n"
+"    border-top-left-radius: 8px;\n"
+"    border-bottom-left-radius: 8px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"    background-color: rgba(223, 223, 221, 200);\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"    background-color: rgba(223, 223, 221, 200);\n"
+"    border-right: rgba(85, 0, 255, 150) 4px solid;\n"
+"}")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap(":/icons/icons/settings.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.settings_menu.setIcon(icon1)
+        self.settings_menu.setObjectName("settings_menu")
+        self.verticalLayout_5.addWidget(self.settings_menu)
+        self.help_menu = QtWidgets.QPushButton(self.app_info_frame)
+        font = QtGui.QFont()
+        font.setBold(True)
+        font.setWeight(75)
+        self.help_menu.setFont(font)
+        self.help_menu.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.help_menu.setStyleSheet("QPushButton{\n"
+"    background-color: rgba(223, 223, 221, 150);\n"
+"    color: rgb(0,0,0);\n"
+"    padding: 10px;\n"
+"    margin: 5px;\n"
+"    border-top-left-radius: 8px;\n"
+"    border-bottom-left-radius: 8px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"    background-color: rgba(223, 223, 221, 200);\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"    background-color: rgba(223, 223, 221, 200);\n"
+"    border-right: rgba(85, 0, 255, 150) 4px solid;\n"
+"}")
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap(":/icons/icons/help-circle.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.help_menu.setIcon(icon2)
+        self.help_menu.setObjectName("help_menu")
+        self.verticalLayout_5.addWidget(self.help_menu)
+        self.about_menu = QtWidgets.QPushButton(self.app_info_frame)
+        font = QtGui.QFont()
+        font.setBold(True)
+        font.setWeight(75)
+        self.about_menu.setFont(font)
+        self.about_menu.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.about_menu.setStyleSheet("QPushButton{\n"
+"    background-color: rgba(223, 223, 221, 150);\n"
+"    color: rgb(0,0,0);\n"
+"    padding: 10px;\n"
+"    margin: 5px;\n"
+"    border-top-left-radius: 8px;\n"
+"    border-bottom-left-radius: 8px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"    background-color: rgba(223, 223, 221, 200);\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"    background-color: rgba(223, 223, 221, 200);\n"
+"    border-right: rgba(85, 0, 255, 150) 4px solid;\n"
+"}")
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap(":/icons/icons/info.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.about_menu.setIcon(icon3)
+        self.about_menu.setObjectName("about_menu")
+        self.verticalLayout_5.addWidget(self.about_menu)
+        self.gridLayout.addWidget(self.app_info_frame, 2, 0, 1, 1)
         self.brand_frame = QtWidgets.QFrame(self.contents)
         self.brand_frame.setMinimumSize(QtCore.QSize(25, 75))
         self.brand_frame.setMaximumSize(QtCore.QSize(75, 75))
@@ -142,12 +239,303 @@ class Ui_MainWindow(object):
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
         self.brand_logo = QtWidgets.QLabel(self.brand_frame)
         self.brand_logo.setText("")
-        self.brand_logo.setPixmap(QtGui.QPixmap("d:\\Creative\\GitHub\\Maya-Utility-App\\assets\\UI\\../icon.ico"))
+        self.brand_logo.setPixmap(QtGui.QPixmap("c:\\Users\\A00172\\Desktop\\New Utility\\assets\\UI\\../icon.ico"))
         self.brand_logo.setScaledContents(True)
         self.brand_logo.setAlignment(QtCore.Qt.AlignCenter)
         self.brand_logo.setObjectName("brand_logo")
         self.horizontalLayout_5.addWidget(self.brand_logo)
         self.gridLayout.addWidget(self.brand_frame, 0, 0, 1, 1)
+        self.content_frame = QtWidgets.QFrame(self.contents)
+        self.content_frame.setStyleSheet("background-color: rgb(29, 29, 29);\n"
+"border-radius: 0px;")
+        self.content_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.content_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.content_frame.setObjectName("content_frame")
+        self.horizontalLayout_7 = QtWidgets.QHBoxLayout(self.content_frame)
+        self.horizontalLayout_7.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_7.setSpacing(0)
+        self.horizontalLayout_7.setObjectName("horizontalLayout_7")
+        self.main_content_pages = QtWidgets.QStackedWidget(self.content_frame)
+        self.main_content_pages.setObjectName("main_content_pages")
+        self.dashboard = QtWidgets.QWidget()
+        self.dashboard.setObjectName("dashboard")
+        self.verticalLayout_8 = QtWidgets.QVBoxLayout(self.dashboard)
+        self.verticalLayout_8.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_8.setSpacing(5)
+        self.verticalLayout_8.setObjectName("verticalLayout_8")
+        self.label_2 = QtWidgets.QLabel(self.dashboard)
+        self.label_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_2.setObjectName("label_2")
+        self.verticalLayout_8.addWidget(self.label_2)
+        self.main_content_pages.addWidget(self.dashboard)
+        self.utilites_number = QtWidgets.QWidget()
+        self.utilites_number.setObjectName("utilites_number")
+        self.verticalLayout_10 = QtWidgets.QVBoxLayout(self.utilites_number)
+        self.verticalLayout_10.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_10.setSpacing(0)
+        self.verticalLayout_10.setObjectName("verticalLayout_10")
+        self.input_number = QtWidgets.QFrame(self.utilites_number)
+        self.input_number.setMinimumSize(QtCore.QSize(0, 40))
+        self.input_number.setMaximumSize(QtCore.QSize(16777215, 60))
+        self.input_number.setStyleSheet("padding: 5px;")
+        self.input_number.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.input_number.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.input_number.setObjectName("input_number")
+        self.horizontalLayout_9 = QtWidgets.QHBoxLayout(self.input_number)
+        self.horizontalLayout_9.setObjectName("horizontalLayout_9")
+        self.number_input_label = QtWidgets.QLabel(self.input_number)
+        font = QtGui.QFont()
+        font.setFamily("Helvetica")
+        font.setPointSize(12)
+        self.number_input_label.setFont(font)
+        self.number_input_label.setObjectName("number_input_label")
+        self.horizontalLayout_9.addWidget(self.number_input_label)
+        self.num_input = QtWidgets.QLineEdit(self.input_number)
+        font = QtGui.QFont()
+        font.setFamily("Helvetica")
+        font.setPointSize(12)
+        self.num_input.setFont(font)
+        self.num_input.setStyleSheet("")
+        self.num_input.setText("")
+        self.num_input.setPlaceholderText("")
+        self.num_input.setClearButtonEnabled(False)
+        self.num_input.setObjectName("num_input")
+        self.horizontalLayout_9.addWidget(self.num_input)
+        self.clear_btn = QtWidgets.QPushButton(self.input_number)
+        self.clear_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.clear_btn.setText("")
+        icon4 = QtGui.QIcon()
+        icon4.addPixmap(QtGui.QPixmap(":/icons/icons/x.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.clear_btn.setIcon(icon4)
+        self.clear_btn.setObjectName("clear_btn")
+        self.horizontalLayout_9.addWidget(self.clear_btn)
+        self.copy_num_all_btn = QtWidgets.QPushButton(self.input_number)
+        self.copy_num_all_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.copy_num_all_btn.setText("")
+        icon5 = QtGui.QIcon()
+        icon5.addPixmap(QtGui.QPixmap(":/icons/icons/copy.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.copy_num_all_btn.setIcon(icon5)
+        self.copy_num_all_btn.setObjectName("copy_num_all_btn")
+        self.horizontalLayout_9.addWidget(self.copy_num_all_btn)
+        self.convert_btn = QtWidgets.QPushButton(self.input_number)
+        self.convert_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.convert_btn.setStyleSheet("padding: 10px;\n"
+"border-radius: 8px;\n"
+"background-color: rgb(152, 152, 151);")
+        self.convert_btn.setObjectName("convert_btn")
+        self.horizontalLayout_9.addWidget(self.convert_btn)
+        self.verticalLayout_10.addWidget(self.input_number)
+        self.output_number = QtWidgets.QFrame(self.utilites_number)
+        self.output_number.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.output_number.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.output_number.setObjectName("output_number")
+        self.verticalLayout_11 = QtWidgets.QVBoxLayout(self.output_number)
+        self.verticalLayout_11.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_11.setSpacing(0)
+        self.verticalLayout_11.setObjectName("verticalLayout_11")
+        self.number_output = QtWidgets.QGridLayout()
+        self.number_output.setContentsMargins(10, 10, 10, 10)
+        self.number_output.setHorizontalSpacing(10)
+        self.number_output.setObjectName("number_output")
+        self.decimal_lbl = QtWidgets.QLabel(self.output_number)
+        font = QtGui.QFont()
+        font.setFamily("Helvetica")
+        font.setPointSize(12)
+        self.decimal_lbl.setFont(font)
+        self.decimal_lbl.setObjectName("decimal_lbl")
+        self.number_output.addWidget(self.decimal_lbl, 3, 0, 1, 1)
+        self.eng_lbl = QtWidgets.QLabel(self.output_number)
+        font = QtGui.QFont()
+        font.setFamily("Helvetica")
+        font.setPointSize(12)
+        self.eng_lbl.setFont(font)
+        self.eng_lbl.setObjectName("eng_lbl")
+        self.number_output.addWidget(self.eng_lbl, 1, 0, 1, 1)
+        self.nep_words_copy_btn = QtWidgets.QPushButton(self.output_number)
+        font = QtGui.QFont()
+        font.setPointSize(8)
+        self.nep_words_copy_btn.setFont(font)
+        self.nep_words_copy_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.nep_words_copy_btn.setText("")
+        self.nep_words_copy_btn.setIcon(icon5)
+        self.nep_words_copy_btn.setObjectName("nep_words_copy_btn")
+        self.number_output.addWidget(self.nep_words_copy_btn, 8, 2, 1, 1)
+        self.nepali_disp = QtWidgets.QLineEdit(self.output_number)
+        self.nepali_disp.setEnabled(False)
+        font = QtGui.QFont()
+        font.setFamily("Helvetica")
+        font.setPointSize(12)
+        self.nepali_disp.setFont(font)
+        self.nepali_disp.setObjectName("nepali_disp")
+        self.number_output.addWidget(self.nepali_disp, 2, 1, 1, 1)
+        self.whole_lbl = QtWidgets.QLabel(self.output_number)
+        font = QtGui.QFont()
+        font.setFamily("Helvetica")
+        font.setPointSize(12)
+        self.whole_lbl.setFont(font)
+        self.whole_lbl.setObjectName("whole_lbl")
+        self.number_output.addWidget(self.whole_lbl, 4, 0, 1, 1)
+        self.lakh_copy_btn = QtWidgets.QPushButton(self.output_number)
+        self.lakh_copy_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.lakh_copy_btn.setText("")
+        self.lakh_copy_btn.setIcon(icon5)
+        self.lakh_copy_btn.setObjectName("lakh_copy_btn")
+        self.number_output.addWidget(self.lakh_copy_btn, 5, 2, 1, 1)
+        self.num_copy_btn = QtWidgets.QPushButton(self.output_number)
+        self.num_copy_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.num_copy_btn.setText("")
+        self.num_copy_btn.setIcon(icon5)
+        self.num_copy_btn.setObjectName("num_copy_btn")
+        self.number_output.addWidget(self.num_copy_btn, 0, 2, 1, 1)
+        self.words_nep_disp = QtWidgets.QLabel(self.output_number)
+        font = QtGui.QFont()
+        font.setFamily("Helvetica")
+        font.setPointSize(12)
+        self.words_nep_disp.setFont(font)
+        self.words_nep_disp.setText("")
+        self.words_nep_disp.setWordWrap(True)
+        self.words_nep_disp.setObjectName("words_nep_disp")
+        self.number_output.addWidget(self.words_nep_disp, 8, 1, 1, 1)
+        self.words_nep_lbl = QtWidgets.QLabel(self.output_number)
+        font = QtGui.QFont()
+        font.setFamily("Helvetica")
+        font.setPointSize(12)
+        self.words_nep_lbl.setFont(font)
+        self.words_nep_lbl.setObjectName("words_nep_lbl")
+        self.number_output.addWidget(self.words_nep_lbl, 8, 0, 1, 1)
+        self.nep_copy_btn = QtWidgets.QPushButton(self.output_number)
+        self.nep_copy_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.nep_copy_btn.setText("")
+        self.nep_copy_btn.setIcon(icon5)
+        self.nep_copy_btn.setObjectName("nep_copy_btn")
+        self.number_output.addWidget(self.nep_copy_btn, 2, 2, 1, 1)
+        self.lakh_lbl = QtWidgets.QLabel(self.output_number)
+        font = QtGui.QFont()
+        font.setFamily("Helvetica")
+        font.setPointSize(12)
+        self.lakh_lbl.setFont(font)
+        self.lakh_lbl.setObjectName("lakh_lbl")
+        self.number_output.addWidget(self.lakh_lbl, 5, 0, 1, 1)
+        self.nepali_lbl = QtWidgets.QLabel(self.output_number)
+        font = QtGui.QFont()
+        font.setFamily("Helvetica")
+        font.setPointSize(12)
+        self.nepali_lbl.setFont(font)
+        self.nepali_lbl.setObjectName("nepali_lbl")
+        self.number_output.addWidget(self.nepali_lbl, 2, 0, 1, 1)
+        self.number_disp = QtWidgets.QLineEdit(self.output_number)
+        self.number_disp.setEnabled(False)
+        font = QtGui.QFont()
+        font.setFamily("Helvetica")
+        font.setPointSize(12)
+        self.number_disp.setFont(font)
+        self.number_disp.setObjectName("number_disp")
+        self.number_output.addWidget(self.number_disp, 0, 1, 1, 1)
+        self.num_lbl = QtWidgets.QLabel(self.output_number)
+        font = QtGui.QFont()
+        font.setFamily("Helvetica")
+        font.setPointSize(12)
+        self.num_lbl.setFont(font)
+        self.num_lbl.setObjectName("num_lbl")
+        self.number_output.addWidget(self.num_lbl, 0, 0, 1, 1)
+        self.decimal_disp = QtWidgets.QLineEdit(self.output_number)
+        self.decimal_disp.setEnabled(False)
+        font = QtGui.QFont()
+        font.setFamily("Helvetica")
+        font.setPointSize(12)
+        self.decimal_disp.setFont(font)
+        self.decimal_disp.setObjectName("decimal_disp")
+        self.number_output.addWidget(self.decimal_disp, 3, 1, 1, 1)
+        self.eng_words_copy_btn = QtWidgets.QPushButton(self.output_number)
+        self.eng_words_copy_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.eng_words_copy_btn.setText("")
+        self.eng_words_copy_btn.setIcon(icon5)
+        self.eng_words_copy_btn.setObjectName("eng_words_copy_btn")
+        self.number_output.addWidget(self.eng_words_copy_btn, 7, 2, 1, 1)
+        self.words_eng_lbl = QtWidgets.QLabel(self.output_number)
+        font = QtGui.QFont()
+        font.setFamily("Helvetica")
+        font.setPointSize(12)
+        self.words_eng_lbl.setFont(font)
+        self.words_eng_lbl.setObjectName("words_eng_lbl")
+        self.number_output.addWidget(self.words_eng_lbl, 7, 0, 1, 1)
+        self.whole_disp = QtWidgets.QLineEdit(self.output_number)
+        self.whole_disp.setEnabled(False)
+        font = QtGui.QFont()
+        font.setFamily("Helvetica")
+        font.setPointSize(12)
+        self.whole_disp.setFont(font)
+        self.whole_disp.setObjectName("whole_disp")
+        self.number_output.addWidget(self.whole_disp, 4, 1, 1, 1)
+        self.million_lbl = QtWidgets.QLabel(self.output_number)
+        font = QtGui.QFont()
+        font.setFamily("Helvetica")
+        font.setPointSize(12)
+        self.million_lbl.setFont(font)
+        self.million_lbl.setObjectName("million_lbl")
+        self.number_output.addWidget(self.million_lbl, 6, 0, 1, 1)
+        self.whole_copy_btn = QtWidgets.QPushButton(self.output_number)
+        self.whole_copy_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.whole_copy_btn.setText("")
+        self.whole_copy_btn.setIcon(icon5)
+        self.whole_copy_btn.setObjectName("whole_copy_btn")
+        self.number_output.addWidget(self.whole_copy_btn, 4, 2, 1, 1)
+        self.words_eng_disp = QtWidgets.QLabel(self.output_number)
+        font = QtGui.QFont()
+        font.setFamily("Helvetica")
+        font.setPointSize(12)
+        self.words_eng_disp.setFont(font)
+        self.words_eng_disp.setText("")
+        self.words_eng_disp.setWordWrap(True)
+        self.words_eng_disp.setObjectName("words_eng_disp")
+        self.number_output.addWidget(self.words_eng_disp, 7, 1, 1, 1)
+        self.lakh_format_disp = QtWidgets.QLineEdit(self.output_number)
+        self.lakh_format_disp.setEnabled(False)
+        font = QtGui.QFont()
+        font.setFamily("Helvetica")
+        font.setPointSize(12)
+        self.lakh_format_disp.setFont(font)
+        self.lakh_format_disp.setObjectName("lakh_format_disp")
+        self.number_output.addWidget(self.lakh_format_disp, 5, 1, 1, 1)
+        self.million_format_disp = QtWidgets.QLineEdit(self.output_number)
+        self.million_format_disp.setEnabled(False)
+        font = QtGui.QFont()
+        font.setFamily("Helvetica")
+        font.setPointSize(12)
+        self.million_format_disp.setFont(font)
+        self.million_format_disp.setObjectName("million_format_disp")
+        self.number_output.addWidget(self.million_format_disp, 6, 1, 1, 1)
+        self.eng_copy_btn = QtWidgets.QPushButton(self.output_number)
+        self.eng_copy_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.eng_copy_btn.setText("")
+        self.eng_copy_btn.setIcon(icon5)
+        self.eng_copy_btn.setObjectName("eng_copy_btn")
+        self.number_output.addWidget(self.eng_copy_btn, 1, 2, 1, 1)
+        self.million_copy_btn = QtWidgets.QPushButton(self.output_number)
+        self.million_copy_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.million_copy_btn.setText("")
+        self.million_copy_btn.setIcon(icon5)
+        self.million_copy_btn.setObjectName("million_copy_btn")
+        self.number_output.addWidget(self.million_copy_btn, 6, 2, 1, 1)
+        self.decimal_copy_btn = QtWidgets.QPushButton(self.output_number)
+        self.decimal_copy_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.decimal_copy_btn.setText("")
+        self.decimal_copy_btn.setIcon(icon5)
+        self.decimal_copy_btn.setObjectName("decimal_copy_btn")
+        self.number_output.addWidget(self.decimal_copy_btn, 3, 2, 1, 1)
+        self.english_disp = QtWidgets.QLineEdit(self.output_number)
+        self.english_disp.setEnabled(False)
+        font = QtGui.QFont()
+        font.setFamily("Helvetica")
+        font.setPointSize(12)
+        self.english_disp.setFont(font)
+        self.english_disp.setObjectName("english_disp")
+        self.number_output.addWidget(self.english_disp, 1, 1, 1, 1)
+        self.verticalLayout_11.addLayout(self.number_output)
+        self.verticalLayout_10.addWidget(self.output_number)
+        self.main_content_pages.addWidget(self.utilites_number)
+        self.horizontalLayout_7.addWidget(self.main_content_pages)
+        self.gridLayout.addWidget(self.content_frame, 1, 2, 2, 1)
         self.top_bar_frame = QtWidgets.QFrame(self.contents)
         self.top_bar_frame.setStyleSheet("background-color: rgb(37, 37, 38);\n"
 "padding: 2px;")
@@ -187,48 +575,358 @@ class Ui_MainWindow(object):
         self.quotes_label.setObjectName("quotes_label")
         self.verticalLayout_3.addWidget(self.quotes_label, 0, QtCore.Qt.AlignVCenter)
         self.horizontalLayout_6.addWidget(self.welcome_text)
+        self.date_frame = QtWidgets.QFrame(self.top_bar_frame)
+        self.date_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.date_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.date_frame.setObjectName("date_frame")
+        self.verticalLayout_9 = QtWidgets.QVBoxLayout(self.date_frame)
+        self.verticalLayout_9.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_9.setSpacing(0)
+        self.verticalLayout_9.setObjectName("verticalLayout_9")
+        self.groupBox = QtWidgets.QGroupBox(self.date_frame)
+        self.groupBox.setObjectName("groupBox")
+        self.dates_grid = QtWidgets.QGridLayout(self.groupBox)
+        self.dates_grid.setObjectName("dates_grid")
+        self.nepali_date = QtWidgets.QLabel(self.groupBox)
+        font = QtGui.QFont()
+        font.setFamily("MS Sans Serif")
+        font.setPointSize(14)
+        self.nepali_date.setFont(font)
+        self.nepali_date.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.nepali_date.setObjectName("nepali_date")
+        self.dates_grid.addWidget(self.nepali_date, 0, 0, 1, 1)
+        self.intdt_copy_btn = QtWidgets.QPushButton(self.groupBox)
+        self.intdt_copy_btn.setMinimumSize(QtCore.QSize(25, 0))
+        self.intdt_copy_btn.setMaximumSize(QtCore.QSize(25, 16777215))
+        self.intdt_copy_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.intdt_copy_btn.setText("")
+        self.intdt_copy_btn.setIcon(icon5)
+        self.intdt_copy_btn.setObjectName("intdt_copy_btn")
+        self.dates_grid.addWidget(self.intdt_copy_btn, 1, 1, 1, 1, QtCore.Qt.AlignLeft)
+        self.int_date = QtWidgets.QLabel(self.groupBox)
+        font = QtGui.QFont()
+        font.setFamily("MS Sans Serif")
+        font.setPointSize(14)
+        self.int_date.setFont(font)
+        self.int_date.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.int_date.setObjectName("int_date")
+        self.dates_grid.addWidget(self.int_date, 1, 0, 1, 1)
+        self.npdt_copy_btn = QtWidgets.QPushButton(self.groupBox)
+        self.npdt_copy_btn.setMinimumSize(QtCore.QSize(25, 0))
+        self.npdt_copy_btn.setMaximumSize(QtCore.QSize(25, 16777215))
+        self.npdt_copy_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.npdt_copy_btn.setText("")
+        self.npdt_copy_btn.setIcon(icon5)
+        self.npdt_copy_btn.setObjectName("npdt_copy_btn")
+        self.dates_grid.addWidget(self.npdt_copy_btn, 0, 1, 1, 1)
+        self.verticalLayout_9.addWidget(self.groupBox)
+        self.horizontalLayout_6.addWidget(self.date_frame)
         self.top_right_menu = QtWidgets.QFrame(self.top_bar_frame)
+        self.top_right_menu.setMinimumSize(QtCore.QSize(150, 0))
+        self.top_right_menu.setMaximumSize(QtCore.QSize(150, 16777215))
         self.top_right_menu.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.top_right_menu.setFrameShadow(QtWidgets.QFrame.Raised)
         self.top_right_menu.setObjectName("top_right_menu")
+        self.horizontalLayout_8 = QtWidgets.QHBoxLayout(self.top_right_menu)
+        self.horizontalLayout_8.setObjectName("horizontalLayout_8")
+        self.np_cal_btn = QtWidgets.QPushButton(self.top_right_menu)
+        self.np_cal_btn.setStyleSheet("QPushButton{\n"
+"    background-color: rgba(223, 223, 221, 150);\n"
+"    color: rgb(0,0,0);\n"
+"    padding: 10px;\n"
+"    margin: 5px;\n"
+"    border-top-left-radius: 8px;\n"
+"    border-bottom-left-radius: 8px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"    background-color: rgba(223, 223, 221, 200);\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"    background-color: rgba(223, 223, 221, 200);\n"
+"    border-right: rgba(85, 0, 255, 150) 4px solid;\n"
+"}")
+        icon6 = QtGui.QIcon()
+        icon6.addPixmap(QtGui.QPixmap(":/icons/icons/calendar.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.np_cal_btn.setIcon(icon6)
+        self.np_cal_btn.setObjectName("np_cal_btn")
+        self.horizontalLayout_8.addWidget(self.np_cal_btn)
+        self.options_btn = QtWidgets.QPushButton(self.top_right_menu)
+        self.options_btn.setStyleSheet("QPushButton{\n"
+"    background-color: rgba(223, 223, 221, 150);\n"
+"    color: rgb(0,0,0);\n"
+"    padding: 10px;\n"
+"    margin: 5px;\n"
+"    border-top-left-radius: 8px;\n"
+"    border-bottom-left-radius: 8px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"    background-color: rgba(223, 223, 221, 200);\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"    background-color: rgba(223, 223, 221, 200);\n"
+"    border-right: rgba(85, 0, 255, 150) 4px solid;\n"
+"}")
+        self.options_btn.setText("")
+        icon7 = QtGui.QIcon()
+        icon7.addPixmap(QtGui.QPixmap(":/icons/icons/chevrons-left.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.options_btn.setIcon(icon7)
+        self.options_btn.setObjectName("options_btn")
+        self.horizontalLayout_8.addWidget(self.options_btn)
         self.horizontalLayout_6.addWidget(self.top_right_menu)
         self.gridLayout.addWidget(self.top_bar_frame, 0, 1, 1, 2)
+        self.left_menu_frame = QtWidgets.QFrame(self.contents)
+        self.left_menu_frame.setStyleSheet("padding: 0px;")
+        self.left_menu_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.left_menu_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.left_menu_frame.setObjectName("left_menu_frame")
+        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.left_menu_frame)
+        self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_4.setSpacing(5)
+        self.verticalLayout_4.setObjectName("verticalLayout_4")
+        self.dashboard_menu = QtWidgets.QPushButton(self.left_menu_frame)
+        font = QtGui.QFont()
+        font.setFamily("Helvetica")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setItalic(False)
+        font.setUnderline(False)
+        font.setWeight(75)
+        font.setStrikeOut(False)
+        self.dashboard_menu.setFont(font)
+        self.dashboard_menu.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.dashboard_menu.setMouseTracking(False)
+        self.dashboard_menu.setStyleSheet("QPushButton{\n"
+"    background-color: rgba(223, 223, 221, 150);\n"
+"    color: rgb(0,0,0);\n"
+"    padding: 10px;\n"
+"    margin: 5px;\n"
+"    border-top-right-radius: 0px;\n"
+"    border-bottom-right-radius: 0px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"    background-color: rgba(223, 223, 221, 200);\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"    background-color: rgba(223, 223, 221, 200);\n"
+"    border-right: rgba(85, 0, 255, 150) 4px solid;\n"
+"}")
+        icon8 = QtGui.QIcon()
+        icon8.addPixmap(QtGui.QPixmap(":/icons/icons/menu.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.dashboard_menu.setIcon(icon8)
+        self.dashboard_menu.setIconSize(QtCore.QSize(16, 16))
+        self.dashboard_menu.setCheckable(True)
+        self.dashboard_menu.setAutoRepeat(False)
+        self.dashboard_menu.setAutoDefault(True)
+        self.dashboard_menu.setDefault(True)
+        self.dashboard_menu.setFlat(False)
+        self.dashboard_menu.setObjectName("dashboard_menu")
+        self.verticalLayout_4.addWidget(self.dashboard_menu)
+        self.utilities_menu = QtWidgets.QPushButton(self.left_menu_frame)
+        font = QtGui.QFont()
+        font.setFamily("Helvetica")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setItalic(False)
+        font.setUnderline(False)
+        font.setWeight(75)
+        font.setStrikeOut(False)
+        self.utilities_menu.setFont(font)
+        self.utilities_menu.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.utilities_menu.setStyleSheet("QPushButton{\n"
+"    background-color: rgba(223, 223, 221, 150);\n"
+"    color: rgb(0,0,0);\n"
+"    padding: 10px;\n"
+"    margin: 5px;\n"
+"    border-top-right-radius: 0px;\n"
+"    border-bottom-right-radius: 0px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"    background-color: rgba(223, 223, 221, 200);\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"    background-color: rgba(223, 223, 221, 200);\n"
+"    border-right: rgba(85, 0, 255, 150) 4px solid;\n"
+"}")
+        icon9 = QtGui.QIcon()
+        icon9.addPixmap(QtGui.QPixmap(":/icons/icons/tool.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.utilities_menu.setIcon(icon9)
+        self.utilities_menu.setIconSize(QtCore.QSize(16, 16))
+        self.utilities_menu.setCheckable(True)
+        self.utilities_menu.setAutoRepeat(False)
+        self.utilities_menu.setAutoDefault(False)
+        self.utilities_menu.setDefault(False)
+        self.utilities_menu.setFlat(False)
+        self.utilities_menu.setObjectName("utilities_menu")
+        self.verticalLayout_4.addWidget(self.utilities_menu)
+        self.api_menu = QtWidgets.QPushButton(self.left_menu_frame)
+        font = QtGui.QFont()
+        font.setFamily("Helvetica")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setItalic(False)
+        font.setUnderline(False)
+        font.setWeight(75)
+        font.setStrikeOut(False)
+        self.api_menu.setFont(font)
+        self.api_menu.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.api_menu.setStyleSheet("QPushButton{\n"
+"    background-color: rgba(223, 223, 221, 150);\n"
+"    color: rgb(0,0,0);\n"
+"    padding: 10px;\n"
+"    margin: 5px;\n"
+"    border-top-right-radius: 0px;\n"
+"    border-bottom-right-radius: 0px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"    background-color: rgba(223, 223, 221, 200);\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"    background-color: rgba(223, 223, 221, 200);\n"
+"    border-right: rgba(85, 0, 255, 150) 4px solid;\n"
+"}")
+        icon10 = QtGui.QIcon()
+        icon10.addPixmap(QtGui.QPixmap(":/icons/icons/link.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.api_menu.setIcon(icon10)
+        self.api_menu.setIconSize(QtCore.QSize(16, 16))
+        self.api_menu.setCheckable(True)
+        self.api_menu.setAutoRepeat(False)
+        self.api_menu.setAutoDefault(False)
+        self.api_menu.setDefault(False)
+        self.api_menu.setFlat(False)
+        self.api_menu.setObjectName("api_menu")
+        self.verticalLayout_4.addWidget(self.api_menu)
+        self.tax_menu = QtWidgets.QPushButton(self.left_menu_frame)
+        font = QtGui.QFont()
+        font.setFamily("Helvetica")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setItalic(False)
+        font.setUnderline(False)
+        font.setWeight(75)
+        font.setStrikeOut(False)
+        self.tax_menu.setFont(font)
+        self.tax_menu.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.tax_menu.setStyleSheet("QPushButton{\n"
+"    background-color: rgba(223, 223, 221, 150);\n"
+"    color: rgb(0,0,0);\n"
+"    padding: 10px;\n"
+"    margin: 5px;\n"
+"    border-top-right-radius: 0px;\n"
+"    border-bottom-right-radius: 0px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"    background-color: rgba(223, 223, 221, 200);\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"    background-color: rgba(223, 223, 221, 200);\n"
+"    border-right: rgba(85, 0, 255, 150) 4px solid;\n"
+"}")
+        icon11 = QtGui.QIcon()
+        icon11.addPixmap(QtGui.QPixmap(":/icons/icons/dollar-sign.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.tax_menu.setIcon(icon11)
+        self.tax_menu.setIconSize(QtCore.QSize(16, 16))
+        self.tax_menu.setCheckable(True)
+        self.tax_menu.setAutoRepeat(False)
+        self.tax_menu.setAutoDefault(False)
+        self.tax_menu.setDefault(False)
+        self.tax_menu.setFlat(False)
+        self.tax_menu.setObjectName("tax_menu")
+        self.verticalLayout_4.addWidget(self.tax_menu)
+        self.lms_menu = QtWidgets.QPushButton(self.left_menu_frame)
+        font = QtGui.QFont()
+        font.setFamily("Helvetica")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setItalic(False)
+        font.setUnderline(False)
+        font.setWeight(75)
+        font.setStrikeOut(False)
+        self.lms_menu.setFont(font)
+        self.lms_menu.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.lms_menu.setStyleSheet("QPushButton{\n"
+"    background-color: rgba(223, 223, 221, 150);\n"
+"    color: rgb(0,0,0);\n"
+"    padding: 10px;\n"
+"    margin: 5px;\n"
+"    border-top-right-radius: 0px;\n"
+"    border-bottom-right-radius: 0px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"    background-color: rgba(223, 223, 221, 200);\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"    background-color: rgba(223, 223, 221, 200);\n"
+"    border-right: rgba(85, 0, 255, 150) 4px solid;\n"
+"}")
+        icon12 = QtGui.QIcon()
+        icon12.addPixmap(QtGui.QPixmap(":/icons/icons/book.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.lms_menu.setIcon(icon12)
+        self.lms_menu.setIconSize(QtCore.QSize(16, 16))
+        self.lms_menu.setCheckable(True)
+        self.lms_menu.setAutoRepeat(False)
+        self.lms_menu.setAutoDefault(False)
+        self.lms_menu.setDefault(False)
+        self.lms_menu.setFlat(False)
+        self.lms_menu.setObjectName("lms_menu")
+        self.verticalLayout_4.addWidget(self.lms_menu)
+        self.gridLayout.addWidget(self.left_menu_frame, 1, 0, 1, 1, QtCore.Qt.AlignTop)
+        self.sub_menu_frame = QtWidgets.QFrame(self.contents)
+        self.sub_menu_frame.setMinimumSize(QtCore.QSize(0, 0))
+        self.sub_menu_frame.setMaximumSize(QtCore.QSize(175, 16777215))
+        self.sub_menu_frame.setStyleSheet("background-color: rgb(37, 37, 38);\n"
+"padding: 2px;\n"
+"border-radius: 0px;")
+        self.sub_menu_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.sub_menu_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.sub_menu_frame.setObjectName("sub_menu_frame")
+        self.verticalLayout_6 = QtWidgets.QVBoxLayout(self.sub_menu_frame)
+        self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_6.setSpacing(0)
+        self.verticalLayout_6.setObjectName("verticalLayout_6")
+        self.submenu_pages = QtWidgets.QStackedWidget(self.sub_menu_frame)
+        self.submenu_pages.setObjectName("submenu_pages")
+        self.dashboard_menus = QtWidgets.QWidget()
+        self.dashboard_menus.setObjectName("dashboard_menus")
+        self.verticalLayout_7 = QtWidgets.QVBoxLayout(self.dashboard_menus)
+        self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_7.setSpacing(5)
+        self.verticalLayout_7.setObjectName("verticalLayout_7")
+        self.label = QtWidgets.QLabel(self.dashboard_menus)
+        self.label.setAlignment(QtCore.Qt.AlignCenter)
+        self.label.setObjectName("label")
+        self.verticalLayout_7.addWidget(self.label)
+        self.submenu_pages.addWidget(self.dashboard_menus)
+        self.utilites_menu = QtWidgets.QWidget()
+        self.utilites_menu.setObjectName("utilites_menu")
+        self.submenu_pages.addWidget(self.utilites_menu)
+        self.verticalLayout_6.addWidget(self.submenu_pages)
+        self.gridLayout.addWidget(self.sub_menu_frame, 1, 1, 2, 1)
         self.right_menu = QtWidgets.QFrame(self.contents)
         self.right_menu.setMinimumSize(QtCore.QSize(175, 0))
         self.right_menu.setMaximumSize(QtCore.QSize(175, 16777215))
         self.right_menu.setStyleSheet("background-color: rgb(37, 37, 38);\n"
-"padding: 2px;")
+"padding: 2px;\n"
+"border-bottom-left-radius: 2px;\n"
+"border-bottom-right-radius: 2px;\n"
+"border-top-right-radius: 2px;")
         self.right_menu.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.right_menu.setFrameShadow(QtWidgets.QFrame.Raised)
         self.right_menu.setObjectName("right_menu")
         self.gridLayout.addWidget(self.right_menu, 0, 3, 3, 1)
-        self.left_menu_frame = QtWidgets.QFrame(self.contents)
-        self.left_menu_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.left_menu_frame.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.left_menu_frame.setObjectName("left_menu_frame")
-        self.gridLayout.addWidget(self.left_menu_frame, 1, 0, 1, 1)
-        self.sub_menu_frame = QtWidgets.QFrame(self.contents)
-        self.sub_menu_frame.setMinimumSize(QtCore.QSize(175, 0))
-        self.sub_menu_frame.setMaximumSize(QtCore.QSize(175, 16777215))
-        self.sub_menu_frame.setStyleSheet("background-color: rgb(37, 37, 38);\n"
-"padding: 2px;")
-        self.sub_menu_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.sub_menu_frame.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.sub_menu_frame.setObjectName("sub_menu_frame")
-        self.gridLayout.addWidget(self.sub_menu_frame, 1, 1, 2, 1)
-        self.content_frame = QtWidgets.QFrame(self.contents)
-        self.content_frame.setStyleSheet("background-color: rgb(29, 29, 29);")
-        self.content_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.content_frame.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.content_frame.setObjectName("content_frame")
-        self.gridLayout.addWidget(self.content_frame, 1, 2, 2, 1)
-        self.app_info_frame = QtWidgets.QFrame(self.contents)
-        self.app_info_frame.setMinimumSize(QtCore.QSize(0, 150))
-        self.app_info_frame.setMaximumSize(QtCore.QSize(16777215, 150))
-        self.app_info_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.app_info_frame.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.app_info_frame.setObjectName("app_info_frame")
-        self.gridLayout.addWidget(self.app_info_frame, 2, 0, 1, 1)
         self.verticalLayout.addWidget(self.contents)
         self.credits_bar = QtWidgets.QFrame(self.drop_shadow_frame)
         self.credits_bar.setMinimumSize(QtCore.QSize(0, 30))
@@ -266,16 +964,19 @@ class Ui_MainWindow(object):
         self.grip_frame = QtWidgets.QFrame(self.credits_bar)
         self.grip_frame.setMinimumSize(QtCore.QSize(30, 30))
         self.grip_frame.setMaximumSize(QtCore.QSize(30, 30))
+        self.grip_frame.setCursor(QtGui.QCursor(QtCore.Qt.SizeFDiagCursor))
         self.grip_frame.setStyleSheet("padding: 5px;")
         self.grip_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.grip_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.grip_frame.setObjectName("grip_frame")
         self.horizontalLayout_3.addWidget(self.grip_frame)
         self.verticalLayout.addWidget(self.credits_bar)
-        self.drop_shadow_layout.addWidget(self.drop_shadow_frame)
+        self.gridLayout_2.addWidget(self.drop_shadow_frame, 0, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
+        self.main_content_pages.setCurrentIndex(1)
+        self.submenu_pages.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -288,6 +989,36 @@ class Ui_MainWindow(object):
         self.btn_maximize.setStatusTip(_translate("MainWindow", "Maximize"))
         self.btn_close.setToolTip(_translate("MainWindow", "Close"))
         self.btn_close.setStatusTip(_translate("MainWindow", "Close"))
+        self.settings_menu.setText(_translate("MainWindow", "Settings"))
+        self.help_menu.setText(_translate("MainWindow", "Help"))
+        self.about_menu.setText(_translate("MainWindow", "About"))
+        self.label_2.setText(_translate("MainWindow", "I am a Dashboard UI"))
+        self.number_input_label.setText(_translate("MainWindow", "Enter your number:"))
+        self.convert_btn.setText(_translate("MainWindow", "Convert"))
+        self.decimal_lbl.setText(_translate("MainWindow", "Decimal:"))
+        self.eng_lbl.setText(_translate("MainWindow", "English:"))
+        self.whole_lbl.setText(_translate("MainWindow", "Whole:"))
+        self.words_nep_lbl.setText(_translate("MainWindow", "Words Lakh Nep:"))
+        self.lakh_lbl.setText(_translate("MainWindow", "Lakh Format:"))
+        self.nepali_lbl.setText(_translate("MainWindow", "Nepali:"))
+        self.num_lbl.setText(_translate("MainWindow", "Number:"))
+        self.words_eng_lbl.setText(_translate("MainWindow", "Words Million Eng:"))
+        self.million_lbl.setText(_translate("MainWindow", "Million Format:"))
         self.welcome_label.setText(_translate("MainWindow", "Good Morning! Ajay Singh"))
         self.quotes_label.setText(_translate("MainWindow", "Turn your wounds into wisdom"))
+        self.nepali_date.setText(_translate("MainWindow", "2079-03-22"))
+        self.int_date.setText(_translate("MainWindow", "2022-07-06"))
+        self.np_cal_btn.setText(_translate("MainWindow", "NP"))
+        self.dashboard_menu.setText(_translate("MainWindow", "Dashboard"))
+        self.dashboard_menu.setShortcut(_translate("MainWindow", "Ctrl+D"))
+        self.utilities_menu.setText(_translate("MainWindow", "Uitlites"))
+        self.utilities_menu.setShortcut(_translate("MainWindow", "Ctrl+S"))
+        self.api_menu.setText(_translate("MainWindow", "API"))
+        self.api_menu.setShortcut(_translate("MainWindow", "Ctrl+A"))
+        self.tax_menu.setText(_translate("MainWindow", "TAX"))
+        self.tax_menu.setShortcut(_translate("MainWindow", "Ctrl+T"))
+        self.lms_menu.setText(_translate("MainWindow", "Library"))
+        self.lms_menu.setShortcut(_translate("MainWindow", "Ctrl+L"))
+        self.label.setText(_translate("MainWindow", "Dashboard Submenu"))
         self.credit_label.setText(_translate("MainWindow", "Copyright @ Ajay Singh [Maya] 2022. All the rights are reserved."))
+import assets_rc
