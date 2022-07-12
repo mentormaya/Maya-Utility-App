@@ -2,7 +2,7 @@
     this is the comment
     for long run
 '''
-from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QFrame, QLabel, QPushButton, QSizeGrip, QVBoxLayout, QLineEdit
+from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QFrame, QLabel, QPushButton, QSizeGrip, QVBoxLayout, QLineEdit, QStackedWidget
 from PyQt5 import uic, QtGui, QtCore
 from PyQt5.QtCore import QPoint
 import sys
@@ -57,6 +57,9 @@ class LoadUI(QMainWindow):
         sizegrip = QSizeGrip(grip_frame)
         # grip_frame.addWidget(sizegrip)
         
+        #getting status label 
+        self.status_disp = self.findChild(QLabel, "status_label")
+        
         #adding button click connect to minimize button
         self.min_btn = self.findChild(QPushButton, "btn_minimize")
         self.min_btn.clicked.connect(self.minimizeWindow)
@@ -79,9 +82,9 @@ class LoadUI(QMainWindow):
         
         #copy to clipboard for dates
         self.np_date = self.findChild(QLabel, "nepali_date")
-        self.findChild(QPushButton, "npdt_copy_btn").clicked.connect(lambda: UI_Functions.copyToClipBoard(self.np_date.text()))
+        self.findChild(QPushButton, "npdt_copy_btn").clicked.connect(lambda: UI_Functions.copyToClipBoard(self.np_date.text(), self.status_disp))
         self.int_date = self.findChild(QLabel, "int_date")
-        self.findChild(QPushButton, "intdt_copy_btn").clicked.connect(lambda: UI_Functions.copyToClipBoard(self.int_date.text()))
+        self.findChild(QPushButton, "intdt_copy_btn").clicked.connect(lambda: UI_Functions.copyToClipBoard(self.int_date.text(), self.status_disp))
         
         #adding button click connect to convert button
         self.convert_btn = self.findChild(QPushButton, "convert_btn")
@@ -89,11 +92,22 @@ class LoadUI(QMainWindow):
         self.number_output = self.findChild(QFrame, "output_number")
         # num_input.setText("113565645.15")
         # print(num_input.text()) 
-        self.convert_btn.clicked.connect(lambda: UI_Functions.convertNumber(num_input.text(), self.utilites_number))
+        self.convert_btn.clicked.connect(lambda: UI_Functions.convertNumber(num_input.text(), self.utilites_number, self.status_disp))
         
         #adding button click connect to clear number button
         self.clear_num_btn = self.findChild(QPushButton, "clear_btn")
-        self.clear_num_btn.clicked.connect(lambda: UI_Functions.clearText(num_input))
+        self.clear_num_btn.clicked.connect(lambda: UI_Functions.clearText(num_input, self.status_disp))
+        
+        #menu and submenu connects
+        self.sub_menus_frame = self.findChild(QFrame, "sub_menu_frame")
+        self.findChild(QPushButton, "dashboard_menu").clicked.connect(lambda: UI_Functions.showSubMenu(0, self.sub_menus_frame))
+        self.findChild(QPushButton, "utilities_menu").clicked.connect(lambda: UI_Functions.showSubMenu(1, self.sub_menus_frame))
+        self.findChild(QPushButton, "api_menu").clicked.connect(lambda: UI_Functions.showSubMenu(2, self.sub_menus_frame))
+        self.findChild(QPushButton, "tax_menu").clicked.connect(lambda: UI_Functions.showSubMenu(3, self.sub_menus_frame))
+        self.findChild(QPushButton, "lms_menu").clicked.connect(lambda: UI_Functions.showSubMenu(4, self.sub_menus_frame))
+        self.findChild(QPushButton, "settings_menu").clicked.connect(lambda: UI_Functions.showSubMenu(5, self.sub_menus_frame))
+        self.findChild(QPushButton, "help_menu").clicked.connect(lambda: UI_Functions.showSubMenu(6, self.sub_menus_frame))
+        self.findChild(QPushButton, "about_menu").clicked.connect(lambda: UI_Functions.showSubMenu(7, self.sub_menus_frame))
         
         #show the window
         self.show()
