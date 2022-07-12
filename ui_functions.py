@@ -62,10 +62,13 @@ class UI_Functions:
             _menu.setMinimumWidth(SUB_MENU_MAX)
             
     def showSubMenu(_index, _frame):
+        _w = _frame.size().width()
         _menu = _frame.findChild(QStackedWidget, "submenu_pages")
         _curr = _menu.currentIndex()
         if _curr == _index:
             UI_Functions.toggleMenu(_frame)
+        elif _w < SUB_MENU_CHECK:
+            UI_Functions.showMenu(_menu, True)
+            _menu.setCurrentIndex(_index)
         else:
             _menu.setCurrentIndex(_index)
-        print(_curr)
