@@ -67,8 +67,10 @@ class UI_Functions:
         _curr = _menu.currentIndex()
         if _curr == _index:
             UI_Functions.toggleMenu(_frame)
+            print("same menu clicked!")
         elif _w < SUB_MENU_CHECK:
             UI_Functions.showMenu(_menu, True)
             _menu.setCurrentIndex(_index)
+            print("menu clicked!")
         else:
             _menu.setCurrentIndex(_index)
