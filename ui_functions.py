@@ -1,5 +1,5 @@
 import pyperclip
-from lib.Numbers import Number
+from libs.Numbers import Number
 from PyQt5.QtWidgets import QLineEdit, QLabel, QPushButton, QStackedWidget
 
 SUB_MENU_MAX = 175
