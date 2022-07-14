@@ -57,9 +57,11 @@ class UI_Functions:
         if not show:
             _menu.setMaximumWidth(SUB_MENU_MIN)
             _menu.setMinimumWidth(SUB_MENU_MIN)
+            print("Hiding Menu")
         else:
             _menu.setMaximumWidth(SUB_MENU_MAX)
             _menu.setMinimumWidth(SUB_MENU_MAX)
+            print("Showing Menu")
             
     def showSubMenu(_index, _frame):
         _w = _frame.size().width()
@@ -67,10 +69,14 @@ class UI_Functions:
         _curr = _menu.currentIndex()
         if _curr == _index:
             UI_Functions.toggleMenu(_frame)
-            print("same menu clicked!")
-        elif _w < SUB_MENU_CHECK:
-            UI_Functions.showMenu(_menu, True)
+            print("toggling menu!")
+        elif _w <= SUB_MENU_CHECK:
+            UI_Functions.showMenu(_frame, True)
             _menu.setCurrentIndex(_index)
-            print("menu clicked!")
+            print(f"Showing menu and clicked! {_w}")
         else:
             _menu.setCurrentIndex(_index)
+            print(f"menu clicked! {_w}")
+    
+    def showPage(_widget, _container):
+        _container.setCurrentWidget(_widget)

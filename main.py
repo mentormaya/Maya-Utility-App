@@ -109,6 +109,14 @@ class LoadUI(QMainWindow):
         self.findChild(QPushButton, "help_menu").clicked.connect(lambda: UI_Functions.showSubMenu(6, self.sub_menus_frame))
         self.findChild(QPushButton, "about_menu").clicked.connect(lambda: UI_Functions.showSubMenu(7, self.sub_menus_frame))
         
+        #page connects 
+        pages_container = self.findChild(QStackedWidget, "main_content_pages")
+        home_page = self.findChild(QWidget, "dashboard")
+        utilities_number_page = self.findChild(QWidget, "utilites_number")
+        #Dashboard
+        self.findChild(QPushButton, "home_page").clicked.connect(lambda: UI_Functions.showPage(home_page, pages_container))
+        self.findChild(QPushButton, "numbers_page").clicked.connect(lambda: UI_Functions.showPage(utilities_number_page, pages_container))
+        
         #show the window
         self.show()
     
