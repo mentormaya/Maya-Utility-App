@@ -535,6 +535,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_11.addLayout(self.number_output)
         self.verticalLayout_10.addWidget(self.output_number, 0, QtCore.Qt.AlignTop)
         self.main_content_pages.addWidget(self.utilites_number)
+        self.page = QtWidgets.QWidget()
+        self.page.setObjectName("page")
+        self.main_content_pages.addWidget(self.page)
         self.horizontalLayout_7.addWidget(self.main_content_pages)
         self.gridLayout.addWidget(self.content_frame, 1, 2, 2, 1)
         self.top_bar_frame = QtWidgets.QFrame(self.contents)
@@ -1098,8 +1101,8 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.main_content_pages.setCurrentIndex(1)
-        self.submenu_pages.setCurrentIndex(0)
+        self.main_content_pages.setCurrentIndex(2)
+        self.submenu_pages.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):

@@ -537,7 +537,7 @@ border-radius: 0px;</string>
              <item>
               <widget class="QStackedWidget" name="main_content_pages">
                <property name="currentIndex">
-                <number>1</number>
+                <number>2</number>
                </property>
                <widget class="QWidget" name="dashboard">
                 <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -1112,6 +1112,7 @@ background-color: rgb(152, 152, 151);</string>
                  </item>
                 </layout>
                </widget>
+               <widget class="QWidget" name="page"/>
               </widget>
              </item>
             </layout>
@@ -1853,7 +1854,7 @@ QPushButton:hover{
 }</string>
                </property>
                <property name="currentIndex">
-                <number>0</number>
+                <number>1</number>
                </property>
                <widget class="QWidget" name="dashboard_menus">
                 <layout class="QVBoxLayout" name="verticalLayout_7">
