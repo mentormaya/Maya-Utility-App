@@ -113,9 +113,21 @@ class LoadUI(QMainWindow):
         pages_container = self.findChild(QStackedWidget, "main_content_pages")
         home_page = self.findChild(QWidget, "dashboard")
         utilities_number_page = self.findChild(QWidget, "utilites_number")
+        pdf_merger_utility_page = self.findChild(QWidget, "join_pdf_container")
+        tax_pan_search_page = self.findChild(QWidget, "tax_pan_search")
         #Dashboard
         self.findChild(QPushButton, "home_page").clicked.connect(lambda: UI_Functions.showPage(home_page, pages_container))
         self.findChild(QPushButton, "numbers_page").clicked.connect(lambda: UI_Functions.showPage(utilities_number_page, pages_container))
+        self.findChild(QPushButton, "join_pdf_page").clicked.connect(lambda: UI_Functions.showPage(pdf_merger_utility_page, pages_container))
+        self.findChild(QPushButton, "pan_search_page_btn").clicked.connect(lambda: UI_Functions.showPage(tax_pan_search_page, pages_container))
+        
+        
+        #PAN Search connects
+        self.pan_input = tax_pan_search_page.findChild(QLineEdit, "pan_input")
+        tax_pan_search_page.findChild(QPushButton, "clear_pan_btn").clicked.connect(lambda: UI_Functions.clearText(self.pan_input, self.status_disp))
+        
+        tax_pan_search_page.findChild(QPushButton, "pan_search_btn").clicked.connect(lambda: UI_Functions.searchPan(self.pan_input.text(), self.status_disp))
+        
         
         #show the window
         self.show()

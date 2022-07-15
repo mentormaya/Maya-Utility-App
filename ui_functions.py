@@ -1,3 +1,4 @@
+import re
 import pyperclip
 from libs.Numbers import Number
 from PyQt5.QtWidgets import QLineEdit, QLabel, QPushButton, QStackedWidget
@@ -5,6 +6,9 @@ from PyQt5.QtWidgets import QLineEdit, QLabel, QPushButton, QStackedWidget
 SUB_MENU_MAX = 175
 SUB_MENU_MIN = 0
 SUB_MENU_CHECK = 100
+
+VAT_PAN_PATTERN =   "\d{9}"
+
 class UI_Functions:
     def __init__(self) -> None:
         pass
@@ -89,3 +93,19 @@ class UI_Functions:
     
     def showPage(_widget, _container):
         _container.setCurrentWidget(_widget)
+    
+    async def searchPan(_pan, _statusBar):
+        if _pan == "":
+            _statusBar.setText("Enter the VAT/PAN number to search")
+            return
+        try:
+            if re.match(VAT_PAN_PATTERN, _pan) is None:
+                raise ValueError("Number not in VAT/PAN Format!")
+            _pan = int(_pan)
+        except ValueError as v_err:
+            _statusBar.setText(f'Format Error: {str(v_err)}')
+        except:
+            _statusBar.setText("Input Value Exception Occured!")
+        else:
+            _statusBar.setText(f'searching details for {_pan}')
+            
