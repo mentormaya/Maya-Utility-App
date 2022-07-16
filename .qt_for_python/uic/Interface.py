@@ -320,9 +320,16 @@ class Ui_MainWindow(object):
         self.horizontalLayout_9.addWidget(self.copy_num_all_btn)
         self.convert_btn = QtWidgets.QPushButton(self.input_number)
         self.convert_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.convert_btn.setStyleSheet("padding: 10px;\n"
-"border-radius: 8px;\n"
-"background-color: rgb(152, 152, 151);")
+        self.convert_btn.setStyleSheet("QPushButton{\n"
+"    padding: 10px;\n"
+"    border-radius: 8px;\n"
+"    background-color: rgba(152, 152, 151, 200);\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"border-radius: 4px;\n"
+"    background-color: rgba(152, 152, 151, 150);\n"
+"}")
         self.convert_btn.setObjectName("convert_btn")
         self.horizontalLayout_9.addWidget(self.convert_btn)
         self.verticalLayout_10.addWidget(self.input_number)
@@ -544,34 +551,129 @@ class Ui_MainWindow(object):
         self.files_input_pdf_merger = QtWidgets.QFrame(self.join_pdf_container)
         self.files_input_pdf_merger.setMinimumSize(QtCore.QSize(0, 40))
         self.files_input_pdf_merger.setMaximumSize(QtCore.QSize(16777215, 60))
+        self.files_input_pdf_merger.setStyleSheet("QPushButton{\n"
+"    padding: 10px;\n"
+"    border-radius: 8px;\n"
+"    background-color: rgba(152, 152, 151, 200);\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"border-radius: 4px;\n"
+"    background-color: rgba(152, 152, 151, 150);\n"
+"}")
         self.files_input_pdf_merger.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.files_input_pdf_merger.setFrameShadow(QtWidgets.QFrame.Raised)
         self.files_input_pdf_merger.setObjectName("files_input_pdf_merger")
-        self.pushButton_2 = QtWidgets.QPushButton(self.files_input_pdf_merger)
-        self.pushButton_2.setGeometry(QtCore.QRect(110, 20, 75, 23))
-        self.pushButton_2.setObjectName("pushButton_2")
-        self.pushButton_6 = QtWidgets.QPushButton(self.files_input_pdf_merger)
-        self.pushButton_6.setGeometry(QtCore.QRect(210, 20, 75, 23))
-        self.pushButton_6.setObjectName("pushButton_6")
-        self.pushButton_7 = QtWidgets.QPushButton(self.files_input_pdf_merger)
-        self.pushButton_7.setGeometry(QtCore.QRect(320, 20, 75, 23))
-        self.pushButton_7.setObjectName("pushButton_7")
-        self.pushButton_8 = QtWidgets.QPushButton(self.files_input_pdf_merger)
-        self.pushButton_8.setGeometry(QtCore.QRect(420, 20, 75, 23))
-        self.pushButton_8.setObjectName("pushButton_8")
-        self.pushButton_9 = QtWidgets.QPushButton(self.files_input_pdf_merger)
-        self.pushButton_9.setGeometry(QtCore.QRect(510, 20, 75, 23))
-        self.pushButton_9.setObjectName("pushButton_9")
-        self.pushButton_10 = QtWidgets.QPushButton(self.files_input_pdf_merger)
-        self.pushButton_10.setGeometry(QtCore.QRect(40, 20, 75, 23))
-        self.pushButton_10.setObjectName("pushButton_10")
+        self.horizontalLayout_12 = QtWidgets.QHBoxLayout(self.files_input_pdf_merger)
+        self.horizontalLayout_12.setObjectName("horizontalLayout_12")
+        self.add_pdf_files_btn = QtWidgets.QPushButton(self.files_input_pdf_merger)
+        self.add_pdf_files_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        icon6 = QtGui.QIcon()
+        icon6.addPixmap(QtGui.QPixmap(":/icons/icons/file-plus.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.add_pdf_files_btn.setIcon(icon6)
+        self.add_pdf_files_btn.setObjectName("add_pdf_files_btn")
+        self.horizontalLayout_12.addWidget(self.add_pdf_files_btn)
+        self.remove_pdf_file_btn = QtWidgets.QPushButton(self.files_input_pdf_merger)
+        self.remove_pdf_file_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        icon7 = QtGui.QIcon()
+        icon7.addPixmap(QtGui.QPixmap(":/icons/icons/file-minus.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.remove_pdf_file_btn.setIcon(icon7)
+        self.remove_pdf_file_btn.setObjectName("remove_pdf_file_btn")
+        self.horizontalLayout_12.addWidget(self.remove_pdf_file_btn)
+        self.clear_pdf_btn = QtWidgets.QPushButton(self.files_input_pdf_merger)
+        self.clear_pdf_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        icon8 = QtGui.QIcon()
+        icon8.addPixmap(QtGui.QPixmap(":/icons/icons/x-square.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.clear_pdf_btn.setIcon(icon8)
+        self.clear_pdf_btn.setObjectName("clear_pdf_btn")
+        self.horizontalLayout_12.addWidget(self.clear_pdf_btn)
+        self.pdf_move_up_btn = QtWidgets.QPushButton(self.files_input_pdf_merger)
+        self.pdf_move_up_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        icon9 = QtGui.QIcon()
+        icon9.addPixmap(QtGui.QPixmap(":/icons/icons/chevrons-up.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pdf_move_up_btn.setIcon(icon9)
+        self.pdf_move_up_btn.setObjectName("pdf_move_up_btn")
+        self.horizontalLayout_12.addWidget(self.pdf_move_up_btn)
+        self.pdf_move_down_btn = QtWidgets.QPushButton(self.files_input_pdf_merger)
+        self.pdf_move_down_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        icon10 = QtGui.QIcon()
+        icon10.addPixmap(QtGui.QPixmap(":/icons/icons/chevrons-down.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pdf_move_down_btn.setIcon(icon10)
+        self.pdf_move_down_btn.setObjectName("pdf_move_down_btn")
+        self.horizontalLayout_12.addWidget(self.pdf_move_down_btn)
+        self.save_pdf_btn = QtWidgets.QPushButton(self.files_input_pdf_merger)
+        self.save_pdf_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        icon11 = QtGui.QIcon()
+        icon11.addPixmap(QtGui.QPixmap(":/icons/icons/save.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.save_pdf_btn.setIcon(icon11)
+        self.save_pdf_btn.setObjectName("save_pdf_btn")
+        self.horizontalLayout_12.addWidget(self.save_pdf_btn)
         self.verticalLayout_22.addWidget(self.files_input_pdf_merger)
         self.pdf_merger_output = QtWidgets.QFrame(self.join_pdf_container)
         self.pdf_merger_output.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.pdf_merger_output.setFrameShadow(QtWidgets.QFrame.Raised)
         self.pdf_merger_output.setObjectName("pdf_merger_output")
+        self.verticalLayout_23 = QtWidgets.QVBoxLayout(self.pdf_merger_output)
+        self.verticalLayout_23.setObjectName("verticalLayout_23")
         self.verticalLayout_22.addWidget(self.pdf_merger_output)
         self.main_content_pages.addWidget(self.join_pdf_container)
+        self.image_text_extraction_page = QtWidgets.QWidget()
+        self.image_text_extraction_page.setObjectName("image_text_extraction_page")
+        self.verticalLayout_221 = QtWidgets.QVBoxLayout(self.image_text_extraction_page)
+        self.verticalLayout_221.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_221.setSpacing(0)
+        self.verticalLayout_221.setObjectName("verticalLayout_221")
+        self.image_drop_zone = QtWidgets.QFrame(self.image_text_extraction_page)
+        self.image_drop_zone.setMinimumSize(QtCore.QSize(0, 40))
+        self.image_drop_zone.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.image_drop_zone.setStyleSheet("QPushButton{\n"
+"    padding: 10px;\n"
+"    border-radius: 8px;\n"
+"    background-color: rgba(152, 152, 151, 200);\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"border-radius: 4px;\n"
+"    background-color: rgba(152, 152, 151, 150);\n"
+"}")
+        self.image_drop_zone.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.image_drop_zone.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.image_drop_zone.setObjectName("image_drop_zone")
+        self.verticalLayout_24 = QtWidgets.QVBoxLayout(self.image_drop_zone)
+        self.verticalLayout_24.setContentsMargins(15, 15, 15, 15)
+        self.verticalLayout_24.setSpacing(0)
+        self.verticalLayout_24.setObjectName("verticalLayout_24")
+        self.image_drop_border = QtWidgets.QFrame(self.image_drop_zone)
+        self.image_drop_border.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
+        self.image_drop_border.setAcceptDrops(True)
+        self.image_drop_border.setStyleSheet("QFrame{\n"
+"    border: 2px dashed  rgb(125, 125, 124);\n"
+"    border-radius: 4px;\n"
+"}")
+        self.image_drop_border.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.image_drop_border.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.image_drop_border.setObjectName("image_drop_border")
+        self.verticalLayout_25 = QtWidgets.QVBoxLayout(self.image_drop_border)
+        self.verticalLayout_25.setObjectName("verticalLayout_25")
+        self.select_file_btn = QtWidgets.QPushButton(self.image_drop_border)
+        self.select_file_btn.setMinimumSize(QtCore.QSize(150, 0))
+        self.select_file_btn.setMaximumSize(QtCore.QSize(250, 16777215))
+        self.select_file_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.select_file_btn.setObjectName("select_file_btn")
+        self.verticalLayout_25.addWidget(self.select_file_btn, 0, QtCore.Qt.AlignHCenter)
+        self.verticalLayout_24.addWidget(self.image_drop_border)
+        self.verticalLayout_221.addWidget(self.image_drop_zone)
+        self.text_extracted_disp = QtWidgets.QFrame(self.image_text_extraction_page)
+        self.text_extracted_disp.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.text_extracted_disp.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.text_extracted_disp.setObjectName("text_extracted_disp")
+        self.verticalLayout_231 = QtWidgets.QVBoxLayout(self.text_extracted_disp)
+        self.verticalLayout_231.setObjectName("verticalLayout_231")
+        self.extracted_texts = QtWidgets.QTextBrowser(self.text_extracted_disp)
+        self.extracted_texts.setObjectName("extracted_texts")
+        self.verticalLayout_231.addWidget(self.extracted_texts)
+        self.verticalLayout_221.addWidget(self.text_extracted_disp)
+        self.main_content_pages.addWidget(self.image_text_extraction_page)
         self.tax_pan_search = QtWidgets.QWidget()
         self.tax_pan_search.setObjectName("tax_pan_search")
         self.verticalLayout_20 = QtWidgets.QVBoxLayout(self.tax_pan_search)
@@ -622,9 +724,9 @@ class Ui_MainWindow(object):
         self.pan_search_btn.setStyleSheet("padding: 10px;\n"
 "border-radius: 8px;\n"
 "background-color: rgb(152, 152, 151);")
-        icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap(":/icons/icons/search.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pan_search_btn.setIcon(icon6)
+        icon12 = QtGui.QIcon()
+        icon12.addPixmap(QtGui.QPixmap(":/icons/icons/search.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pan_search_btn.setIcon(icon12)
         self.pan_search_btn.setObjectName("pan_search_btn")
         self.horizontalLayout_10.addWidget(self.pan_search_btn)
         self.verticalLayout_20.addWidget(self.pan_input_container)
@@ -767,9 +869,9 @@ class Ui_MainWindow(object):
 "    background-color: rgba(223, 223, 221, 200);\n"
 "    border-right: rgba(85, 0, 255, 150) 4px solid;\n"
 "}")
-        icon7 = QtGui.QIcon()
-        icon7.addPixmap(QtGui.QPixmap(":/icons/icons/calendar.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.np_cal_btn.setIcon(icon7)
+        icon13 = QtGui.QIcon()
+        icon13.addPixmap(QtGui.QPixmap(":/icons/icons/calendar.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.np_cal_btn.setIcon(icon13)
         self.np_cal_btn.setObjectName("np_cal_btn")
         self.horizontalLayout_8.addWidget(self.np_cal_btn)
         self.options_btn = QtWidgets.QPushButton(self.top_right_menu)
@@ -836,9 +938,9 @@ class Ui_MainWindow(object):
 "    background-color: rgba(223, 223, 221, 200);\n"
 "    border-right: rgba(85, 0, 255, 150) 4px solid;\n"
 "}")
-        icon8 = QtGui.QIcon()
-        icon8.addPixmap(QtGui.QPixmap(":/icons/icons/menu.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.dashboard_menu.setIcon(icon8)
+        icon14 = QtGui.QIcon()
+        icon14.addPixmap(QtGui.QPixmap(":/icons/icons/menu.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.dashboard_menu.setIcon(icon14)
         self.dashboard_menu.setIconSize(QtCore.QSize(16, 16))
         self.dashboard_menu.setCheckable(True)
         self.dashboard_menu.setChecked(True)
@@ -876,9 +978,9 @@ class Ui_MainWindow(object):
 "    background-color: rgba(223, 223, 221, 200);\n"
 "    border-right: rgba(85, 0, 255, 150) 4px solid;\n"
 "}")
-        icon9 = QtGui.QIcon()
-        icon9.addPixmap(QtGui.QPixmap(":/icons/icons/tool.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.utilities_menu.setIcon(icon9)
+        icon15 = QtGui.QIcon()
+        icon15.addPixmap(QtGui.QPixmap(":/icons/icons/tool.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.utilities_menu.setIcon(icon15)
         self.utilities_menu.setIconSize(QtCore.QSize(16, 16))
         self.utilities_menu.setCheckable(True)
         self.utilities_menu.setAutoRepeat(False)
@@ -915,9 +1017,9 @@ class Ui_MainWindow(object):
 "    background-color: rgba(223, 223, 221, 200);\n"
 "    border-right: rgba(85, 0, 255, 150) 4px solid;\n"
 "}")
-        icon10 = QtGui.QIcon()
-        icon10.addPixmap(QtGui.QPixmap(":/icons/icons/link.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.api_menu.setIcon(icon10)
+        icon16 = QtGui.QIcon()
+        icon16.addPixmap(QtGui.QPixmap(":/icons/icons/link.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.api_menu.setIcon(icon16)
         self.api_menu.setIconSize(QtCore.QSize(16, 16))
         self.api_menu.setCheckable(True)
         self.api_menu.setAutoRepeat(False)
@@ -954,9 +1056,9 @@ class Ui_MainWindow(object):
 "    background-color: rgba(223, 223, 221, 200);\n"
 "    border-right: rgba(85, 0, 255, 150) 4px solid;\n"
 "}")
-        icon11 = QtGui.QIcon()
-        icon11.addPixmap(QtGui.QPixmap(":/icons/icons/dollar-sign.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.tax_menu.setIcon(icon11)
+        icon17 = QtGui.QIcon()
+        icon17.addPixmap(QtGui.QPixmap(":/icons/icons/dollar-sign.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.tax_menu.setIcon(icon17)
         self.tax_menu.setIconSize(QtCore.QSize(16, 16))
         self.tax_menu.setCheckable(True)
         self.tax_menu.setAutoRepeat(False)
@@ -993,9 +1095,9 @@ class Ui_MainWindow(object):
 "    background-color: rgba(223, 223, 221, 200);\n"
 "    border-right: rgba(85, 0, 255, 150) 4px solid;\n"
 "}")
-        icon12 = QtGui.QIcon()
-        icon12.addPixmap(QtGui.QPixmap(":/icons/icons/book.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.lms_menu.setIcon(icon12)
+        icon18 = QtGui.QIcon()
+        icon18.addPixmap(QtGui.QPixmap(":/icons/icons/book.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.lms_menu.setIcon(icon18)
         self.lms_menu.setIconSize(QtCore.QSize(16, 16))
         self.lms_menu.setCheckable(True)
         self.lms_menu.setAutoRepeat(False)
@@ -1066,7 +1168,7 @@ class Ui_MainWindow(object):
         self.numbers_page.setFont(font)
         self.numbers_page.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.numbers_page.setStyleSheet("")
-        self.numbers_page.setIcon(icon11)
+        self.numbers_page.setIcon(icon17)
         self.numbers_page.setIconSize(QtCore.QSize(16, 16))
         self.numbers_page.setObjectName("numbers_page")
         self.verticalLayout_13.addWidget(self.numbers_page)
@@ -1074,6 +1176,10 @@ class Ui_MainWindow(object):
         self.join_pdf_page.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.join_pdf_page.setObjectName("join_pdf_page")
         self.verticalLayout_13.addWidget(self.join_pdf_page)
+        self.image_extraction_page = QtWidgets.QPushButton(self.utilites_menus)
+        self.image_extraction_page.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.image_extraction_page.setObjectName("image_extraction_page")
+        self.verticalLayout_13.addWidget(self.image_extraction_page)
         spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_13.addItem(spacerItem1)
         self.submenu_pages.addWidget(self.utilites_menus)
@@ -1094,7 +1200,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_15.setObjectName("verticalLayout_15")
         self.pan_search_page_btn = QtWidgets.QPushButton(self.tax_menus)
         self.pan_search_page_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pan_search_page_btn.setIcon(icon6)
+        self.pan_search_page_btn.setIcon(icon12)
         self.pan_search_page_btn.setObjectName("pan_search_page_btn")
         self.verticalLayout_15.addWidget(self.pan_search_page_btn)
         spacerItem3 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
@@ -1221,7 +1327,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.main_content_pages.setCurrentIndex(2)
+        self.main_content_pages.setCurrentIndex(3)
         self.submenu_pages.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
@@ -1250,12 +1356,19 @@ class Ui_MainWindow(object):
         self.num_lbl.setText(_translate("MainWindow", "Number:"))
         self.words_eng_lbl.setText(_translate("MainWindow", "Words Million Eng:"))
         self.million_lbl.setText(_translate("MainWindow", "Million Format:"))
-        self.pushButton_2.setText(_translate("MainWindow", "Add Files"))
-        self.pushButton_6.setText(_translate("MainWindow", "Remove File"))
-        self.pushButton_7.setText(_translate("MainWindow", "Clear Files"))
-        self.pushButton_8.setText(_translate("MainWindow", "UP"))
-        self.pushButton_9.setText(_translate("MainWindow", "Down"))
-        self.pushButton_10.setText(_translate("MainWindow", "Save"))
+        self.add_pdf_files_btn.setText(_translate("MainWindow", "Add Files"))
+        self.remove_pdf_file_btn.setText(_translate("MainWindow", "Remove File"))
+        self.clear_pdf_btn.setText(_translate("MainWindow", "Clear Files"))
+        self.pdf_move_up_btn.setText(_translate("MainWindow", "UP"))
+        self.pdf_move_down_btn.setText(_translate("MainWindow", "Down"))
+        self.save_pdf_btn.setText(_translate("MainWindow", "Save"))
+        self.select_file_btn.setText(_translate("MainWindow", "Either Drop or Select File"))
+        self.extracted_texts.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Your result will be shown Here</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
         self.pan_input_label.setText(_translate("MainWindow", "Enter your number:"))
         self.clear_pan_btn.setToolTip(_translate("MainWindow", "Clear the Input"))
         self.copy_pan_raw_btn.setToolTip(_translate("MainWindow", "Copy Raw Data"))
@@ -1280,6 +1393,7 @@ class Ui_MainWindow(object):
         self.home_page.setText(_translate("MainWindow", "Home"))
         self.numbers_page.setText(_translate("MainWindow", "Numbers"))
         self.join_pdf_page.setText(_translate("MainWindow", "PDF Join"))
+        self.image_extraction_page.setText(_translate("MainWindow", "Text Extraction"))
         self.pushButton.setText(_translate("MainWindow", "APiS"))
         self.pan_search_page_btn.setText(_translate("MainWindow", " Pan Search"))
         self.pushButton_3.setText(_translate("MainWindow", "Library"))
