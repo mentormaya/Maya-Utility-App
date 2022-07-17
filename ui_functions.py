@@ -1,6 +1,10 @@
 import re
+import json
+import aiohttp
+import requests
 import pyperclip
 from libs.Numbers import Number
+from requests import Timeout, TooManyRedirects, HTTPError
 from PyQt5.QtWidgets import QLineEdit, QLabel, QPushButton, QStackedWidget
 
 SUB_MENU_MAX = 175
@@ -8,6 +12,8 @@ SUB_MENU_MIN = 0
 SUB_MENU_CHECK = 100
 
 VAT_PAN_PATTERN =   "\d{9}"
+
+BASE_API = "https://fastapi-production-c751.up.railway.app"
 
 class UI_Functions:
     def __init__(self) -> None:
@@ -94,7 +100,12 @@ class UI_Functions:
     def showPage(_widget, _container):
         _container.setCurrentWidget(_widget)
     
-    async def searchPan(_pan, _statusBar):
+    async def getPan(_session, _pan, _statusBar, _container):
+        _api_url = f'{BASE_API}/pan/v1/{_pan}'
+        async with _session.get(_api_url) as resp:
+                return await resp.json()
+    
+    async def searchPan(_pan, _statusBar, _output_container):
         if _pan == "":
             _statusBar.setText("Enter the VAT/PAN number to search")
             return
@@ -108,4 +119,7 @@ class UI_Functions:
             _statusBar.setText("Input Value Exception Occured!")
         else:
             _statusBar.setText(f'searching details for {_pan}')
-            
+            async with aiohttp.ClientSession() as session:
+                pan_details = await UI_Functions.getPan(session, _pan, _statusBar, _output_container)
+                _output_container.findChild(QLabel, "raw_pan_output").setText(json.dumps(pan_details, indent=4, ensure_ascii=False))
+                _statusBar.setText(f'Details fetched Successfully for PAN {_pan}!')

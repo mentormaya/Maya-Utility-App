@@ -1,10 +1,10 @@
 '''
-    this is the comment
-    for long run
+    
 '''
 from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QFrame, QLabel, QPushButton, QSizeGrip, QVBoxLayout, QLineEdit, QStackedWidget
 from PyQt5 import uic, QtGui, QtCore
 from PyQt5.QtCore import QPoint
+import asyncio
 import sys
 
 #importing assets
@@ -126,9 +126,10 @@ class LoadUI(QMainWindow):
         
         #PAN Search connects
         self.pan_input = tax_pan_search_page.findChild(QLineEdit, "pan_input")
+        raw_output_container = tax_pan_search_page.findChild(QFrame, "raw_output_container")
         tax_pan_search_page.findChild(QPushButton, "clear_pan_btn").clicked.connect(lambda: UI_Functions.clearText(self.pan_input, self.status_disp))
         
-        tax_pan_search_page.findChild(QPushButton, "pan_search_btn").clicked.connect(lambda: UI_Functions.searchPan(self.pan_input.text(), self.status_disp))
+        tax_pan_search_page.findChild(QPushButton, "pan_search_btn").clicked.connect(lambda: asyncio.get_event_loop().run_until_complete(UI_Functions.searchPan(self.pan_input.text(), self.status_disp, raw_output_container)))
         
         
         #show the window

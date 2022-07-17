@@ -537,7 +537,7 @@ border-radius: 0px;</string>
              <item>
               <widget class="QStackedWidget" name="main_content_pages">
                <property name="currentIndex">
-                <number>3</number>
+                <number>4</number>
                </property>
                <widget class="QWidget" name="dashboard">
                 <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -1553,48 +1553,33 @@ background-color: rgb(152, 152, 151);</string>
                     <enum>QFrame::Raised</enum>
                    </property>
                    <layout class="QHBoxLayout" name="horizontalLayout_11">
-                    <property name="spacing">
-                     <number>5</number>
-                    </property>
-                    <property name="leftMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="topMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="rightMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="bottomMargin">
-                     <number>0</number>
-                    </property>
                     <item>
-                     <widget class="QFrame" name="raw_output_container">
-                      <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
-                      </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
-                      </property>
-                      <layout class="QVBoxLayout" name="verticalLayout_21">
-                       <item alignment="Qt::AlignTop">
-                        <widget class="QLabel" name="raw_pan_output">
-                         <property name="text">
-                          <string>Enter the valid VAT or PAN number and hit search!</string>
-                         </property>
-                        </widget>
-                       </item>
-                      </layout>
-                     </widget>
+                     <widget class="QTableWidget" name="pan_table_output"/>
                     </item>
                     <item>
-                     <widget class="QFrame" name="pan_table_output">
-                      <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
+                     <widget class="QScrollArea" name="raw_output_container">
+                      <property name="widgetResizable">
+                       <bool>true</bool>
                       </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
-                      </property>
+                      <widget class="QWidget" name="raw_output_container_scrol">
+                       <property name="geometry">
+                        <rect>
+                         <x>0</x>
+                         <y>0</y>
+                         <width>304</width>
+                         <height>453</height>
+                        </rect>
+                       </property>
+                       <layout class="QVBoxLayout" name="verticalLayout_21">
+                        <item alignment="Qt::AlignTop">
+                         <widget class="QLabel" name="raw_pan_output">
+                          <property name="text">
+                           <string>Your results will be shown here!</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
                      </widget>
                     </item>
                    </layout>
