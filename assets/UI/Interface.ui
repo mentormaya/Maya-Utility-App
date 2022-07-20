@@ -1573,6 +1573,11 @@ background-color: rgb(152, 152, 151);</string>
                        <layout class="QVBoxLayout" name="verticalLayout_21">
                         <item alignment="Qt::AlignTop">
                          <widget class="QLabel" name="raw_pan_output">
+                          <property name="font">
+                           <font>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
                           <property name="text">
                            <string>Your results will be shown here!</string>
                           </property>

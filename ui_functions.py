@@ -164,7 +164,7 @@ class UI_Functions:
             
     def dispPanDetails(self, _details):
         self.statusUpdate(f'Details for {self.pan} fetched Successfully!')
-        self.container.findChild(QLabel, "raw_pan_output").setText(json.dumps(_details, indent=4, ensure_ascii=False))
+        self.container.findChild(QLabel, "raw_pan_output").setText(json.dumps(_details['raw_data'], indent=4, ensure_ascii=False))
 
     def panSearch_completed(self, details):
         self.statusUpdate("Pan Details Fetched")
