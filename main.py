@@ -9,7 +9,7 @@ import sys
 
 #importing assets
 from assets import *
-from ui_functions import *
+from ui_functions import UI_Functions
 
 CONFIG = {
     ### App related constants
@@ -72,19 +72,21 @@ class LoadUI(QMainWindow):
         self.btn_close = self.findChild(QPushButton, "btn_close")
         self.btn_close.clicked.connect(self.closeWindow)
         
+        ui_f = UI_Functions(self.status_disp)
+        
         #Adding Submenu Animation
         self.submenu = self.findChild(QFrame, "sub_menu_frame")
         #Adding right-side-menu Animation
         self.right_menu = self.findChild(QFrame, "right_menu")
         self.right_menu.setMaximumWidth(0)
         self.right_menu.setMinimumWidth(0)
-        self.findChild(QPushButton, "options_btn").clicked.connect(lambda: UI_Functions.toggleMenu(self.right_menu))
+        self.findChild(QPushButton, "options_btn").clicked.connect(lambda: ui_f.toggleMenu(self.right_menu))
         
         #copy to clipboard for dates
         self.np_date = self.findChild(QLabel, "nepali_date")
-        self.findChild(QPushButton, "npdt_copy_btn").clicked.connect(lambda: UI_Functions.copyToClipBoard(self.np_date.text(), self.status_disp))
+        self.findChild(QPushButton, "npdt_copy_btn").clicked.connect(lambda: ui_f.copyToClipBoard(self.np_date.text()))
         self.int_date = self.findChild(QLabel, "int_date")
-        self.findChild(QPushButton, "intdt_copy_btn").clicked.connect(lambda: UI_Functions.copyToClipBoard(self.int_date.text(), self.status_disp))
+        self.findChild(QPushButton, "intdt_copy_btn").clicked.connect(lambda: ui_f.copyToClipBoard(self.int_date.text()))
         
         #adding button click connect to convert button
         self.convert_btn = self.findChild(QPushButton, "convert_btn")
@@ -92,22 +94,22 @@ class LoadUI(QMainWindow):
         self.number_output = self.findChild(QFrame, "output_number")
         # num_input.setText("113565645.15")
         # print(num_input.text()) 
-        self.convert_btn.clicked.connect(lambda: UI_Functions.convertNumber(num_input.text(), self.utilites_number, self.status_disp))
+        self.convert_btn.clicked.connect(lambda: ui_f.convertNumber(num_input.text(), self.utilites_number))
         
         #adding button click connect to clear number button
         self.clear_num_btn = self.findChild(QPushButton, "clear_btn")
-        self.clear_num_btn.clicked.connect(lambda: UI_Functions.clearText(num_input, self.status_disp))
+        self.clear_num_btn.clicked.connect(lambda: ui_f.clearText(num_input, self.status_disp))
         
         #menu and submenu connects
         self.sub_menus_frame = self.findChild(QFrame, "sub_menu_frame")
-        self.findChild(QPushButton, "dashboard_menu").clicked.connect(lambda: UI_Functions.showSubMenu(0, self.sub_menus_frame))
-        self.findChild(QPushButton, "utilities_menu").clicked.connect(lambda: UI_Functions.showSubMenu(1, self.sub_menus_frame))
-        self.findChild(QPushButton, "api_menu").clicked.connect(lambda: UI_Functions.showSubMenu(2, self.sub_menus_frame))
-        self.findChild(QPushButton, "tax_menu").clicked.connect(lambda: UI_Functions.showSubMenu(3, self.sub_menus_frame))
-        self.findChild(QPushButton, "lms_menu").clicked.connect(lambda: UI_Functions.showSubMenu(4, self.sub_menus_frame))
-        self.findChild(QPushButton, "settings_menu").clicked.connect(lambda: UI_Functions.showSubMenu(5, self.sub_menus_frame))
-        self.findChild(QPushButton, "help_menu").clicked.connect(lambda: UI_Functions.showSubMenu(6, self.sub_menus_frame))
-        self.findChild(QPushButton, "about_menu").clicked.connect(lambda: UI_Functions.showSubMenu(7, self.sub_menus_frame))
+        self.findChild(QPushButton, "dashboard_menu").clicked.connect(lambda: ui_f.showSubMenu(0, self.sub_menus_frame))
+        self.findChild(QPushButton, "utilities_menu").clicked.connect(lambda: ui_f.showSubMenu(1, self.sub_menus_frame))
+        self.findChild(QPushButton, "api_menu").clicked.connect(lambda: ui_f.showSubMenu(2, self.sub_menus_frame))
+        self.findChild(QPushButton, "tax_menu").clicked.connect(lambda: ui_f.showSubMenu(3, self.sub_menus_frame))
+        self.findChild(QPushButton, "lms_menu").clicked.connect(lambda: ui_f.showSubMenu(4, self.sub_menus_frame))
+        self.findChild(QPushButton, "settings_menu").clicked.connect(lambda: ui_f.showSubMenu(5, self.sub_menus_frame))
+        self.findChild(QPushButton, "help_menu").clicked.connect(lambda: ui_f.showSubMenu(6, self.sub_menus_frame))
+        self.findChild(QPushButton, "about_menu").clicked.connect(lambda: ui_f.showSubMenu(7, self.sub_menus_frame))
         
         #page connects 
         pages_container = self.findChild(QStackedWidget, "main_content_pages")
@@ -117,19 +119,19 @@ class LoadUI(QMainWindow):
         image_extraction_page = self.findChild(QWidget, "image_text_extraction_page")
         tax_pan_search_page = self.findChild(QWidget, "tax_pan_search")
         #Dashboard
-        self.findChild(QPushButton, "home_page").clicked.connect(lambda: UI_Functions.showPage(home_page, pages_container))
-        self.findChild(QPushButton, "numbers_page").clicked.connect(lambda: UI_Functions.showPage(utilities_number_page, pages_container))
-        self.findChild(QPushButton, "join_pdf_page").clicked.connect(lambda: UI_Functions.showPage(pdf_merger_utility_page, pages_container))
-        self.findChild(QPushButton, "image_extraction_page").clicked.connect(lambda: UI_Functions.showPage(image_extraction_page, pages_container))
-        self.findChild(QPushButton, "pan_search_page_btn").clicked.connect(lambda: UI_Functions.showPage(tax_pan_search_page, pages_container))
+        self.findChild(QPushButton, "home_page").clicked.connect(lambda: ui_f.showPage(home_page, pages_container))
+        self.findChild(QPushButton, "numbers_page").clicked.connect(lambda: ui_f.showPage(utilities_number_page, pages_container))
+        self.findChild(QPushButton, "join_pdf_page").clicked.connect(lambda: ui_f.showPage(pdf_merger_utility_page, pages_container))
+        self.findChild(QPushButton, "image_extraction_page").clicked.connect(lambda: ui_f.showPage(image_extraction_page, pages_container))
+        self.findChild(QPushButton, "pan_search_page_btn").clicked.connect(lambda: ui_f.showPage(tax_pan_search_page, pages_container))
         
         
         #PAN Search connects
         self.pan_input = tax_pan_search_page.findChild(QLineEdit, "pan_input")
         raw_output_container = tax_pan_search_page.findChild(QFrame, "raw_output_container")
-        tax_pan_search_page.findChild(QPushButton, "clear_pan_btn").clicked.connect(lambda: UI_Functions.clearText(self.pan_input, self.status_disp))
+        tax_pan_search_page.findChild(QPushButton, "clear_pan_btn").clicked.connect(lambda: ui_f.clearText(self.pan_input, self.status_disp))
         
-        tax_pan_search_page.findChild(QPushButton, "pan_search_btn").clicked.connect(lambda: asyncio.get_event_loop().run_until_complete(UI_Functions.searchPan(self.pan_input.text(), self.status_disp, raw_output_container)))
+        tax_pan_search_page.findChild(QPushButton, "pan_search_btn").clicked.connect(lambda: ui_f.searchPan(self.pan_input.text(), raw_output_container))
         
         
         #show the window
