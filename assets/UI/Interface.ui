@@ -26,7 +26,7 @@
 border-radius: 10;
 color: rgb(255,255,255)</string>
    </property>
-   <layout class="QGridLayout" name="gridLayout_2">
+   <layout class="QVBoxLayout" name="verticalLayout_26">
     <property name="leftMargin">
      <number>0</number>
     </property>
@@ -39,7 +39,7 @@ color: rgb(255,255,255)</string>
     <property name="bottomMargin">
      <number>0</number>
     </property>
-    <item row="0" column="0">
+    <item>
      <widget class="QFrame" name="drop_shadow_frame">
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
@@ -1545,49 +1545,71 @@ background-color: rgb(152, 152, 151);</string>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QFrame" name="pan_output">
-                   <property name="frameShape">
-                    <enum>QFrame::StyledPanel</enum>
+                  <widget class="QTabWidget" name="pan_output">
+                   <property name="currentIndex">
+                    <number>0</number>
                    </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Raised</enum>
-                   </property>
-                   <layout class="QHBoxLayout" name="horizontalLayout_11">
-                    <item>
-                     <widget class="QTableWidget" name="pan_table_output"/>
-                    </item>
-                    <item>
-                     <widget class="QScrollArea" name="raw_output_container">
-                      <property name="widgetResizable">
-                       <bool>true</bool>
-                      </property>
-                      <widget class="QWidget" name="raw_output_container_scrol">
-                       <property name="geometry">
-                        <rect>
-                         <x>0</x>
-                         <y>0</y>
-                         <width>304</width>
-                         <height>453</height>
-                        </rect>
+                   <widget class="QWidget" name="pan_table_output_page" native="true">
+                    <attribute name="title">
+                     <string/>
+                    </attribute>
+                    <layout class="QVBoxLayout" name="verticalLayout_27">
+                     <property name="spacing">
+                      <number>5</number>
+                     </property>
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <item>
+                      <widget class="QScrollArea" name="raw_output_container">
+                       <property name="widgetResizable">
+                        <bool>true</bool>
                        </property>
-                       <layout class="QVBoxLayout" name="verticalLayout_21">
-                        <item alignment="Qt::AlignTop">
-                         <widget class="QLabel" name="raw_pan_output">
-                          <property name="font">
-                           <font>
-                            <pointsize>12</pointsize>
-                           </font>
-                          </property>
-                          <property name="text">
-                           <string>Your results will be shown here!</string>
-                          </property>
-                         </widget>
-                        </item>
-                       </layout>
+                       <widget class="QWidget" name="raw_output_container_scrol">
+                        <property name="geometry">
+                         <rect>
+                          <x>0</x>
+                          <y>0</y>
+                          <width>630</width>
+                          <height>222</height>
+                         </rect>
+                        </property>
+                        <layout class="QVBoxLayout" name="verticalLayout_21">
+                         <item alignment="Qt::AlignTop">
+                          <widget class="QLabel" name="raw_pan_output">
+                           <property name="font">
+                            <font>
+                             <pointsize>12</pointsize>
+                            </font>
+                           </property>
+                           <property name="text">
+                            <string>Your results will be shown here!</string>
+                           </property>
+                          </widget>
+                         </item>
+                        </layout>
+                       </widget>
                       </widget>
-                     </widget>
-                    </item>
-                   </layout>
+                     </item>
+                     <item>
+                      <widget class="QTableWidget" name="pan_table_output"/>
+                     </item>
+                    </layout>
+                   </widget>
+                   <widget class="QWidget" name="raw_pan_out_page">
+                    <attribute name="title">
+                     <string>Page</string>
+                    </attribute>
+                   </widget>
                   </widget>
                  </item>
                 </layout>

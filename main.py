@@ -1,5 +1,12 @@
 '''
-    
+#######################################################################################################################
+    Project Name: Maya Utility
+    Project Description: This project is started to address the daily utility based task for me.
+    Project Date: 2022/06/30
+    Project Author: Ajay Singh (MaYa)
+    Copyright: 2022
+    License: 
+#######################################################################################################################
 '''
 from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QFrame, QLabel, QPushButton, QSizeGrip, QVBoxLayout, QLineEdit, QStackedWidget
 from PyQt5 import uic, QtGui, QtCore
@@ -98,7 +105,7 @@ class LoadUI(QMainWindow):
         
         #adding button click connect to clear number button
         self.clear_num_btn = self.findChild(QPushButton, "clear_btn")
-        self.clear_num_btn.clicked.connect(lambda: ui_f.clearText(num_input, self.status_disp))
+        self.clear_num_btn.clicked.connect(lambda: ui_f.clearText(num_input))
         
         #menu and submenu connects
         self.sub_menus_frame = self.findChild(QFrame, "sub_menu_frame")
@@ -130,7 +137,7 @@ class LoadUI(QMainWindow):
         self.pan_input = tax_pan_search_page.findChild(QLineEdit, "pan_input")
         raw_output_container = tax_pan_search_page.findChild(QFrame, "raw_output_container")
         raw_output_label = raw_output_container.findChild(QLabel, "raw_pan_output")
-        tax_pan_search_page.findChild(QPushButton, "clear_pan_btn").clicked.connect(lambda: ui_f.clearText(self.pan_input, self.status_disp))
+        tax_pan_search_page.findChild(QPushButton, "clear_pan_btn").clicked.connect(lambda: ui_f.clearText(self.pan_input))
         tax_pan_search_page.findChild(QPushButton, "copy_pan_raw_btn").clicked.connect(lambda: ui_f.copyToClipBoard(raw_output_label.text()))
         tax_pan_search_page.findChild(QPushButton, "pan_search_btn").clicked.connect(lambda: ui_f.searchPan(self.pan_input.text(), raw_output_container))
         
