@@ -1546,12 +1546,37 @@ background-color: rgb(152, 152, 151);</string>
                  </item>
                  <item>
                   <widget class="QTabWidget" name="pan_output">
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QTabWidget::pane {
+    border: 1px solid rgb(51, 51, 51);
+  	padding: 2px;
+	background-color: rgba(51, 51, 51,200);
+} 
+
+QTabBar::tab {
+	background-color: rgba(47, 47, 47,200);
+ 	border: 1px solid rgb(51, 51, 51);
+	padding: 10px;
+} 
+
+QTabBar::tab:selected { 
+   background-color: rgba(47, 47, 47,150);
+  margin-bottom: -1px; 
+}
+
+QTabBar::tab:hover { 
+   background-color: rgba(47, 47, 47,150);
+}</string>
+                   </property>
                    <property name="currentIndex">
                     <number>0</number>
                    </property>
-                   <widget class="QWidget" name="pan_table_output_page" native="true">
+                   <widget class="QWidget" name="pan_table_output_page">
                     <attribute name="title">
-                     <string/>
+                     <string>PAN/VAT Details</string>
                     </attribute>
                     <layout class="QVBoxLayout" name="verticalLayout_27">
                      <property name="spacing">
@@ -1570,6 +1595,165 @@ background-color: rgb(152, 152, 151);</string>
                       <number>0</number>
                      </property>
                      <item>
+                      <widget class="QTableWidget" name="pan_table_output">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">QTableWidget{
+	background-color: rgb(47, 47, 47);
+	alternate-background-color: rgb(40, 40, 40);
+}
+
+QTableWidget QTableCornerButton::section {
+	background-color: #646464;
+    border-style: none;
+    border: 1px solid #fffff8;
+}
+
+QHeaderView::section {
+    background-color: #646464;
+    padding: 5px;
+    font-size: 10pt;
+    border-style: none;
+    border: 1px solid #fffff8;
+}
+
+QHeaderView::section:horizontal
+{
+    border-top: 1px solid #fffff8;
+}
+
+QHeaderView::section:vertical
+{
+    border-left: 1px solid #fffff8;
+}</string>
+                       </property>
+                       <property name="alternatingRowColors">
+                        <bool>true</bool>
+                       </property>
+                       <property name="showGrid">
+                        <bool>true</bool>
+                       </property>
+                       <property name="gridStyle">
+                        <enum>Qt::DashDotLine</enum>
+                       </property>
+                       <property name="sortingEnabled">
+                        <bool>false</bool>
+                       </property>
+                       <attribute name="horizontalHeaderVisible">
+                        <bool>true</bool>
+                       </attribute>
+                       <attribute name="horizontalHeaderCascadingSectionResizes">
+                        <bool>false</bool>
+                       </attribute>
+                       <attribute name="horizontalHeaderMinimumSectionSize">
+                        <number>50</number>
+                       </attribute>
+                       <attribute name="horizontalHeaderDefaultSectionSize">
+                        <number>100</number>
+                       </attribute>
+                       <attribute name="horizontalHeaderStretchLastSection">
+                        <bool>true</bool>
+                       </attribute>
+                       <row>
+                        <property name="text">
+                         <string>Name in English</string>
+                        </property>
+                       </row>
+                       <row>
+                        <property name="text">
+                         <string>Name in Nepali</string>
+                        </property>
+                       </row>
+                       <row>
+                        <property name="text">
+                         <string>VAT/PAN No</string>
+                        </property>
+                       </row>
+                       <row>
+                        <property name="text">
+                         <string>Address</string>
+                        </property>
+                       </row>
+                       <row>
+                        <property name="text">
+                         <string>Mobile</string>
+                        </property>
+                       </row>
+                       <row>
+                        <property name="text">
+                         <string>Telephone</string>
+                        </property>
+                       </row>
+                       <row>
+                        <property name="text">
+                         <string>Eff. Reg. Date</string>
+                        </property>
+                       </row>
+                       <row>
+                        <property name="text">
+                         <string>Registered Office</string>
+                        </property>
+                       </row>
+                       <row>
+                        <property name="text">
+                         <string>Personal PAN</string>
+                        </property>
+                       </row>
+                       <row>
+                        <property name="text">
+                         <string>Businesses</string>
+                        </property>
+                       </row>
+                       <row>
+                        <property name="text">
+                         <string>Tax Clearance</string>
+                        </property>
+                       </row>
+                       <row>
+                        <property name="text">
+                         <string>Account Status</string>
+                        </property>
+                       </row>
+                       <column>
+                        <property name="text">
+                         <string>Values</string>
+                        </property>
+                       </column>
+                       <item row="0" column="0">
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </item>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                   <widget class="QWidget" name="raw_pan_out_page">
+                    <attribute name="title">
+                     <string>RAW Data</string>
+                    </attribute>
+                    <layout class="QVBoxLayout" name="verticalLayout_29">
+                     <property name="spacing">
+                      <number>5</number>
+                     </property>
+                     <property name="leftMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>5</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>5</number>
+                     </property>
+                     <item>
                       <widget class="QScrollArea" name="raw_output_container">
                        <property name="widgetResizable">
                         <bool>true</bool>
@@ -1579,11 +1763,26 @@ background-color: rgb(152, 152, 151);</string>
                          <rect>
                           <x>0</x>
                           <y>0</y>
-                          <width>630</width>
-                          <height>222</height>
+                          <width>616</width>
+                          <height>420</height>
                          </rect>
                         </property>
-                        <layout class="QVBoxLayout" name="verticalLayout_21">
+                        <layout class="QVBoxLayout" name="verticalLayout_28">
+                         <property name="spacing">
+                          <number>5</number>
+                         </property>
+                         <property name="leftMargin">
+                          <number>5</number>
+                         </property>
+                         <property name="topMargin">
+                          <number>5</number>
+                         </property>
+                         <property name="rightMargin">
+                          <number>5</number>
+                         </property>
+                         <property name="bottomMargin">
+                          <number>5</number>
+                         </property>
                          <item alignment="Qt::AlignTop">
                           <widget class="QLabel" name="raw_pan_output">
                            <property name="font">
@@ -1592,7 +1791,7 @@ background-color: rgb(152, 152, 151);</string>
                             </font>
                            </property>
                            <property name="text">
-                            <string>Your results will be shown here!</string>
+                            <string>Details will be shown Here!</string>
                            </property>
                           </widget>
                          </item>
@@ -1600,15 +1799,7 @@ background-color: rgb(152, 152, 151);</string>
                        </widget>
                       </widget>
                      </item>
-                     <item>
-                      <widget class="QTableWidget" name="pan_table_output"/>
-                     </item>
                     </layout>
-                   </widget>
-                   <widget class="QWidget" name="raw_pan_out_page">
-                    <attribute name="title">
-                     <string>Page</string>
-                    </attribute>
                    </widget>
                   </widget>
                  </item>

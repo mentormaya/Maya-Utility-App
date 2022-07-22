@@ -8,7 +8,7 @@
     License: 
 #######################################################################################################################
 '''
-from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QFrame, QLabel, QPushButton, QSizeGrip, QVBoxLayout, QLineEdit, QStackedWidget
+from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QFrame, QLabel, QPushButton, QSizeGrip, QTabWidget, QLineEdit, QStackedWidget
 from PyQt5 import uic, QtGui, QtCore
 from PyQt5.QtCore import QPoint
 from DB import DB
@@ -137,11 +137,11 @@ class LoadUI(QMainWindow):
         
         #PAN Search connects
         self.pan_input = tax_pan_search_page.findChild(QLineEdit, "pan_input")
-        raw_output_container = tax_pan_search_page.findChild(QFrame, "raw_output_container")
-        raw_output_label = raw_output_container.findChild(QLabel, "raw_pan_output")
+        output_container = tax_pan_search_page.findChild(QTabWidget, "pan_output")
+        raw_output_label = output_container.findChild(QLabel, "raw_pan_output")
         tax_pan_search_page.findChild(QPushButton, "clear_pan_btn").clicked.connect(lambda: ui_f.clearText(self.pan_input))
         tax_pan_search_page.findChild(QPushButton, "copy_pan_raw_btn").clicked.connect(lambda: ui_f.copyToClipBoard(raw_output_label.text()))
-        tax_pan_search_page.findChild(QPushButton, "pan_search_btn").clicked.connect(lambda: ui_f.searchPan(self.pan_input.text(), raw_output_container))
+        tax_pan_search_page.findChild(QPushButton, "pan_search_btn").clicked.connect(lambda: ui_f.searchPan(self.pan_input.text(), output_container))
         
         
         #show the window

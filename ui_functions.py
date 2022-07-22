@@ -12,7 +12,7 @@ import pyperclip
 from libs.Numbers import Number
 from PyQt5.QtCore import QThread, pyqtSignal
 from requests import Timeout, TooManyRedirects, HTTPError
-from PyQt5.QtWidgets import QLineEdit, QLabel, QPushButton, QStackedWidget, QApplication
+from PyQt5.QtWidgets import QLineEdit, QLabel, QPushButton, QStackedWidget, QApplication, QTableWidget, QTableWidgetItem
 
 SUB_MENU_MAX = 175
 SUB_MENU_MIN = 0
@@ -169,7 +169,23 @@ class UI_Functions:
             
     def dispPanDetails(self, _details):
         self.statusUpdate(f'Details for {self.pan} fetched Successfully!')
-        self.container.findChild(QLabel, "raw_pan_output").setText(json.dumps(_details['raw_data'], indent=4, ensure_ascii=False))
+        _details = _details['raw_data']
+        _address = f'{_details["panDetails"][0]["street_Name"]} ({_details["panDetails"][0]["ward_No"]}) {_details["panDetails"][0]["vdc_Town"]}'
+        _businesses = "Businesses"
+        self.container.findChild(QLabel, "raw_pan_output").setText(json.dumps(_details, indent=4, ensure_ascii=False))
+        table = self.container.findChild(QTableWidget, "pan_table_output")
+        table.setItem(0, 1, QTableWidgetItem(str(_details["panDetails"][0]["trade_Name_Eng"])))
+        table.setItem(1, 1, QTableWidgetItem(str(_details["panDetails"][0]["trade_Name_Nep"])))
+        table.setItem(2, 1, QTableWidgetItem(str(_details["panDetails"][0]["pan"])))
+        table.setItem(3, 1, QTableWidgetItem(str(_address)))
+        table.setItem(4, 1, QTableWidgetItem(str(_details["panDetails"][0]["mobile"])))
+        table.setItem(5, 1, QTableWidgetItem(str(_details["panDetails"][0]["telephone"])))
+        table.setItem(6, 1, QTableWidgetItem(str(_details["panDetails"][0]["eff_Reg_Date"])))
+        table.setItem(7, 1, QTableWidgetItem(str(_details["panDetails"][0]["office_Name"])))
+        table.setItem(8, 1, QTableWidgetItem(str(_details["panDetails"][0]["is_Personal"])))
+        table.setItem(9, 1, QTableWidgetItem(str(_businesses)))
+        table.setItem(10, 1, QTableWidgetItem(str(_details["panTaxClearance"][0]["return_Verified_Date"])))
+        table.setItem(11, 1, QTableWidgetItem(str(_details["panDetails"][0]["account_Status"])))
 
     def panSearch_completed(self, details):
         self.statusUpdate("Pan Details Fetched")

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'c:\Users\A00172\Desktop\New Utility\dist\assets\UI\Interface.ui'
+# Form implementation generated from reading ui file 'c:\Users\A00172\Desktop\New Utility\assets\UI\Interface.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -16,7 +16,7 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1100, 700)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("c:\\Users\\A00172\\Desktop\\New Utility\\dist\\assets\\UI\\../icon.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("c:\\Users\\A00172\\Desktop\\New Utility\\assets\\UI\\../icon.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet("background-color: rgba(255, 255, 255, 0);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -239,7 +239,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
         self.brand_logo = QtWidgets.QLabel(self.brand_frame)
         self.brand_logo.setText("")
-        self.brand_logo.setPixmap(QtGui.QPixmap("c:\\Users\\A00172\\Desktop\\New Utility\\dist\\assets\\UI\\../icon.ico"))
+        self.brand_logo.setPixmap(QtGui.QPixmap("c:\\Users\\A00172\\Desktop\\New Utility\\assets\\UI\\../icon.ico"))
         self.brand_logo.setScaledContents(True)
         self.brand_logo.setAlignment(QtCore.Qt.AlignCenter)
         self.brand_logo.setObjectName("brand_logo")
@@ -731,6 +731,27 @@ class Ui_MainWindow(object):
         self.horizontalLayout_10.addWidget(self.pan_search_btn)
         self.verticalLayout_20.addWidget(self.pan_input_container)
         self.pan_output = QtWidgets.QTabWidget(self.tax_pan_search)
+        self.pan_output.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.pan_output.setStyleSheet("QTabWidget::pane {\n"
+"    border: 1px solid rgb(51, 51, 51);\n"
+"      padding: 2px;\n"
+"    background-color: rgba(51, 51, 51,200);\n"
+"} \n"
+"\n"
+"QTabBar::tab {\n"
+"    background-color: rgba(47, 47, 47,200);\n"
+"     border: 1px solid rgb(51, 51, 51);\n"
+"    padding: 10px;\n"
+"} \n"
+"\n"
+"QTabBar::tab:selected { \n"
+"   background-color: rgba(47, 47, 47,150);\n"
+"  margin-bottom: -1px; \n"
+"}\n"
+"\n"
+"QTabBar::tab:hover { \n"
+"   background-color: rgba(47, 47, 47,150);\n"
+"}")
         self.pan_output.setObjectName("pan_output")
         self.pan_table_output_page = QtWidgets.QWidget()
         self.pan_table_output_page.setObjectName("pan_table_output_page")
@@ -738,30 +759,105 @@ class Ui_MainWindow(object):
         self.verticalLayout_27.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_27.setSpacing(5)
         self.verticalLayout_27.setObjectName("verticalLayout_27")
-        self.raw_output_container = QtWidgets.QScrollArea(self.pan_table_output_page)
+        self.pan_table_output = QtWidgets.QTableWidget(self.pan_table_output_page)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.pan_table_output.sizePolicy().hasHeightForWidth())
+        self.pan_table_output.setSizePolicy(sizePolicy)
+        self.pan_table_output.setStyleSheet("QTableWidget{\n"
+"    background-color: rgb(47, 47, 47);\n"
+"    alternate-background-color: rgb(40, 40, 40);\n"
+"}\n"
+"\n"
+"QTableWidget QTableCornerButton::section {\n"
+"    background-color: #646464;\n"
+"    border-style: none;\n"
+"    border: 1px solid #fffff8;\n"
+"}\n"
+"\n"
+"QHeaderView::section {\n"
+"    background-color: #646464;\n"
+"    padding: 5px;\n"
+"    font-size: 10pt;\n"
+"    border-style: none;\n"
+"    border: 1px solid #fffff8;\n"
+"}\n"
+"\n"
+"QHeaderView::section:horizontal\n"
+"{\n"
+"    border-top: 1px solid #fffff8;\n"
+"}\n"
+"\n"
+"QHeaderView::section:vertical\n"
+"{\n"
+"    border-left: 1px solid #fffff8;\n"
+"}")
+        self.pan_table_output.setAlternatingRowColors(True)
+        self.pan_table_output.setShowGrid(True)
+        self.pan_table_output.setGridStyle(QtCore.Qt.DashDotLine)
+        self.pan_table_output.setObjectName("pan_table_output")
+        self.pan_table_output.setColumnCount(1)
+        self.pan_table_output.setRowCount(12)
+        item = QtWidgets.QTableWidgetItem()
+        self.pan_table_output.setVerticalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.pan_table_output.setVerticalHeaderItem(1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.pan_table_output.setVerticalHeaderItem(2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.pan_table_output.setVerticalHeaderItem(3, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.pan_table_output.setVerticalHeaderItem(4, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.pan_table_output.setVerticalHeaderItem(5, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.pan_table_output.setVerticalHeaderItem(6, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.pan_table_output.setVerticalHeaderItem(7, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.pan_table_output.setVerticalHeaderItem(8, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.pan_table_output.setVerticalHeaderItem(9, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.pan_table_output.setVerticalHeaderItem(10, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.pan_table_output.setVerticalHeaderItem(11, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.pan_table_output.setHorizontalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.pan_table_output.setItem(0, 0, item)
+        self.pan_table_output.horizontalHeader().setVisible(True)
+        self.pan_table_output.horizontalHeader().setCascadingSectionResizes(False)
+        self.pan_table_output.horizontalHeader().setDefaultSectionSize(100)
+        self.pan_table_output.horizontalHeader().setMinimumSectionSize(50)
+        self.pan_table_output.horizontalHeader().setStretchLastSection(True)
+        self.verticalLayout_27.addWidget(self.pan_table_output)
+        self.pan_output.addTab(self.pan_table_output_page, "")
+        self.raw_pan_out_page = QtWidgets.QWidget()
+        self.raw_pan_out_page.setObjectName("raw_pan_out_page")
+        self.verticalLayout_29 = QtWidgets.QVBoxLayout(self.raw_pan_out_page)
+        self.verticalLayout_29.setContentsMargins(5, 5, 5, 5)
+        self.verticalLayout_29.setSpacing(5)
+        self.verticalLayout_29.setObjectName("verticalLayout_29")
+        self.raw_output_container = QtWidgets.QScrollArea(self.raw_pan_out_page)
         self.raw_output_container.setWidgetResizable(True)
         self.raw_output_container.setObjectName("raw_output_container")
         self.raw_output_container_scrol = QtWidgets.QWidget()
-        self.raw_output_container_scrol.setGeometry(QtCore.QRect(0, 0, 630, 222))
+        self.raw_output_container_scrol.setGeometry(QtCore.QRect(0, 0, 616, 420))
         self.raw_output_container_scrol.setObjectName("raw_output_container_scrol")
-        self.verticalLayout_21 = QtWidgets.QVBoxLayout(self.raw_output_container_scrol)
-        self.verticalLayout_21.setObjectName("verticalLayout_21")
+        self.verticalLayout_28 = QtWidgets.QVBoxLayout(self.raw_output_container_scrol)
+        self.verticalLayout_28.setContentsMargins(5, 5, 5, 5)
+        self.verticalLayout_28.setSpacing(5)
+        self.verticalLayout_28.setObjectName("verticalLayout_28")
         self.raw_pan_output = QtWidgets.QLabel(self.raw_output_container_scrol)
         font = QtGui.QFont()
         font.setPointSize(12)
         self.raw_pan_output.setFont(font)
         self.raw_pan_output.setObjectName("raw_pan_output")
-        self.verticalLayout_21.addWidget(self.raw_pan_output, 0, QtCore.Qt.AlignTop)
+        self.verticalLayout_28.addWidget(self.raw_pan_output, 0, QtCore.Qt.AlignTop)
         self.raw_output_container.setWidget(self.raw_output_container_scrol)
-        self.verticalLayout_27.addWidget(self.raw_output_container)
-        self.pan_table_output = QtWidgets.QTableWidget(self.pan_table_output_page)
-        self.pan_table_output.setObjectName("pan_table_output")
-        self.pan_table_output.setColumnCount(0)
-        self.pan_table_output.setRowCount(0)
-        self.verticalLayout_27.addWidget(self.pan_table_output)
-        self.pan_output.addTab(self.pan_table_output_page, "")
-        self.raw_pan_out_page = QtWidgets.QWidget()
-        self.raw_pan_out_page.setObjectName("raw_pan_out_page")
+        self.verticalLayout_29.addWidget(self.raw_output_container)
         self.pan_output.addTab(self.raw_pan_out_page, "")
         self.verticalLayout_20.addWidget(self.pan_output)
         self.main_content_pages.addWidget(self.tax_pan_search)
@@ -1385,8 +1481,39 @@ class Ui_MainWindow(object):
         self.copy_pan_raw_btn.setToolTip(_translate("MainWindow", "Copy Raw Data"))
         self.pan_search_btn.setToolTip(_translate("MainWindow", "Search the VAT/PAN Number"))
         self.pan_search_btn.setText(_translate("MainWindow", "Search"))
-        self.raw_pan_output.setText(_translate("MainWindow", "Your results will be shown here!"))
-        self.pan_output.setTabText(self.pan_output.indexOf(self.raw_pan_out_page), _translate("MainWindow", "Page"))
+        self.pan_table_output.setSortingEnabled(False)
+        item = self.pan_table_output.verticalHeaderItem(0)
+        item.setText(_translate("MainWindow", "Name in English"))
+        item = self.pan_table_output.verticalHeaderItem(1)
+        item.setText(_translate("MainWindow", "Name in Nepali"))
+        item = self.pan_table_output.verticalHeaderItem(2)
+        item.setText(_translate("MainWindow", "VAT/PAN No"))
+        item = self.pan_table_output.verticalHeaderItem(3)
+        item.setText(_translate("MainWindow", "Address"))
+        item = self.pan_table_output.verticalHeaderItem(4)
+        item.setText(_translate("MainWindow", "Mobile"))
+        item = self.pan_table_output.verticalHeaderItem(5)
+        item.setText(_translate("MainWindow", "Telephone"))
+        item = self.pan_table_output.verticalHeaderItem(6)
+        item.setText(_translate("MainWindow", "Eff. Reg. Date"))
+        item = self.pan_table_output.verticalHeaderItem(7)
+        item.setText(_translate("MainWindow", "Registered Office"))
+        item = self.pan_table_output.verticalHeaderItem(8)
+        item.setText(_translate("MainWindow", "Personal PAN"))
+        item = self.pan_table_output.verticalHeaderItem(9)
+        item.setText(_translate("MainWindow", "Businesses"))
+        item = self.pan_table_output.verticalHeaderItem(10)
+        item.setText(_translate("MainWindow", "Tax Clearance"))
+        item = self.pan_table_output.verticalHeaderItem(11)
+        item.setText(_translate("MainWindow", "Account Status"))
+        item = self.pan_table_output.horizontalHeaderItem(0)
+        item.setText(_translate("MainWindow", "Values"))
+        __sortingEnabled = self.pan_table_output.isSortingEnabled()
+        self.pan_table_output.setSortingEnabled(False)
+        self.pan_table_output.setSortingEnabled(__sortingEnabled)
+        self.pan_output.setTabText(self.pan_output.indexOf(self.pan_table_output_page), _translate("MainWindow", "PAN/VAT Details"))
+        self.raw_pan_output.setText(_translate("MainWindow", "Details will be shown Here!"))
+        self.pan_output.setTabText(self.pan_output.indexOf(self.raw_pan_out_page), _translate("MainWindow", "RAW Data"))
         self.welcome_label.setText(_translate("MainWindow", "Good Morning! Ajay Singh"))
         self.quotes_label.setText(_translate("MainWindow", "Turn your wounds into wisdom"))
         self.nepali_date.setText(_translate("MainWindow", "2079-03-22"))
