@@ -11,6 +11,7 @@
 from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QFrame, QLabel, QPushButton, QSizeGrip, QVBoxLayout, QLineEdit, QStackedWidget
 from PyQt5 import uic, QtGui, QtCore
 from PyQt5.QtCore import QPoint
+from DB import DB
 import asyncio
 import sys
 
@@ -35,6 +36,7 @@ class LoadUI(QMainWindow):
         super(LoadUI, self).__init__()
         #setup loading UI and everything
         self.setupUI()
+        self.db = DB("maya.db")
         
     def setupUI(self):
         #load the ui file on the fly
