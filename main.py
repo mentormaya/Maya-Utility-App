@@ -83,6 +83,12 @@ class LoadUI(QMainWindow):
         
         ui_f = UI_Functions(self.status_disp)
         
+        #adding date functionality
+        self.nepali_date_disp = self.findChild(QLabel, "nepali_date")
+        self.english_date_disp = self.findChild(QLabel, "int_date")
+        
+        ui_f.updateDateTime(self.nepali_date_disp, self.english_date_disp)
+        
         #Adding Submenu Animation
         self.submenu = self.findChild(QFrame, "sub_menu_frame")
         #Adding right-side-menu Animation

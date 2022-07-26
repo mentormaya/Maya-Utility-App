@@ -8,7 +8,9 @@ import json
 import asyncio
 import aiohttp
 import requests
+import datetime as dt
 import pyperclip
+import nepali_datetime as ndt
 from libs.Numbers import Number
 from PyQt5.QtCore import QThread, pyqtSignal
 from requests import Timeout, TooManyRedirects, HTTPError
@@ -190,3 +192,12 @@ class UI_Functions:
     def panSearch_completed(self, details):
         self.statusUpdate("Pan Details Fetched")
         self.dispPanDetails(details)
+    
+    def updateDateTime(self, _np_date, _eng_date):
+        self.np_dt_container = _np_date
+        self.eng_dt_container = _eng_date
+        self.today = {}
+        self.today["english"] = dt.date.today().strftime("%Y-%m-%d %a")
+        self.today["nepali"] = ndt.date.today().strftime('%K %N %D %G')
+        self.np_dt_container.setText(self.today["nepali"])
+        self.eng_dt_container.setText(self.today["english"])
