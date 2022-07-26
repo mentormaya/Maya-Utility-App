@@ -9,8 +9,9 @@ import asyncio
 import aiohttp
 import datetime as dt
 import pyperclip
-import nepali_datetime as ndt
 from libs.PAN import PAN
+from libs.Quotes import Quote
+import nepali_datetime as ndt
 from libs.Numbers import Number
 from requests import Timeout, TooManyRedirects, HTTPError
 from PyQt5.QtWidgets import QLineEdit, QLabel, QPushButton, QStackedWidget, QApplication, QTableWidget, QTableWidgetItem
@@ -177,3 +178,9 @@ class UI_Functions:
     
     def getQuote(self, _quote_disp):
         self.quote_container = _quote_disp
+        self.quote_thread = Quote()
+        self.quote_thread.status.connect(self.statusUpdate)
+        self.quote_thread.complete.connect(self.quoteFetched)
+    
+    def quoteFetched(self, _quote):
+        print(_quote)
