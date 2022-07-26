@@ -1644,6 +1644,12 @@ QHeaderView::section:vertical
                        <property name="sortingEnabled">
                         <bool>false</bool>
                        </property>
+                       <property name="cornerButtonEnabled">
+                        <bool>true</bool>
+                       </property>
+                       <property name="columnCount">
+                        <number>1</number>
+                       </property>
                        <attribute name="horizontalHeaderVisible">
                         <bool>true</bool>
                        </attribute>
@@ -1657,6 +1663,12 @@ QHeaderView::section:vertical
                         <number>100</number>
                        </attribute>
                        <attribute name="horizontalHeaderStretchLastSection">
+                        <bool>true</bool>
+                       </attribute>
+                       <attribute name="verticalHeaderVisible">
+                        <bool>true</bool>
+                       </attribute>
+                       <attribute name="verticalHeaderStretchLastSection">
                         <bool>true</bool>
                        </attribute>
                        <row>
@@ -1706,17 +1718,17 @@ QHeaderView::section:vertical
                        </row>
                        <row>
                         <property name="text">
-                         <string>Businesses</string>
-                        </property>
-                       </row>
-                       <row>
-                        <property name="text">
                          <string>Tax Clearance</string>
                         </property>
                        </row>
                        <row>
                         <property name="text">
                          <string>Account Status</string>
+                        </property>
+                       </row>
+                       <row>
+                        <property name="text">
+                         <string>Businesses</string>
                         </property>
                        </row>
                        <column>

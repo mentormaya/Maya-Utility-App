@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'c:\Users\A00172\Desktop\New Utility\assets\UI\Interface.ui'
+# Form implementation generated from reading ui file 'd:\Creative\GitHub\Maya-Utility-App\assets\UI\Interface.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -16,7 +16,7 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1100, 700)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("c:\\Users\\A00172\\Desktop\\New Utility\\assets\\UI\\../icon.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("d:\\Creative\\GitHub\\Maya-Utility-App\\assets\\UI\\../icon.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet("background-color: rgba(255, 255, 255, 0);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -239,7 +239,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
         self.brand_logo = QtWidgets.QLabel(self.brand_frame)
         self.brand_logo.setText("")
-        self.brand_logo.setPixmap(QtGui.QPixmap("c:\\Users\\A00172\\Desktop\\New Utility\\assets\\UI\\../icon.ico"))
+        self.brand_logo.setPixmap(QtGui.QPixmap("d:\\Creative\\GitHub\\Maya-Utility-App\\assets\\UI\\../icon.ico"))
         self.brand_logo.setScaledContents(True)
         self.brand_logo.setAlignment(QtCore.Qt.AlignCenter)
         self.brand_logo.setObjectName("brand_logo")
@@ -796,8 +796,9 @@ class Ui_MainWindow(object):
         self.pan_table_output.setAlternatingRowColors(True)
         self.pan_table_output.setShowGrid(True)
         self.pan_table_output.setGridStyle(QtCore.Qt.DashDotLine)
-        self.pan_table_output.setObjectName("pan_table_output")
+        self.pan_table_output.setCornerButtonEnabled(True)
         self.pan_table_output.setColumnCount(1)
+        self.pan_table_output.setObjectName("pan_table_output")
         self.pan_table_output.setRowCount(12)
         item = QtWidgets.QTableWidgetItem()
         self.pan_table_output.setVerticalHeaderItem(0, item)
@@ -832,6 +833,8 @@ class Ui_MainWindow(object):
         self.pan_table_output.horizontalHeader().setDefaultSectionSize(100)
         self.pan_table_output.horizontalHeader().setMinimumSectionSize(50)
         self.pan_table_output.horizontalHeader().setStretchLastSection(True)
+        self.pan_table_output.verticalHeader().setVisible(True)
+        self.pan_table_output.verticalHeader().setStretchLastSection(True)
         self.verticalLayout_27.addWidget(self.pan_table_output)
         self.pan_output.addTab(self.pan_table_output_page, "")
         self.raw_pan_out_page = QtWidgets.QWidget()
@@ -1501,11 +1504,11 @@ class Ui_MainWindow(object):
         item = self.pan_table_output.verticalHeaderItem(8)
         item.setText(_translate("MainWindow", "Personal PAN"))
         item = self.pan_table_output.verticalHeaderItem(9)
-        item.setText(_translate("MainWindow", "Businesses"))
-        item = self.pan_table_output.verticalHeaderItem(10)
         item.setText(_translate("MainWindow", "Tax Clearance"))
-        item = self.pan_table_output.verticalHeaderItem(11)
+        item = self.pan_table_output.verticalHeaderItem(10)
         item.setText(_translate("MainWindow", "Account Status"))
+        item = self.pan_table_output.verticalHeaderItem(11)
+        item.setText(_translate("MainWindow", "Businesses"))
         item = self.pan_table_output.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "Values"))
         __sortingEnabled = self.pan_table_output.isSortingEnabled()
