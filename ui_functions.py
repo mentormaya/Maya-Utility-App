@@ -7,12 +7,11 @@ import re
 import json
 import asyncio
 import aiohttp
-import requests
 import datetime as dt
 import pyperclip
 import nepali_datetime as ndt
+from libs.PAN import PAN
 from libs.Numbers import Number
-from PyQt5.QtCore import QThread, pyqtSignal
 from requests import Timeout, TooManyRedirects, HTTPError
 from PyQt5.QtWidgets import QLineEdit, QLabel, QPushButton, QStackedWidget, QApplication, QTableWidget, QTableWidgetItem
 
@@ -21,41 +20,6 @@ SUB_MENU_MIN = 0
 SUB_MENU_CHECK = 100
 
 VAT_PAN_PATTERN =   "\d{9}"
-
-BASE_API = "https://fastapi-production-c751.up.railway.app"
-
-REQ_HEADERS = {
-    'User-Agent': ''
-}
-
-class PAN(QThread):
-    status = pyqtSignal(str)
-    complete = pyqtSignal(dict)
-    def __init__(self, pan = 0):
-        super(PAN, self).__init__()
-        self.pan = pan
-        self.is_running = True
-    
-    def run(self):
-        self.api_url = f'{BASE_API}/pan/v1/{self.pan}'
-        QApplication.processEvents()
-        self.resp = requests.get(self.api_url)
-        QApplication.sendPostedEvents()
-        if self.resp.status_code == 200:
-            self.details = self.resp.json()
-            self.complete.emit(self.details)
-            self.update(f'Fetching Completed!')
-        else:
-            self.complete.emit({'msg': "No Details could be fetched", 'result': False})
-    
-    def update(self, msg):
-        print(f'PAN Update: {msg}')
-        self.status.emit(msg)
-    
-    def stop(self):
-        self.is_running = False
-        self.update(f'Terminating Search for {self.pan}')
-        self.terminate()
 
 class UI_Functions:
     def __init__(self, _statusBar):
@@ -210,3 +174,6 @@ class UI_Functions:
         self.today["nepali"] = ndt.date.today().strftime('%K %N %D %G')
         self.np_dt_container.setText(self.today["nepali"])
         self.eng_dt_container.setText(self.today["english"])
+    
+    def getQuote(self, _quote_disp):
+        self.quote_container = _quote_disp
