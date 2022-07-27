@@ -8,6 +8,7 @@
     License: MIT Lisence
 #######################################################################################################################
 '''
+from sqlite3 import Date
 from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QFrame, QLabel, QPushButton, QSizeGrip, QTabWidget, QLineEdit, QStackedWidget
 from PyQt5 import uic, QtGui, QtCore
 from PyQt5.QtCore import QPoint
@@ -17,6 +18,7 @@ import sys
 #importing assets
 from assets import *
 from ui_functions import UI_Functions
+from widgets.Date_Converter import Date_Converter
 
 CONFIG = {
     ### App related constants
@@ -88,6 +90,10 @@ class LoadUI(QMainWindow):
         
         ui_f.updateDateTime(self.nepali_date_disp, self.english_date_disp)
         
+        #date conversion functionality
+        self.date_converter_btn = self.findChild(QPushButton, "np_cal_btn")
+        self.date_converter_btn.clicked.connect(lambda: self.showDateConverter())
+        
         #Quotes Display
         self.quote_container = self.findChild(QLabel, "quotes_label")
         self.quote = ui_f.getQuote(self.quote_container)
@@ -155,6 +161,11 @@ class LoadUI(QMainWindow):
         
         #show the window
         self.show()
+    
+    def showDateConverter(self):
+        self.dt_conv_win = Date_Converter(CONFIG)
+        self.dt_conv_win.show()
+        
     
     def mousePressEvent(self, event):
         self.oldPosition = event.globalPos()
