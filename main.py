@@ -89,6 +89,10 @@ class LoadUI(QMainWindow):
         
         ui_f.updateDateTime(self.nepali_date_disp, self.english_date_disp)
         
+        #Quotes Display
+        self.quote_container = self.findChild(QLabel, "quotes_label")
+        self.quote = ui_f.getQuote(self.quote_container)
+        
         #Adding Submenu Animation
         self.submenu = self.findChild(QFrame, "sub_menu_frame")
         #Adding right-side-menu Animation

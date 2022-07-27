@@ -19,10 +19,11 @@ class Quote(QThread):
     def run(self):
         self.api_url = f'{BASE_API}/'
         QApplication.processEvents()
+        print('fetching quote...')
         self.resp = requests.get(self.api_url)
         QApplication.sendPostedEvents()
         if self.resp.status_code == 200:
-            self.quote = self.resp.json()
+            self.quote = self.resp.json()[0]
             self.complete.emit(self.quote)
             self.update(f'Fetching Completed!')
         else:

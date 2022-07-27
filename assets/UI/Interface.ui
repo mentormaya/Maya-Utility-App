@@ -1896,6 +1896,18 @@ padding: 2px;</string>
                 </item>
                 <item alignment="Qt::AlignVCenter">
                  <widget class="QLabel" name="quotes_label">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>500</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
                   <property name="font">
                    <font>
                     <family>Kalam Light</family>
@@ -1905,6 +1917,12 @@ padding: 2px;</string>
                   </property>
                   <property name="text">
                    <string>Turn your wounds into wisdom</string>
+                  </property>
+                  <property name="scaledContents">
+                   <bool>true</bool>
+                  </property>
+                  <property name="wordWrap">
+                   <bool>true</bool>
                   </property>
                  </widget>
                 </item>

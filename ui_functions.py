@@ -178,9 +178,14 @@ class UI_Functions:
     
     def getQuote(self, _quote_disp):
         self.quote_container = _quote_disp
+        QApplication.processEvents()
         self.quote_thread = Quote()
         self.quote_thread.status.connect(self.statusUpdate)
         self.quote_thread.complete.connect(self.quoteFetched)
+        self.quote_thread.start()
     
     def quoteFetched(self, _quote):
-        print(_quote)
+        self.quote = _quote
+        self.quote_container.setText(f'{self.quote["q"]} ~ {self.quote["a"]}')
+        
+    
