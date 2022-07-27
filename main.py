@@ -5,14 +5,13 @@
     Project Date: 2022/06/30
     Project Author: Ajay Singh (MaYa)
     Copyright: 2022
-    License: 
+    License: MIT Lisence
 #######################################################################################################################
 '''
 from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QFrame, QLabel, QPushButton, QSizeGrip, QTabWidget, QLineEdit, QStackedWidget
 from PyQt5 import uic, QtGui, QtCore
 from PyQt5.QtCore import QPoint
 from DB import DB
-import asyncio
 import sys
 
 #importing assets

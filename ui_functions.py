@@ -1,6 +1,11 @@
 '''
 #######################################################################################################################
-    
+    Project Name: Maya Utility
+    Project Description: This project is started to address the daily utility based task for me.
+    Project Date: 2022/06/30
+    Project Author: Ajay Singh (MaYa)
+    Copyright: 2022
+    License: MIT Lisence
 #######################################################################################################################
 '''
 import re
@@ -13,7 +18,6 @@ from libs.PAN import PAN
 from libs.Quotes import Quote
 import nepali_datetime as ndt
 from libs.Numbers import Number
-from requests import Timeout, TooManyRedirects, HTTPError
 from PyQt5.QtWidgets import QLineEdit, QLabel, QPushButton, QStackedWidget, QApplication, QTableWidget, QTableWidgetItem
 
 SUB_MENU_MAX = 175
