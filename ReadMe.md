@@ -7,8 +7,8 @@ This is the Maya Utility App to integrate and supposed to be as ready to use uti
 ## Download
 [Download from the release section of this repo](https://github.com/mentormaya/Maya-Utility-App/releases/)
 
-## Extract the zip files to the folder
-## Double click the exe file to run
+Extract the zip files to the folder
+Double click the exe file to run
 
 # For Developers
 # Download
