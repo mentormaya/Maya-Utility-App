@@ -74,28 +74,32 @@ class Date_Converter(QWidget):
             self.date["nep"]["day"] = self.today['nep'].strftime('%G')
         else:
             inputs = date.split("-")
-            # calculate the date provided
-            if self.convert_to == "BS":
-                ad_dt = dt.date(int(inputs[0]), int(inputs[1]), int(inputs[2]))
-                converted = ndt.date.from_datetime_date(ad_dt)
-                print(f'Converted {date} to BS as {converted.strftime("%K-%N-%D-%G")} corresponding to {ad_dt.strftime("%Y-%B-%d-%A")}')
-                self.date["int"]["year"] = ad_dt.strftime("%Y")
-                self.date["int"]["month_date"] = ad_dt.strftime("%B, %d")
-                self.date["int"]["day"] = ad_dt.strftime("%A")
-                self.date["nep"]["year"] = converted.strftime('%K')
-                self.date["nep"]["month_date"] = converted.strftime('%N, %D')
-                self.date["nep"]["day"] = converted.strftime('%G')
+            try:
+                # calculate the date provided
+                if self.convert_to == "BS":
+                    ad_dt = dt.date(int(inputs[0]), int(inputs[1]), int(inputs[2]))
+                    converted = ndt.date.from_datetime_date(ad_dt)
+                    print(f'Converted {date} to BS as {converted.strftime("%K-%N-%D-%G")} corresponding to {ad_dt.strftime("%Y-%B-%d-%A")}')
+                    self.date["int"]["year"] = ad_dt.strftime("%Y")
+                    self.date["int"]["month_date"] = ad_dt.strftime("%B, %d")
+                    self.date["int"]["day"] = ad_dt.strftime("%A")
+                    self.date["nep"]["year"] = converted.strftime('%K')
+                    self.date["nep"]["month_date"] = converted.strftime('%N, %D')
+                    self.date["nep"]["day"] = converted.strftime('%G')
+                else:
+                    bs_dt = ndt.date(int(inputs[0]), int(inputs[1]), int(inputs[2]))
+                    converted = bs_dt.to_datetime_date()
+                    print(f'Converted {date} to AD as {converted.strftime("%Y-%B-%d-%A")} corresponding to {bs_dt.strftime("%K-%N-%D-%G")}')
+                    self.date["int"]["year"] = converted.strftime("%Y")
+                    self.date["int"]["month_date"] = converted.strftime("%B, %d")
+                    self.date["int"]["day"] = converted.strftime("%A")
+                    self.date["nep"]["year"] = bs_dt.strftime('%K')
+                    self.date["nep"]["month_date"] = bs_dt.strftime('%N, %D')
+                    self.date["nep"]["day"] = bs_dt.strftime('%G')
+            except BaseException as err:
+                alert.warning(self, "Unexpected Error!", f"{err.__class__.__name__}: {err}")
             else:
-                bs_dt = ndt.date(int(inputs[0]), int(inputs[1]), int(inputs[2]))
-                converted = bs_dt.to_datetime_date()
-                print(f'Converted {date} to AD as {converted.strftime("%Y-%B-%d-%A")} corresponding to {bs_dt.strftime("%K-%N-%D-%G")}')
-                self.date["int"]["year"] = converted.strftime("%Y")
-                self.date["int"]["month_date"] = converted.strftime("%B, %d")
-                self.date["int"]["day"] = converted.strftime("%A")
-                self.date["nep"]["year"] = bs_dt.strftime('%K')
-                self.date["nep"]["month_date"] = bs_dt.strftime('%N, %D')
-                self.date["nep"]["day"] = bs_dt.strftime('%G')
-        self.updateDate()
+                self.updateDate()
     
     def updateDate(self):
         #extract dates containers
