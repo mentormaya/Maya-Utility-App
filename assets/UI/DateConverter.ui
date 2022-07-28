@@ -143,6 +143,9 @@ QLineEdit#date_input{
            <property name="text">
             <string>Convert</string>
            </property>
+           <property name="default">
+            <bool>true</bool>
+           </property>
           </widget>
          </item>
         </layout>
@@ -206,7 +209,7 @@ QLineEdit#date_input{
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_4">
             <item>
-             <widget class="QLabel" name="label">
+             <widget class="QLabel" name="int_yr_lbl">
               <property name="font">
                <font>
                 <family>Helvetica</family>
@@ -224,7 +227,7 @@ QLineEdit#date_input{
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="label_2">
+             <widget class="QLabel" name="int_month_date_label">
               <property name="font">
                <font>
                 <family>Helvetica</family>
@@ -242,7 +245,7 @@ QLineEdit#date_input{
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="label_3">
+             <widget class="QLabel" name="int_day_label">
               <property name="font">
                <font>
                 <family>Helvetica</family>
@@ -296,7 +299,7 @@ QLineEdit#date_input{
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_5">
             <item>
-             <widget class="QLabel" name="label_4">
+             <widget class="QLabel" name="nep_yr_lbl">
               <property name="font">
                <font>
                 <family>Helvetica</family>
@@ -314,7 +317,7 @@ QLineEdit#date_input{
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="label_5">
+             <widget class="QLabel" name="nep_month_date_label">
               <property name="font">
                <font>
                 <family>Helvetica</family>
@@ -332,7 +335,7 @@ QLineEdit#date_input{
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="label_6">
+             <widget class="QLabel" name="nep_day_label">
               <property name="font">
                <font>
                 <family>Helvetica</family>
