@@ -106,13 +106,23 @@ QLineEdit#date_input{
           <number>10</number>
          </property>
          <item>
-          <widget class="QLineEdit" name="month_input"/>
-         </item>
-         <item>
           <widget class="QLineEdit" name="date_input"/>
          </item>
          <item>
+          <widget class="QLineEdit" name="month_input"/>
+         </item>
+         <item>
           <widget class="QLineEdit" name="year_input"/>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="BS_AD">
+           <property name="text">
+            <string>BS</string>
+           </property>
+           <property name="tristate">
+            <bool>false</bool>
+           </property>
+          </widget>
          </item>
          <item>
           <widget class="QPushButton" name="convert_btn">
