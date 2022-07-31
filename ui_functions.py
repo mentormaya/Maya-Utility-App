@@ -10,7 +10,6 @@
 '''
 import re
 import json
-import asyncio
 import pyperclip
 import datetime as dt
 from libs.PAN import PAN
