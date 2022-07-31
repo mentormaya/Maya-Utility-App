@@ -19,6 +19,7 @@ import sys
 from assets import *
 from ui_functions import UI_Functions
 from widgets.Date_Converter import Date_Converter
+from widgets.DropZone import DropZone
 
 CONFIG = {
     ### App related constants
@@ -116,8 +117,6 @@ class LoadUI(QMainWindow):
         self.convert_btn = self.findChild(QPushButton, "convert_btn")
         num_input = self.findChild(QLineEdit, "num_input")
         self.number_output = self.findChild(QFrame, "output_number")
-        # num_input.setText("113565645.15")
-        # print(num_input.text()) 
         self.convert_btn.clicked.connect(lambda: ui_f.convertNumber(num_input.text(), self.utilites_number))
         
         #adding button click connect to clear number button
@@ -158,6 +157,10 @@ class LoadUI(QMainWindow):
         tax_pan_search_page.findChild(QPushButton, "copy_pan_raw_btn").clicked.connect(lambda: ui_f.copyToClipBoard(raw_output_label.text()))
         tax_pan_search_page.findChild(QPushButton, "pan_search_btn").clicked.connect(lambda: ui_f.searchPan(self.pan_input.text(), output_container))
         
+        
+        #PHOTO TO TEXT EXTRACTOR
+        self.image_text_extraction_page = self.findChild(QWidget, "image_text_extraction_page")
+        self.image_text_drop_zone_container = self.findChild(QFrame, "image_drop_zone")
         
         #show the window
         self.show()
