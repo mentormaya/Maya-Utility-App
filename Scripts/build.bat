@@ -5,7 +5,6 @@ pyinstaller ^
     --windowed ^
     --icon "assets//icon.ico" ^
     --name "MaYa_Utility" ^
-    --clean ^
     --resource "assets" ^
     --resource "uploads" ^
     main.py
