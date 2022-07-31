@@ -1,4 +1,5 @@
 echo "Building the project..."
+echo off
 pyinstaller ^
     --onefile ^
     --windowed ^
@@ -7,5 +8,4 @@ pyinstaller ^
     --clean ^
     --resource "assets" ^
     --resource "uploads" ^
-    --resource ".venv/Lib/site-packages/nepali_datetime/data/calendar_bs.csv" ^
     main.py

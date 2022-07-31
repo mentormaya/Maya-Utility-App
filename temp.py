@@ -7,3 +7,15 @@
         # async with _session.get(_api_url) as resp:
         #         return await resp.json()
         # asyncio.get_event_loop().run_until_complete(pan_search_thread.start())
+        
+# echo "Building the project..."
+# echo off
+# pyinstaller ^
+#     --onefile ^
+#     --windowed ^
+#     --icon "assets//icon.ico" ^
+#     --name "MaYa_Utility" ^
+#     --clean ^
+#     --resource "assets" ^
+#     --resource "uploads" ^
+#     main.py

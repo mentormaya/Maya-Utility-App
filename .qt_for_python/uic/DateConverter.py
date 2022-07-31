@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'd:\Creative\GitHub\Maya-Utility-App\assets\UI\DateConverter.ui'
+# Form implementation generated from reading ui file 'd:\Creative\GitHub\Maya-Utility-App\dist\assets\UI\DateConverter.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
