@@ -192,4 +192,5 @@ class UI_Functions:
         self.quote = _quote
         self.quote_container.setText(f'{self.quote["q"]} ~ {self.quote["a"]}')
         
-    
+    def setUpDropForImageText(self, _widget):
+        print('i am activated')

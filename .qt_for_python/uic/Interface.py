@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'd:\Creative\GitHub\Maya-Utility-App\assets\UI\Interface.ui'
+# Form implementation generated from reading ui file 'c:\Users\A00172\Desktop\New Utility\assets\UI\Interface.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -16,7 +16,7 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1100, 700)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("d:\\Creative\\GitHub\\Maya-Utility-App\\assets\\UI\\../icon.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("c:\\Users\\A00172\\Desktop\\New Utility\\assets\\UI\\../icon.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet("background-color: rgba(255, 255, 255, 0);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -239,7 +239,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
         self.brand_logo = QtWidgets.QLabel(self.brand_frame)
         self.brand_logo.setText("")
-        self.brand_logo.setPixmap(QtGui.QPixmap("d:\\Creative\\GitHub\\Maya-Utility-App\\assets\\UI\\../icon.ico"))
+        self.brand_logo.setPixmap(QtGui.QPixmap("c:\\Users\\A00172\\Desktop\\New Utility\\assets\\UI\\../icon.ico"))
         self.brand_logo.setScaledContents(True)
         self.brand_logo.setAlignment(QtCore.Qt.AlignCenter)
         self.brand_logo.setObjectName("brand_logo")
@@ -617,7 +617,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_23.setObjectName("verticalLayout_23")
         self.verticalLayout_22.addWidget(self.pdf_merger_output)
         self.main_content_pages.addWidget(self.join_pdf_container)
-        self.image_text_extraction_page = QtWidgets.QWidget()
+        self.image_text_extraction_page = DropZone()
+        self.image_text_extraction_page.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
+        self.image_text_extraction_page.setMouseTracking(False)
         self.image_text_extraction_page.setObjectName("image_text_extraction_page")
         self.verticalLayout_221 = QtWidgets.QVBoxLayout(self.image_text_extraction_page)
         self.verticalLayout_221.setContentsMargins(0, 0, 0, 0)
@@ -626,6 +628,7 @@ class Ui_MainWindow(object):
         self.image_drop_zone = QtWidgets.QFrame(self.image_text_extraction_page)
         self.image_drop_zone.setMinimumSize(QtCore.QSize(0, 40))
         self.image_drop_zone.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.image_drop_zone.setCursor(QtGui.QCursor(QtCore.Qt.OpenHandCursor))
         self.image_drop_zone.setStyleSheet("QPushButton{\n"
 "    padding: 10px;\n"
 "    border-radius: 8px;\n"
@@ -828,12 +831,12 @@ class Ui_MainWindow(object):
         self.pan_table_output.setHorizontalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
         self.pan_table_output.setItem(0, 0, item)
-        self.pan_table_output.horizontalHeader().setVisible(True)
+        self.pan_table_output.horizontalHeader().setVisible(False)
         self.pan_table_output.horizontalHeader().setCascadingSectionResizes(False)
         self.pan_table_output.horizontalHeader().setDefaultSectionSize(100)
         self.pan_table_output.horizontalHeader().setMinimumSectionSize(50)
         self.pan_table_output.horizontalHeader().setStretchLastSection(True)
-        self.pan_table_output.verticalHeader().setVisible(True)
+        self.pan_table_output.verticalHeader().setVisible(False)
         self.pan_table_output.verticalHeader().setStretchLastSection(True)
         self.verticalLayout_27.addWidget(self.pan_table_output)
         self.pan_output.addTab(self.pan_table_output_page, "")
@@ -847,7 +850,7 @@ class Ui_MainWindow(object):
         self.raw_output_container.setWidgetResizable(True)
         self.raw_output_container.setObjectName("raw_output_container")
         self.raw_output_container_scrol = QtWidgets.QWidget()
-        self.raw_output_container_scrol.setGeometry(QtCore.QRect(0, 0, 616, 420))
+        self.raw_output_container_scrol.setGeometry(QtCore.QRect(0, 0, 201, 29))
         self.raw_output_container_scrol.setObjectName("raw_output_container_scrol")
         self.verticalLayout_28 = QtWidgets.QVBoxLayout(self.raw_output_container_scrol)
         self.verticalLayout_28.setContentsMargins(5, 5, 5, 5)
@@ -1440,7 +1443,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.main_content_pages.setCurrentIndex(4)
+        self.main_content_pages.setCurrentIndex(3)
         self.pan_output.setCurrentIndex(0)
         self.submenu_pages.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -1550,4 +1553,5 @@ class Ui_MainWindow(object):
         self.label_3.setText(_translate("MainWindow", "Right - Side -Menu"))
         self.status_label.setText(_translate("MainWindow", "Ready"))
         self.credit_label.setText(_translate("MainWindow", "Copyright @ Ajay Singh [Maya] 2022. All the rights are reserved."))
+from widgets.DropZone import DropZone
 import assets_rc

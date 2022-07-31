@@ -537,7 +537,7 @@ border-radius: 0px;</string>
              <item>
               <widget class="QStackedWidget" name="main_content_pages">
                <property name="currentIndex">
-                <number>4</number>
+                <number>3</number>
                </property>
                <widget class="QWidget" name="dashboard">
                 <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -1269,7 +1269,13 @@ border-radius: 4px;
                  </item>
                 </layout>
                </widget>
-               <widget class="QWidget" name="image_text_extraction_page">
+               <widget class="DropZone" name="image_text_extraction_page">
+                <property name="cursor">
+                 <cursorShape>ArrowCursor</cursorShape>
+                </property>
+                <property name="mouseTracking">
+                 <bool>false</bool>
+                </property>
                 <layout class="QVBoxLayout" name="verticalLayout_22">
                  <property name="spacing">
                   <number>0</number>
@@ -1299,6 +1305,9 @@ border-radius: 4px;
                      <width>16777215</width>
                      <height>16777215</height>
                     </size>
+                   </property>
+                   <property name="cursor">
+                    <cursorShape>OpenHandCursor</cursorShape>
                    </property>
                    <property name="styleSheet">
                     <string notr="true">QPushButton{
@@ -1651,7 +1660,7 @@ QHeaderView::section:vertical
                         <number>1</number>
                        </property>
                        <attribute name="horizontalHeaderVisible">
-                        <bool>true</bool>
+                        <bool>false</bool>
                        </attribute>
                        <attribute name="horizontalHeaderCascadingSectionResizes">
                         <bool>false</bool>
@@ -1666,7 +1675,7 @@ QHeaderView::section:vertical
                         <bool>true</bool>
                        </attribute>
                        <attribute name="verticalHeaderVisible">
-                        <bool>true</bool>
+                        <bool>false</bool>
                        </attribute>
                        <attribute name="verticalHeaderStretchLastSection">
                         <bool>true</bool>
@@ -1775,8 +1784,8 @@ QHeaderView::section:vertical
                          <rect>
                           <x>0</x>
                           <y>0</y>
-                          <width>616</width>
-                          <height>420</height>
+                          <width>201</width>
+                          <height>29</height>
                          </rect>
                         </property>
                         <layout class="QVBoxLayout" name="verticalLayout_28">
@@ -3079,6 +3088,14 @@ border-top-right-radius: 0px;</string>
    </layout>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DropZone</class>
+   <extends>QWidget</extends>
+   <header>widgets/DropZone.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="../assets.qrc"/>
  </resources>
