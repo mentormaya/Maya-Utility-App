@@ -11,7 +11,6 @@
 import re
 import json
 import asyncio
-import aiohttp
 import pyperclip
 import datetime as dt
 from libs.PAN import PAN
