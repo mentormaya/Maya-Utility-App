@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'd:\Creative\GitHub\Maya-Utility-App\dist\assets\UI\Interface.ui'
+# Form implementation generated from reading ui file 'c:\Users\A00172\Desktop\New Utility\assets\UI\Interface.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -16,7 +16,7 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1100, 700)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("d:\\Creative\\GitHub\\Maya-Utility-App\\dist\\assets\\UI\\../icon.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("c:\\Users\\A00172\\Desktop\\New Utility\\assets\\UI\\../icon.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet("QMainWindow{\n"
 "    background-color: rgba(255, 255, 255, 0);\n"
@@ -242,7 +242,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
         self.brand_logo = QtWidgets.QLabel(self.brand_frame)
         self.brand_logo.setText("")
-        self.brand_logo.setPixmap(QtGui.QPixmap("d:\\Creative\\GitHub\\Maya-Utility-App\\dist\\assets\\UI\\../icon.ico"))
+        self.brand_logo.setPixmap(QtGui.QPixmap("c:\\Users\\A00172\\Desktop\\New Utility\\assets\\UI\\../icon.ico"))
         self.brand_logo.setScaledContents(True)
         self.brand_logo.setAlignment(QtCore.Qt.AlignCenter)
         self.brand_logo.setObjectName("brand_logo")
@@ -684,14 +684,14 @@ class Ui_MainWindow(object):
         self.image_drop_border.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.image_drop_border.setFrameShadow(QtWidgets.QFrame.Raised)
         self.image_drop_border.setObjectName("image_drop_border")
-        self.verticalLayout_25 = QtWidgets.QVBoxLayout(self.image_drop_border)
-        self.verticalLayout_25.setObjectName("verticalLayout_25")
+        self.horizontalLayout_11 = QtWidgets.QHBoxLayout(self.image_drop_border)
+        self.horizontalLayout_11.setObjectName("horizontalLayout_11")
         self.select_file_btn = QtWidgets.QPushButton(self.image_drop_border)
         self.select_file_btn.setMinimumSize(QtCore.QSize(150, 0))
         self.select_file_btn.setMaximumSize(QtCore.QSize(250, 16777215))
         self.select_file_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.select_file_btn.setObjectName("select_file_btn")
-        self.verticalLayout_25.addWidget(self.select_file_btn, 0, QtCore.Qt.AlignHCenter)
+        self.horizontalLayout_11.addWidget(self.select_file_btn)
         self.verticalLayout_24.addWidget(self.image_drop_border)
         self.verticalLayout_221.addWidget(self.image_drop_zone)
         self.text_extracted_disp = QtWidgets.QFrame(self.image_text_extraction_page)
@@ -1471,7 +1471,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.main_content_pages.setCurrentIndex(1)
+        self.main_content_pages.setCurrentIndex(3)
         self.pan_output.setCurrentIndex(0)
         self.submenu_pages.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)

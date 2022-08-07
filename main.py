@@ -141,6 +141,7 @@ class LoadUI(QMainWindow):
         pdf_merger_utility_page = self.findChild(QWidget, "join_pdf_container")
         image_extraction_page = self.findChild(QWidget, "image_text_extraction_page")
         tax_pan_search_page = self.findChild(QWidget, "tax_pan_search")
+        
         #Dashboard
         self.findChild(QPushButton, "home_page").clicked.connect(lambda: ui_f.showPage(home_page, pages_container))
         self.findChild(QPushButton, "numbers_page").clicked.connect(lambda: ui_f.showPage(utilities_number_page, pages_container))
