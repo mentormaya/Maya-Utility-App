@@ -8,10 +8,11 @@ class DropZone(QFrame):
     
     def add_image(self, file_paths):
         print(file_paths)
-        image_viewer = QLabel("Image will be here!")
-        image_viewer.setPixmap(QtGui.QPixmap(file_paths[0]))
-        layout = QVBoxLayout(self.findChild(QFrame, "image_drop_border"))
-        layout.addWidget(image_viewer)
+        layout = self.findChild(QFrame, "image_drop_border").layout()
+        for image in file_paths:
+            image_viewer = QLabel("Image will be here!")
+            image_viewer.setPixmap(QtGui.QPixmap(image))
+            layout.addWidget(image_viewer)
     
     def dragEnterEvent(self, event):
         if event.mimeData().hasImage:
