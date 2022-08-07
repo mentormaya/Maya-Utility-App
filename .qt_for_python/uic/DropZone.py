@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'c:\Users\A00172\Desktop\New Utility\assets\UI\DropZone.ui'
+# Form implementation generated from reading ui file 'd:\Creative\GitHub\Maya-Utility-App\dist\assets\UI\DropZone.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
