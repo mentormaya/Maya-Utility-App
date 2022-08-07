@@ -18,7 +18,10 @@ class Ui_MainWindow(object):
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("c:\\Users\\A00172\\Desktop\\New Utility\\assets\\UI\\../icon.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
-        MainWindow.setStyleSheet("background-color: rgba(255, 255, 255, 0);")
+        MainWindow.setStyleSheet("QMainWindow{\n"
+"    background-color: rgba(255, 255, 255, 0);\n"
+"}\n"
+"")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setStyleSheet("background-color: rgb(51, 51, 51);\n"
 "border-radius: 10;\n"
@@ -256,6 +259,22 @@ class Ui_MainWindow(object):
         self.horizontalLayout_7.setSpacing(0)
         self.horizontalLayout_7.setObjectName("horizontalLayout_7")
         self.main_content_pages = QtWidgets.QStackedWidget(self.content_frame)
+        font = QtGui.QFont()
+        font.setItalic(False)
+        self.main_content_pages.setFont(font)
+        self.main_content_pages.setStyleSheet("\n"
+"QLineEdit{\n"
+"    border: none;\n"
+"    border-Bottom: 2px solid #5e5e5e;\n"
+"}\n"
+"\n"
+"QLineEdit:hover{\n"
+"    border-Bottom: 2px solid #7e7e7e;\n"
+"}\n"
+"\n"
+"QLineEdit:focus{\n"
+"    border-Bottom: 2px solid #7e7e7e;\n"
+"}")
         self.main_content_pages.setObjectName("main_content_pages")
         self.dashboard = QtWidgets.QWidget()
         self.dashboard.setObjectName("dashboard")
@@ -277,7 +296,11 @@ class Ui_MainWindow(object):
         self.input_number = QtWidgets.QFrame(self.utilites_number)
         self.input_number.setMinimumSize(QtCore.QSize(0, 40))
         self.input_number.setMaximumSize(QtCore.QSize(16777215, 60))
-        self.input_number.setStyleSheet("padding: 5px;")
+        self.input_number.setStyleSheet("QFrame{\n"
+"    padding: 5px;\n"
+"}\n"
+"\n"
+"")
         self.input_number.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.input_number.setFrameShadow(QtWidgets.QFrame.Raised)
         self.input_number.setObjectName("input_number")
@@ -294,11 +317,13 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setFamily("Helvetica")
         font.setPointSize(12)
+        font.setItalic(True)
         self.num_input.setFont(font)
         self.num_input.setAutoFillBackground(False)
         self.num_input.setStyleSheet("")
+        self.num_input.setInputMask("")
         self.num_input.setText("")
-        self.num_input.setPlaceholderText("")
+        self.num_input.setPlaceholderText("Number to Convert")
         self.num_input.setClearButtonEnabled(False)
         self.num_input.setObjectName("num_input")
         self.horizontalLayout_9.addWidget(self.num_input)
@@ -334,6 +359,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout_9.addWidget(self.convert_btn)
         self.verticalLayout_10.addWidget(self.input_number)
         self.output_number = QtWidgets.QFrame(self.utilites_number)
+        self.output_number.setStyleSheet("QLineEdit{\n"
+"    border:none;\n"
+"}")
         self.output_number.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.output_number.setFrameShadow(QtWidgets.QFrame.Raised)
         self.output_number.setObjectName("output_number")
@@ -1443,7 +1471,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.main_content_pages.setCurrentIndex(3)
+        self.main_content_pages.setCurrentIndex(1)
         self.pan_output.setCurrentIndex(0)
         self.submenu_pages.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)

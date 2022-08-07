@@ -64,7 +64,7 @@ class UI_Functions:
             frame.findChild(QLabel, "words_nep_disp").setText(data["words_nep"])
             frame.findChild(QPushButton, "nep_words_copy_btn").clicked.connect(lambda: self.copyToClipBoard(data["words_nep"]))
             frame.findChild(QPushButton, "copy_num_all_btn").clicked.connect(lambda: self.copyToClipBoard(json.dumps(data, indent=4, ensure_ascii=False)))
-            status = f'{data["num"]} is converted!'
+            status = f'{data["lakh_format"]} is converted!'
             print(status)
             self.statusBar.setText(status)
     

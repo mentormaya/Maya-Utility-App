@@ -18,7 +18,10 @@
     <normaloff>../icon.ico</normaloff>../icon.ico</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+   <string notr="true">QMainWindow{
+	background-color: rgba(255, 255, 255, 0);
+}
+</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
@@ -536,8 +539,28 @@ border-radius: 0px;</string>
              </property>
              <item>
               <widget class="QStackedWidget" name="main_content_pages">
+               <property name="font">
+                <font>
+                 <italic>false</italic>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">
+QLineEdit{
+	border: none;
+	border-Bottom: 2px solid #5e5e5e;
+}
+
+QLineEdit:hover{
+	border-Bottom: 2px solid #7e7e7e;
+}
+
+QLineEdit:focus{
+	border-Bottom: 2px solid #7e7e7e;
+}</string>
+               </property>
                <property name="currentIndex">
-                <number>3</number>
+                <number>1</number>
                </property>
                <widget class="QWidget" name="dashboard">
                 <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -600,7 +623,11 @@ border-radius: 0px;</string>
                     </size>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">padding: 5px;</string>
+                    <string notr="true">QFrame{
+	padding: 5px;
+}
+
+</string>
                    </property>
                    <property name="frameShape">
                     <enum>QFrame::StyledPanel</enum>
@@ -628,6 +655,7 @@ border-radius: 0px;</string>
                        <font>
                         <family>Helvetica</family>
                         <pointsize>12</pointsize>
+                        <italic>true</italic>
                        </font>
                       </property>
                       <property name="autoFillBackground">
@@ -636,11 +664,14 @@ border-radius: 0px;</string>
                       <property name="styleSheet">
                        <string notr="true"/>
                       </property>
+                      <property name="inputMask">
+                       <string/>
+                      </property>
                       <property name="text">
                        <string/>
                       </property>
                       <property name="placeholderText">
-                       <string notr="true"/>
+                       <string notr="true">Number to Convert</string>
                       </property>
                       <property name="clearButtonEnabled">
                        <bool>false</bool>
@@ -702,6 +733,11 @@ border-radius: 4px;
                  </item>
                  <item alignment="Qt::AlignTop">
                   <widget class="QFrame" name="output_number">
+                   <property name="styleSheet">
+                    <string notr="true">QLineEdit{
+	border:none;
+}</string>
+                   </property>
                    <property name="frameShape">
                     <enum>QFrame::StyledPanel</enum>
                    </property>
