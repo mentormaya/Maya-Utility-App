@@ -1422,6 +1422,13 @@ border-radius: 4px;
                          </property>
                         </widget>
                        </item>
+                       <item alignment="Qt::AlignHCenter">
+                        <widget class="QLabel" name="Image_Label">
+                         <property name="text">
+                          <string>Image will be Shown Here...</string>
+                         </property>
+                        </widget>
+                       </item>
                       </layout>
                      </widget>
                     </item>

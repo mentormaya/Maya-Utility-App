@@ -692,6 +692,9 @@ class Ui_MainWindow(object):
         self.select_file_btn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.select_file_btn.setObjectName("select_file_btn")
         self.horizontalLayout_11.addWidget(self.select_file_btn)
+        self.Image_Label = QtWidgets.QLabel(self.image_drop_border)
+        self.Image_Label.setObjectName("Image_Label")
+        self.horizontalLayout_11.addWidget(self.Image_Label, 0, QtCore.Qt.AlignHCenter)
         self.verticalLayout_24.addWidget(self.image_drop_border)
         self.verticalLayout_221.addWidget(self.image_drop_zone)
         self.text_extracted_disp = QtWidgets.QFrame(self.image_text_extraction_page)
@@ -1508,6 +1511,7 @@ class Ui_MainWindow(object):
         self.pdf_move_down_btn.setText(_translate("MainWindow", "Down"))
         self.save_pdf_btn.setText(_translate("MainWindow", "Save"))
         self.select_file_btn.setText(_translate("MainWindow", "Either Drop or Select File"))
+        self.Image_Label.setText(_translate("MainWindow", "Image will be Shown Here..."))
         self.extracted_texts.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"

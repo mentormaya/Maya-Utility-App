@@ -16,6 +16,7 @@ from libs.PAN import PAN
 from libs.Quotes import Quote
 import nepali_datetime as ndt
 from libs.Numbers import Number
+from libs.ImageToText import Image2Text
 from PyQt5.QtWidgets import QLineEdit, QLabel, QPushButton, QStackedWidget, QApplication, QTableWidget, QTableWidgetItem
 
 SUB_MENU_MAX = 175
@@ -190,5 +191,12 @@ class UI_Functions:
         self.quote = _quote
         self.quote_container.setText(f'{self.quote["q"]} ~ {self.quote["a"]}')
         
-    def setUpDropForImageText(self, _widget):
-        print('i am activated')
+    def extTextfromImg(self, images):
+        self.statusUpdate(f'Ready to extract from {images["files"][0]}')
+        self.img2text = Image2Text(images["files"][0])
+        self.img2text.status.connect(self.statusUpdate)
+        self.img2text.completed.connect(self.displayTextExtracted)
+        self.img2text.start()
+    
+    def displayTextExtracted(self, text):
+        self.statusUpdate(text)

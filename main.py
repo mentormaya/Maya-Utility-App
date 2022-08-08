@@ -160,8 +160,9 @@ class LoadUI(QMainWindow):
         
         
         #PHOTO TO TEXT EXTRACTOR
-        self.image_text_extraction_page = self.findChild(QWidget, "image_text_extraction_page")
+        self.image_text_extraction_page = self.findChild(DropZone, "image_text_extraction_page")         #Also the DropZone Component
         self.image_text_drop_zone_container = self.findChild(QFrame, "image_drop_zone")
+        self.image_text_extraction_page.loaded.connect(ui_f.extTextfromImg)        
         
         #show the window
         self.show()

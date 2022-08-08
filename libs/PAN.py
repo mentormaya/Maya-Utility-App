@@ -29,7 +29,6 @@ class PAN(QThread):
             self.complete.emit({'msg': "No Details could be fetched", 'result': False})
     
     def update(self, msg):
-        print(f'PAN Update: {msg}')
         self.status.emit(msg)
     
     def stop(self):
