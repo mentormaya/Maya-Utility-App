@@ -2,6 +2,8 @@ from PyQt5 import uic, QtGui, QtCore
 from PyQt5.QtCore import QThread, pyqtSignal
 from PyQt5.QtWidgets import QVBoxLayout, QFrame, QWidget, QLabel, QPushButton, QLineEdit, QCheckBox
 
+IMAGE_HEIGHT = 150
+
 class DropZone(QFrame):
     loaded = pyqtSignal(dict)
     def __init__(self):
@@ -14,7 +16,7 @@ class DropZone(QFrame):
         layout = self.findChild(QFrame, "image_drop_border").layout()
         for image in self.file_paths:
             image_viewer = self.findChild(QLabel, "Image_Label")
-            image_viewer.setPixmap(QtGui.QPixmap(image))
+            image_viewer.setPixmap(QtGui.QPixmap(image).scaledToHeight(IMAGE_HEIGHT))
             image_viewer.setAlignment(QtCore.Qt.AlignCenter)
             layout.addWidget(image_viewer)
         self.loaded.emit({"msg": "Image Loaded", "files": self.file_paths})

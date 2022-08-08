@@ -704,6 +704,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_231 = QtWidgets.QVBoxLayout(self.text_extracted_disp)
         self.verticalLayout_231.setObjectName("verticalLayout_231")
         self.extracted_texts = QtWidgets.QTextBrowser(self.text_extracted_disp)
+        self.extracted_texts.viewport().setProperty("cursor", QtGui.QCursor(QtCore.Qt.IBeamCursor))
+        self.extracted_texts.setReadOnly(False)
+        self.extracted_texts.setMarkdown("")
         self.extracted_texts.setObjectName("extracted_texts")
         self.verticalLayout_231.addWidget(self.extracted_texts)
         self.verticalLayout_221.addWidget(self.text_extracted_disp)
@@ -1516,8 +1519,8 @@ class Ui_MainWindow(object):
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Your result will be shown Here</p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.extracted_texts.setPlaceholderText(_translate("MainWindow", "Your result will be shown Here  "))
         self.pan_input_label.setText(_translate("MainWindow", "Enter your number:"))
         self.clear_pan_btn.setToolTip(_translate("MainWindow", "Clear the Input"))
         self.copy_pan_raw_btn.setToolTip(_translate("MainWindow", "Copy Raw Data"))
