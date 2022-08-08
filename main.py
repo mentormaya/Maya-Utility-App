@@ -83,7 +83,9 @@ class LoadUI(QMainWindow):
         self.btn_close = self.findChild(QPushButton, "btn_close")
         self.btn_close.clicked.connect(self.closeWindow)
         
-        ui_f = UI_Functions(self.status_disp)
+        self.content_frame = self.findChild(QFrame, "content_frame")
+        
+        ui_f = UI_Functions(self.status_disp, self.content_frame)
         
         #adding date functionality
         self.nepali_date_disp = self.findChild(QLabel, "nepali_date")

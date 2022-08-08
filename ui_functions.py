@@ -17,7 +17,7 @@ from libs.Quotes import Quote
 import nepali_datetime as ndt
 from libs.Numbers import Number
 from libs.ImageToText import Image2Text
-from PyQt5.QtWidgets import QLineEdit, QLabel, QPushButton, QStackedWidget, QApplication, QTableWidget, QTableWidgetItem
+from PyQt5.QtWidgets import QLineEdit, QLabel, QPushButton, QStackedWidget, QApplication, QTableWidget, QTableWidgetItem, QTextBrowser
 
 SUB_MENU_MAX = 175
 SUB_MENU_MIN = 0
@@ -26,9 +26,10 @@ SUB_MENU_CHECK = 100
 VAT_PAN_PATTERN =   "\d{9}"
 
 class UI_Functions:
-    def __init__(self, _statusBar):
+    def __init__(self, _statusBar, _content_frame):
         super().__init__()
         self.statusBar = _statusBar
+        self.content_frame = _content_frame
     
     #number utility functions
     def convertNumber(self, num, frame):
@@ -199,4 +200,5 @@ class UI_Functions:
         self.img2text.start()
     
     def displayTextExtracted(self, text):
-        self.statusUpdate(text)
+        disp = self.content_frame.findChild(QTextBrowser, "extracted_texts")
+        disp.setText(text)
