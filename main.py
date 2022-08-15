@@ -8,10 +8,9 @@
     License: MIT Lisence
 #######################################################################################################################
 '''
-from sqlite3 import Date
 from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QFrame, QLabel, QPushButton, QSizeGrip, QTabWidget, QLineEdit, QStackedWidget
 from PyQt5 import uic, QtGui, QtCore
-from PyQt5.QtCore import QPoint
+from PyQt5.QtCore import QPoint, QSettings
 from DB import DB
 import sys
 
@@ -30,7 +29,8 @@ CONFIG = {
     "COPYRIGHT": "Ajay Singh",
     "CREDIT_TEXT": "Design Credit:",
     "AUTHOR": "Ajay Singh [Maya]",
-    "ICON": "assets/icon.ico"
+    "ICON": "assets/icon.ico",
+    "TESSERACT_EXE_PATH": "C:\\Users\\A00172\\AppData\\Local\\Tesseract-OCR\\tesseract.exe"
 }
 
 class LoadUI(QMainWindow):
@@ -38,7 +38,7 @@ class LoadUI(QMainWindow):
         super(LoadUI, self).__init__()
         #setup loading UI and everything
         self.setupUI()
-        self.db = DB("maya.db")
+        self.db = DB("maya.db", self.status_disp)
         
     def setupUI(self):
         #load the ui file on the fly
@@ -85,7 +85,7 @@ class LoadUI(QMainWindow):
         
         self.content_frame = self.findChild(QFrame, "content_frame")
         
-        ui_f = UI_Functions(self.status_disp, self.content_frame)
+        ui_f = UI_Functions(self.status_disp, self.content_frame, CONFIG)
         
         #adding date functionality
         self.nepali_date_disp = self.findChild(QLabel, "nepali_date")

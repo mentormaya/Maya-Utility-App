@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'c:\Users\A00172\Desktop\New Utility\dist\assets\UI\Interface.ui'
+# Form implementation generated from reading ui file 'c:\Users\A00172\Desktop\New Utility\assets\UI\Interface.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -16,7 +16,7 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1100, 700)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("c:\\Users\\A00172\\Desktop\\New Utility\\dist\\assets\\UI\\../icon.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("c:\\Users\\A00172\\Desktop\\New Utility\\assets\\UI\\../../../../.designer/icon.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet("QMainWindow{\n"
 "    background-color: rgba(255, 255, 255, 0);\n"
@@ -242,7 +242,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
         self.brand_logo = QtWidgets.QLabel(self.brand_frame)
         self.brand_logo.setText("")
-        self.brand_logo.setPixmap(QtGui.QPixmap("c:\\Users\\A00172\\Desktop\\New Utility\\dist\\assets\\UI\\../icon.ico"))
+        self.brand_logo.setPixmap(QtGui.QPixmap("c:\\Users\\A00172\\Desktop\\New Utility\\assets\\UI\\../../../../.designer/icon.ico"))
         self.brand_logo.setScaledContents(True)
         self.brand_logo.setAlignment(QtCore.Qt.AlignCenter)
         self.brand_logo.setObjectName("brand_logo")
@@ -576,6 +576,13 @@ class Ui_MainWindow(object):
         self.verticalLayout_22.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_22.setSpacing(0)
         self.verticalLayout_22.setObjectName("verticalLayout_22")
+        self.pdf_merger_output = QtWidgets.QFrame(self.join_pdf_container)
+        self.pdf_merger_output.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.pdf_merger_output.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.pdf_merger_output.setObjectName("pdf_merger_output")
+        self.verticalLayout_23 = QtWidgets.QVBoxLayout(self.pdf_merger_output)
+        self.verticalLayout_23.setObjectName("verticalLayout_23")
+        self.verticalLayout_22.addWidget(self.pdf_merger_output)
         self.files_input_pdf_merger = QtWidgets.QFrame(self.join_pdf_container)
         self.files_input_pdf_merger.setMinimumSize(QtCore.QSize(0, 40))
         self.files_input_pdf_merger.setMaximumSize(QtCore.QSize(16777215, 60))
@@ -637,13 +644,6 @@ class Ui_MainWindow(object):
         self.save_pdf_btn.setObjectName("save_pdf_btn")
         self.horizontalLayout_12.addWidget(self.save_pdf_btn)
         self.verticalLayout_22.addWidget(self.files_input_pdf_merger)
-        self.pdf_merger_output = QtWidgets.QFrame(self.join_pdf_container)
-        self.pdf_merger_output.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.pdf_merger_output.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.pdf_merger_output.setObjectName("pdf_merger_output")
-        self.verticalLayout_23 = QtWidgets.QVBoxLayout(self.pdf_merger_output)
-        self.verticalLayout_23.setObjectName("verticalLayout_23")
-        self.verticalLayout_22.addWidget(self.pdf_merger_output)
         self.main_content_pages.addWidget(self.join_pdf_container)
         self.image_text_extraction_page = DropZone()
         self.image_text_extraction_page.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
@@ -1477,7 +1477,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.main_content_pages.setCurrentIndex(3)
+        self.main_content_pages.setCurrentIndex(2)
         self.pan_output.setCurrentIndex(0)
         self.submenu_pages.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)

@@ -15,7 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../icon.ico</normaloff>../icon.ico</iconset>
+    <normaloff>../../../../.designer/icon.ico</normaloff>../../../../.designer/icon.ico</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">QMainWindow{
@@ -496,7 +496,7 @@ QPushButton:pressed{
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap>../icon.ico</pixmap>
+                <pixmap>../../../../.designer/icon.ico</pixmap>
                </property>
                <property name="scaledContents">
                 <bool>true</bool>
@@ -560,7 +560,7 @@ QLineEdit:focus{
 }</string>
                </property>
                <property name="currentIndex">
-                <number>3</number>
+                <number>2</number>
                </property>
                <widget class="QWidget" name="dashboard">
                 <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -1173,6 +1173,17 @@ border-radius: 4px;
                   <number>0</number>
                  </property>
                  <item>
+                  <widget class="QFrame" name="pdf_merger_output">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_23"/>
+                  </widget>
+                 </item>
+                 <item>
                   <widget class="QFrame" name="files_input_pdf_merger">
                    <property name="minimumSize">
                     <size>
@@ -1290,17 +1301,6 @@ border-radius: 4px;
                      </widget>
                     </item>
                    </layout>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QFrame" name="pdf_merger_output">
-                   <property name="frameShape">
-                    <enum>QFrame::StyledPanel</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Raised</enum>
-                   </property>
-                   <layout class="QVBoxLayout" name="verticalLayout_23"/>
                   </widget>
                  </item>
                 </layout>

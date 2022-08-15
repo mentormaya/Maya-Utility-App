@@ -26,10 +26,11 @@ SUB_MENU_CHECK = 100
 VAT_PAN_PATTERN =   "\d{9}"
 
 class UI_Functions:
-    def __init__(self, _statusBar, _content_frame):
+    def __init__(self, _statusBar, _content_frame, _config):
         super().__init__()
         self.statusBar = _statusBar
         self.content_frame = _content_frame
+        self.config = _config
     
     #number utility functions
     def convertNumber(self, num, frame):
@@ -127,7 +128,7 @@ class UI_Functions:
         except:
             self.statusBar.setText("Input Value Exception Occured!")
         else:
-            self.statusUpdate(f'searching details for {_pan}')
+            self.statusUpdate(f'Update: searching details for {_pan}')
             QApplication.processEvents()
             self.pan_search_thread = PAN(pan = _pan)
             self.pan_search_thread.status.connect(self.statusUpdate)
@@ -135,11 +136,11 @@ class UI_Functions:
             self.pan_search_thread.start()
     
     def statusUpdate(self, status):
-        print(f"Update: {status}")
-        self.statusBar.setText(f"Update: {status}")
+        print(f"{status}")
+        self.statusBar.setText(f"{status}")
             
     def dispPanDetails(self, _details):
-        self.statusUpdate(f'Details for {self.pan} fetched Successfully!')
+        self.statusUpdate(f'Update: Details for {self.pan} fetched Successfully!')
         _details = _details['raw_data']
         _address = f'{_details["panDetails"][0]["street_Name"]} ({_details["panDetails"][0]["ward_No"]}) {_details["panDetails"][0]["vdc_Town"]}'
         _businesses = ""
@@ -168,7 +169,7 @@ class UI_Functions:
         table.setItem(11, 0, QTableWidgetItem(str(_businesses)))
 
     def panSearch_completed(self, details):
-        self.statusUpdate("Pan Details Fetched")
+        self.statusUpdate("Update: Pan Details Fetched")
         self.dispPanDetails(details)
     
     def updateDateTime(self, _np_date, _eng_date):
@@ -193,8 +194,8 @@ class UI_Functions:
         self.quote_container.setText(f'{self.quote["q"]} ~ {self.quote["a"]}')
         
     def extTextfromImg(self, images):
-        self.statusUpdate(f'Ready to extract from {images["files"][0]}')
-        self.img2text = Image2Text(images["files"][0])
+        self.statusUpdate(f'Update: Ready to extract from {images["files"][0]}')
+        self.img2text = Image2Text(images["files"][0], self.config)
         self.img2text.status.connect(self.statusUpdate)
         self.img2text.completed.connect(self.displayTextExtracted)
         self.img2text.start()

@@ -19,7 +19,7 @@ class Quote(QThread):
     def run(self):
         self.api_url = f'{BASE_API}/'
         QApplication.processEvents()
-        print('fetching quote...')
+        self.update(f'Fetching random quote...')
         self.resp = requests.get(self.api_url)
         QApplication.sendPostedEvents()
         if self.resp.status_code == 200:
@@ -30,7 +30,7 @@ class Quote(QThread):
             self.complete.emit({'msg': "No Details could be fetched", 'result': False})
     
     def update(self, msg):
-        print(f'Quotes Update: {msg}')
+        msg = f'Quotes Update: {msg}'
         self.status.emit(msg)
     
     def stop(self):
