@@ -1,20 +1,24 @@
 from PIL import Image
 from pytesseract import pytesseract
 from PyQt5.QtWidgets import QApplication
-from PyQt5.QtCore import QThread, pyqtSignal
+from PyQt5.QtCore import QThread, pyqtSignal, QSettings
 
 
 class Image2Text(QThread):
     completed = pyqtSignal(str)
     status = pyqtSignal(str)
-    def __init__(self, image, _config):
+    def __init__(self, image):
         super(Image2Text, self).__init__()
+        self.initSettings()
         self.image = image
         self.result = ""
         self.is_running = True
-        self.config = _config
-        pytesseract.tesseract_cmd = self.config['TESSERACT_EXE_PATH']
+        pytesseract.tesseract_cmd = self.settings.value('TESSERACT_EXE_PATH')
         
+    def initSettings(self):
+        self.settings = QSettings('BR Solutions', 'AI')
+        self.settings.setValue('TESSERACT_EXE_PATH', "C:\\Users\\A00172\\AppData\\Local\\Tesseract-OCR\\tesseract.exe")
+        self.app_settings = QSettings('BR Solutions', 'Maya_Utility_App')
         
     def run(self):
         self.update(f'Started: Extraction for {self.image} started!')

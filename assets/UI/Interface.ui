@@ -560,7 +560,7 @@ QLineEdit:focus{
 }</string>
                </property>
                <property name="currentIndex">
-                <number>2</number>
+                <number>4</number>
                </property>
                <widget class="QWidget" name="dashboard">
                 <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -1729,7 +1729,7 @@ QHeaderView::section:vertical
                         <bool>true</bool>
                        </attribute>
                        <attribute name="verticalHeaderVisible">
-                        <bool>false</bool>
+                        <bool>true</bool>
                        </attribute>
                        <attribute name="verticalHeaderStretchLastSection">
                         <bool>true</bool>
@@ -1838,8 +1838,8 @@ QHeaderView::section:vertical
                          <rect>
                           <x>0</x>
                           <y>0</y>
-                          <width>201</width>
-                          <height>29</height>
+                          <width>616</width>
+                          <height>420</height>
                          </rect>
                         </property>
                         <layout class="QVBoxLayout" name="verticalLayout_28">

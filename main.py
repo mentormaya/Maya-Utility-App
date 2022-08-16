@@ -29,24 +29,29 @@ CONFIG = {
     "COPYRIGHT": "Ajay Singh",
     "CREDIT_TEXT": "Design Credit:",
     "AUTHOR": "Ajay Singh [Maya]",
-    "ICON": "assets/icon.ico",
-    "TESSERACT_EXE_PATH": "C:\\Users\\A00172\\AppData\\Local\\Tesseract-OCR\\tesseract.exe"
+    "ICON": "assets/icon.ico"
 }
 
 class LoadUI(QMainWindow):
     def __init__(self):
         super(LoadUI, self).__init__()
         #setup loading UI and everything
+        self.initSettings()
         self.setupUI()
         self.db = DB("maya.db", self.status_disp)
-        
+    
+    def initSettings(self):
+        self.settings = QSettings('BR Solutions', 'Maya_Utility_App')
+        for setting in CONFIG:
+            self.settings.setValue(setting, CONFIG[setting])
+            
     def setupUI(self):
         #load the ui file on the fly
         uic.loadUi("assets/UI/Interface.ui", self)
         
         #populating up app name and app info
-        self.title = f'{CONFIG["APP_NAME"]} {CONFIG["VERSION"]}'
-        self.icon = CONFIG["ICON"]
+        self.title = f'{self.settings.value("APP_NAME")} {self.settings.value("VERSION")}'
+        self.icon = self.settings.value("ICON")
         self.app_title = self.findChild(QLabel, "app_title")
         self.app_title.setText(self.title)
         
@@ -56,7 +61,7 @@ class LoadUI(QMainWindow):
         
         #populating copyright and credit info
         self.credit_label = self.findChild(QLabel, "credit_label")
-        self.credit_label.setText(f'{CONFIG["COPY_TEXT"]} {CONFIG["COPYRIGHT"]} {CONFIG["COPYRIGHT_YEAR"]}. {CONFIG["CREDIT_TEXT"]} {CONFIG["AUTHOR"]} All the rights are reserved.')
+        self.credit_label.setText(f'{self.settings.value("COPY_TEXT")} {self.settings.value("COPYRIGHT")} {self.settings.value("COPYRIGHT_YEAR")}. {self.settings.value("CREDIT_TEXT")} {self.settings.value("AUTHOR")} All the rights are reserved.')
 
         #Frameless window to make custom titlebar
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
@@ -85,7 +90,7 @@ class LoadUI(QMainWindow):
         
         self.content_frame = self.findChild(QFrame, "content_frame")
         
-        ui_f = UI_Functions(self.status_disp, self.content_frame, CONFIG)
+        ui_f = UI_Functions(self.status_disp, self.content_frame)
         
         #adding date functionality
         self.nepali_date_disp = self.findChild(QLabel, "nepali_date")
@@ -170,7 +175,7 @@ class LoadUI(QMainWindow):
         self.show()
     
     def showDateConverter(self):
-        self.dt_conv_win = Date_Converter(CONFIG)
+        self.dt_conv_win = Date_Converter(self.settings)
         self.dt_conv_win.show()
         
     

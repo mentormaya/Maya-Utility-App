@@ -7,7 +7,7 @@ class DB():
         try:
             self.connection = sqlite3.connect(self.name)
         except sqlite3.Error as e:
-            self.update("Error Occured!")
+            self.update("Error: Something unexpected happened!")
         else:
             self.update("Database Connected Successfully!")
             self.cursor = self.connection.cursor()
@@ -72,3 +72,5 @@ class DB():
         data = self.cursor.fetchall()
         self.update("Data Found...")
         return data
+    
+    

@@ -16,21 +16,23 @@ from libs.PAN import PAN
 from libs.Quotes import Quote
 import nepali_datetime as ndt
 from libs.Numbers import Number
+from PyQt5.QtCore import QSettings
 from libs.ImageToText import Image2Text
 from PyQt5.QtWidgets import QLineEdit, QLabel, QPushButton, QStackedWidget, QApplication, QTableWidget, QTableWidgetItem, QTextBrowser
 
-SUB_MENU_MAX = 175
-SUB_MENU_MIN = 0
-SUB_MENU_CHECK = 100
-
-VAT_PAN_PATTERN =   "\d{9}"
-
 class UI_Functions:
-    def __init__(self, _statusBar, _content_frame, _config):
+    def __init__(self, _statusBar, _content_frame):
         super().__init__()
         self.statusBar = _statusBar
         self.content_frame = _content_frame
-        self.config = _config
+        self.initSettings()
+    
+    def initSettings(self):
+        self.settings = QSettings('BR Solutions', 'Maya_Utility_App')
+        self.settings.setValue('SUB_MENU_MAX', 175)
+        self.settings.setValue('SUB_MENU_MIN', 0)
+        self.settings.setValue('SUB_MENU_CHECK', 100)
+        self.settings.setValue('VAT_PAN_PATTERN', "\d{9}")
     
     #number utility functions
     def convertNumber(self, num, frame):
@@ -80,19 +82,19 @@ class UI_Functions:
     
     def toggleMenu(self, _menu):
         w = _menu.size().width()
-        if w > SUB_MENU_CHECK:
+        if w > self.settings.value('SUB_MENU_CHECK'):
             self.showMenu(_menu, False)
         else:
             self.showMenu(_menu, True)
     
     def showMenu(self, _menu, show):
         if not show:
-            _menu.setMaximumWidth(SUB_MENU_MIN)
-            _menu.setMinimumWidth(SUB_MENU_MIN)
+            _menu.setMaximumWidth(self.settings.value('SUB_MENU_MIN'))
+            _menu.setMinimumWidth(self.settings.value('SUB_MENU_MIN'))
             # print("Hiding Menu")
         else:
-            _menu.setMaximumWidth(SUB_MENU_MAX)
-            _menu.setMinimumWidth(SUB_MENU_MAX)
+            _menu.setMaximumWidth(self.settings.value('SUB_MENU_MAX'))
+            _menu.setMinimumWidth(self.settings.value('SUB_MENU_MAX'))
             # print("Showing Menu")
             
     def showSubMenu(self, _index, _frame):
@@ -102,7 +104,7 @@ class UI_Functions:
         if _curr == _index:
             self.toggleMenu(_frame)
             # print("toggling menu!")
-        elif _w <= SUB_MENU_CHECK:
+        elif _w <= self.settings.value('SUB_MENU_CHECK'):
             self.showMenu(_frame, True)
             _menu.setCurrentIndex(_index)
             # print(f"Showing menu and clicked! {_w}")
@@ -120,7 +122,7 @@ class UI_Functions:
             self.statusBar.setText("Enter the VAT/PAN number to search")
             return
         try:
-            if re.match(VAT_PAN_PATTERN, _pan) is None:
+            if re.match(self.settings.value('VAT_PAN_PATTERN'), _pan) is None:
                 raise ValueError("Number not in VAT/PAN Format!")
             _pan = int(_pan)
         except ValueError as v_err:
@@ -195,7 +197,7 @@ class UI_Functions:
         
     def extTextfromImg(self, images):
         self.statusUpdate(f'Update: Ready to extract from {images["files"][0]}')
-        self.img2text = Image2Text(images["files"][0], self.config)
+        self.img2text = Image2Text(images["files"][0])
         self.img2text.status.connect(self.statusUpdate)
         self.img2text.completed.connect(self.displayTextExtracted)
         self.img2text.start()
