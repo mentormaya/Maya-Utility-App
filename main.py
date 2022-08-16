@@ -108,11 +108,13 @@ class LoadUI(QMainWindow):
         
         #Adding Submenu Animation
         self.submenu = self.findChild(QFrame, "sub_menu_frame")
+        
         #Adding right-side-menu Animation
         self.right_menu = self.findChild(QFrame, "right_menu")
         self.right_menu.setMaximumWidth(0)
         self.right_menu.setMinimumWidth(0)
         self.findChild(QPushButton, "options_btn").clicked.connect(lambda: ui_f.toggleMenu(self.right_menu))
+        ui_f.loadSettings()
         
         #copy to clipboard for dates
         self.np_date = self.findChild(QLabel, "nepali_date")
@@ -197,6 +199,8 @@ class LoadUI(QMainWindow):
             self.showMaximized()
     
     def closeWindow(self, event):
+        self.settings.setValue('UI/app_size', self.size())
+        self.settings.setValue('UI/app_pos', self.pos())
         self.close()
     
     def keyPressEvent(self, e):  

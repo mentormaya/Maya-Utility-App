@@ -1409,19 +1409,50 @@ class Ui_MainWindow(object):
         self.right_menu = QtWidgets.QFrame(self.contents)
         self.right_menu.setMinimumSize(QtCore.QSize(175, 0))
         self.right_menu.setMaximumSize(QtCore.QSize(175, 16777215))
-        self.right_menu.setStyleSheet("background-color: rgb(37, 37, 38);\n"
-"padding: 2px;\n"
-"border-bottom-left-radius: 2px;\n"
-"border-bottom-right-radius: 2px;\n"
-"border-top-right-radius: 2px;")
+        self.right_menu.setStyleSheet("QFrame{\n"
+"    background-color: rgb(37, 37, 38);\n"
+"    padding: 2px;\n"
+"    border-bottom-left-radius: 2px;\n"
+"    border-bottom-right-radius: 2px;\n"
+"    border-top-right-radius: 2px;\n"
+"}\n"
+"\n"
+"QLabel{\n"
+"    height: 50;\n"
+"    font-size: 10;\n"
+"    font-weight: bold;\n"
+"    text-decoration: underline;\n"
+"}\n"
+"\n"
+"QLineEdit{\n"
+"    height: 25;\n"
+"    font-size: 10;\n"
+"    background-color: rgb(47, 47, 47);\n"
+"    padding: 5;\n"
+"    border-bottom: 2px solid grey;\n"
+"}")
         self.right_menu.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.right_menu.setFrameShadow(QtWidgets.QFrame.Raised)
         self.right_menu.setObjectName("right_menu")
         self.verticalLayout_12 = QtWidgets.QVBoxLayout(self.right_menu)
         self.verticalLayout_12.setObjectName("verticalLayout_12")
-        self.label_3 = QtWidgets.QLabel(self.right_menu)
-        self.label_3.setObjectName("label_3")
-        self.verticalLayout_12.addWidget(self.label_3)
+        self.setting_name = QtWidgets.QLabel(self.right_menu)
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        font.setBold(True)
+        font.setUnderline(True)
+        font.setWeight(75)
+        self.setting_name.setFont(font)
+        self.setting_name.setObjectName("setting_name")
+        self.verticalLayout_12.addWidget(self.setting_name)
+        self.setting_value = QtWidgets.QLineEdit(self.right_menu)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.setting_value.setFont(font)
+        self.setting_value.setObjectName("setting_value")
+        self.verticalLayout_12.addWidget(self.setting_value)
+        spacerItem8 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_12.addItem(spacerItem8)
         self.gridLayout.addWidget(self.right_menu, 0, 3, 3, 1)
         self.verticalLayout.addWidget(self.contents)
         self.credits_bar = QtWidgets.QFrame(self.drop_shadow_frame)
@@ -1585,7 +1616,8 @@ class Ui_MainWindow(object):
         self.pushButton_5.setText(_translate("MainWindow", "Help"))
         self.about_app.setText(_translate("MainWindow", "About App"))
         self.about_developer.setText(_translate("MainWindow", "About Developer"))
-        self.label_3.setText(_translate("MainWindow", "Right - Side -Menu"))
+        self.setting_name.setText(_translate("MainWindow", "Right - Side -Menu"))
+        self.setting_value.setText(_translate("MainWindow", "Setting Value"))
         self.status_label.setText(_translate("MainWindow", "Ready"))
         self.credit_label.setText(_translate("MainWindow", "Copyright @ Ajay Singh [Maya] 2022. All the rights are reserved."))
 from widgets.DropZone import DropZone

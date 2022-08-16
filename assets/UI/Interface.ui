@@ -2970,11 +2970,28 @@ QPushButton:hover{
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(37, 37, 38);
-padding: 2px;
-border-bottom-left-radius: 2px;
-border-bottom-right-radius: 2px;
-border-top-right-radius: 2px;</string>
+             <string notr="true">QFrame{
+	background-color: rgb(37, 37, 38);
+	padding: 2px;
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+	border-top-right-radius: 2px;
+}
+
+QLabel{
+	height: 50;
+	font-size: 10;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+QLineEdit{
+	height: 25;
+	font-size: 10;
+	background-color: rgb(47, 47, 47);
+	padding: 5;
+	border-bottom: 2px solid grey;
+}</string>
             </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
@@ -2984,11 +3001,44 @@ border-top-right-radius: 2px;</string>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_12">
              <item>
-              <widget class="QLabel" name="label_3">
+              <widget class="QLabel" name="setting_name">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                 <underline>true</underline>
+                </font>
+               </property>
                <property name="text">
                 <string>Right - Side -Menu</string>
                </property>
               </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="setting_value">
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Setting Value</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="settings_spacer">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
              </item>
             </layout>
            </widget>

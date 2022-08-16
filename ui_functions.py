@@ -29,10 +29,10 @@ class UI_Functions:
     
     def initSettings(self):
         self.settings = QSettings('BR Solutions', 'Maya_Utility_App')
-        self.settings.setValue('SUB_MENU_MAX', 175)
-        self.settings.setValue('SUB_MENU_MIN', 0)
-        self.settings.setValue('SUB_MENU_CHECK', 100)
-        self.settings.setValue('VAT_PAN_PATTERN', "\d{9}")
+        self.settings.setValue('UI/SUB_MENU_MAX', 175)
+        self.settings.setValue('UI/SUB_MENU_MIN', 0)
+        self.settings.setValue('UI/SUB_MENU_CHECK', 100)
+        self.settings.setValue('TAX/VAT_PAN_PATTERN', "\d{9}")
     
     #number utility functions
     def convertNumber(self, num, frame):
@@ -82,19 +82,19 @@ class UI_Functions:
     
     def toggleMenu(self, _menu):
         w = _menu.size().width()
-        if w > self.settings.value('SUB_MENU_CHECK'):
+        if w > int(self.settings.value('UI/SUB_MENU_CHECK')):
             self.showMenu(_menu, False)
         else:
             self.showMenu(_menu, True)
     
     def showMenu(self, _menu, show):
         if not show:
-            _menu.setMaximumWidth(self.settings.value('SUB_MENU_MIN'))
-            _menu.setMinimumWidth(self.settings.value('SUB_MENU_MIN'))
+            _menu.setMaximumWidth(int(self.settings.value('UI/SUB_MENU_MIN')))
+            _menu.setMinimumWidth(int(self.settings.value('UI/SUB_MENU_MIN')))
             # print("Hiding Menu")
         else:
-            _menu.setMaximumWidth(self.settings.value('SUB_MENU_MAX'))
-            _menu.setMinimumWidth(self.settings.value('SUB_MENU_MAX'))
+            _menu.setMaximumWidth(int(self.settings.value('UI/SUB_MENU_MAX')))
+            _menu.setMinimumWidth(int(self.settings.value('UI/SUB_MENU_MAX')))
             # print("Showing Menu")
             
     def showSubMenu(self, _index, _frame):
@@ -104,13 +104,19 @@ class UI_Functions:
         if _curr == _index:
             self.toggleMenu(_frame)
             # print("toggling menu!")
-        elif _w <= self.settings.value('SUB_MENU_CHECK'):
+        elif _w <= int(self.settings.value('UI/SUB_MENU_CHECK')):
             self.showMenu(_frame, True)
             _menu.setCurrentIndex(_index)
             # print(f"Showing menu and clicked! {_w}")
         else:
             _menu.setCurrentIndex(_index)
             # print(f"menu clicked! {_w}")
+    
+    def loadSettings(self):
+        _settings = self.settings.allKeys()
+        
+        for setting in _settings:
+            print(f'{setting} => {self.settings[setting]}')
     
     def showPage(self, _widget, _container):
         _container.setCurrentWidget(_widget)
