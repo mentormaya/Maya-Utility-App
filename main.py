@@ -10,7 +10,7 @@
 '''
 from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QFrame, QLabel, QPushButton, QSizeGrip, QTabWidget, QLineEdit, QStackedWidget
 from PyQt5 import uic, QtGui, QtCore
-from PyQt5.QtCore import QPoint, QSettings
+from PyQt5.QtCore import QPoint, QSettings, QSize
 from DB import DB
 import sys
 
@@ -57,6 +57,7 @@ class LoadUI(QMainWindow):
         
         self.setWindowTitle(self.title)
         self.setWindowIcon(QtGui.QIcon(self.icon))
+        self.resize(QSize(self.settings.value('UI/app_size')))
         # self.setGeometry(self.left, self.top, self.width, self.height)
         
         #populating copyright and credit info
@@ -88,7 +89,7 @@ class LoadUI(QMainWindow):
         self.btn_close = self.findChild(QPushButton, "btn_close")
         self.btn_close.clicked.connect(self.closeWindow)
         
-        self.content_frame = self.findChild(QFrame, "content_frame")
+        self.content_frame = self.findChild(QFrame, "contents")
         
         ui_f = UI_Functions(self.status_disp, self.content_frame)
         
@@ -110,10 +111,11 @@ class LoadUI(QMainWindow):
         self.submenu = self.findChild(QFrame, "sub_menu_frame")
         
         #Adding right-side-menu Animation
-        self.right_menu = self.findChild(QFrame, "right_menu")
-        self.right_menu.setMaximumWidth(0)
-        self.right_menu.setMinimumWidth(0)
-        self.findChild(QPushButton, "options_btn").clicked.connect(lambda: ui_f.toggleMenu(self.right_menu))
+        self.right_menu_container = self.findChild(QFrame, "right_menu_container")
+        self.right_menu = self.findChild(QWidget, "right_menu")
+        self.right_menu_container.setMaximumWidth(0)
+        self.right_menu_container.setMinimumWidth(0)
+        self.findChild(QPushButton, "options_btn").clicked.connect(lambda: ui_f.toggleMenu(self.right_menu_container))
         ui_f.loadSettings()
         
         #copy to clipboard for dates
@@ -185,6 +187,8 @@ class LoadUI(QMainWindow):
         self.oldPosition = event.globalPos()
     
     def mouseMoveEvent(self, event):
+        if not hasattr(self, 'oldPosition'):
+            self.oldPosition = event.globalPos()
         delta = QPoint(event.globalPos() - self.oldPosition)
         self.move(self.x() + delta.x(), self.y() + delta.y())
         self.oldPosition = event.globalPos()

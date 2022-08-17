@@ -17,8 +17,9 @@ from libs.Quotes import Quote
 import nepali_datetime as ndt
 from libs.Numbers import Number
 from PyQt5.QtCore import QSettings
+from PyQt5.QtGui import QFont
 from libs.ImageToText import Image2Text
-from PyQt5.QtWidgets import QLineEdit, QLabel, QPushButton, QStackedWidget, QApplication, QTableWidget, QTableWidgetItem, QTextBrowser
+from PyQt5.QtWidgets import QLineEdit, QLabel, QPushButton, QStackedWidget, QApplication, QTableWidget, QTableWidgetItem, QTextBrowser, QWidget, QFrame
 
 class UI_Functions:
     def __init__(self, _statusBar, _content_frame):
@@ -29,7 +30,7 @@ class UI_Functions:
     
     def initSettings(self):
         self.settings = QSettings('BR Solutions', 'Maya_Utility_App')
-        self.settings.setValue('UI/SUB_MENU_MAX', 175)
+        self.settings.setValue('UI/SUB_MENU_MAX', 200)
         self.settings.setValue('UI/SUB_MENU_MIN', 0)
         self.settings.setValue('UI/SUB_MENU_CHECK', 100)
         self.settings.setValue('TAX/VAT_PAN_PATTERN', "\d{9}")
@@ -114,9 +115,30 @@ class UI_Functions:
     
     def loadSettings(self):
         _settings = self.settings.allKeys()
-        
+        settings_container = self.content_frame.findChild(QWidget, 'right_menu')
+        settings_layout = settings_container.layout()
+        seperator = QFrame()
+        seperator.setFrameShape(QFrame.HLine)
+        seperator.setLineWidth(3)
         for setting in _settings:
-            print(f'{setting} => {self.settings[setting]}')
+            # print(f'{setting} => {self.settings.value(setting)}')
+            setting_name = QLabel(setting)
+            font = QFont()
+            font.setPointSize(9)
+            font.setBold(True)
+            font.setUnderline(True)
+            font.setWeight(75)
+            setting_name.setFont(font)
+            setting_name.setObjectName(f'{setting}_label')
+            settings_layout.addWidget(setting_name)
+            
+            setting_value = QLineEdit(str(self.settings.value(setting)))
+            font = QFont()
+            font.setPointSize(10)
+            setting_value.setFont(font)
+            setting_value.setObjectName(f'{setting}_value')
+            settings_layout.addWidget(setting_value)
+            settings_layout.addWidget(seperator)
     
     def showPage(self, _widget, _container):
         _container.setCurrentWidget(_widget)

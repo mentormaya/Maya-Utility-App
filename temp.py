@@ -19,3 +19,20 @@
 #     --resource "assets" ^
 #     --resource "uploads" ^
 #     main.py
+
+self.setting_name = QtWidgets.QLabel(self.right_menu)
+font = QtGui.QFont()
+font.setPointSize(9)
+font.setBold(True)
+font.setUnderline(True)
+font.setWeight(75)
+self.setting_name.setFont(font)
+self.setting_name.setObjectName("setting_name")
+self.verticalLayout_12.addWidget(self.setting_name)
+self.setting_value = QtWidgets.QLineEdit(self.right_menu)
+font = QtGui.QFont()
+font.setPointSize(10)
+self.setting_value.setFont(font)
+self.setting_value.setObjectName("setting_value")
+self.verticalLayout_12.addWidget(self.setting_value)
+spacerItem8 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
