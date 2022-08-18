@@ -50,6 +50,9 @@ After either downloading or cloning the project, you can install it using the fo
 pip install -r requirements.txt
 ```
 
+## Note Tesseract Installation required
+Inorder to use OCR feature of this app one must install the Tesseract for their system from the developer.
+
 ~Note: Due to the requirement of dependency is different on different OS you may need to install the appropriate version and requirements as needed!
 # Setting up the Environment
 Copy the .sample.env file and rename it as .env file and edit the varibales value as required
