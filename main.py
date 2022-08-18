@@ -23,13 +23,14 @@ from widgets.DropZone import DropZone
 CONFIG = {
     ### App related constants
     "APP_NAME": "Maya Utility App",
-    "VERSION": "v1.0.0",
+    "VERSION": "v0.1.1",
     "COPY_TEXT": "Copyright@",
     "COPYRIGHT_YEAR": "2022",
     "COPYRIGHT": "Ajay Singh",
     "CREDIT_TEXT": "Design Credit:",
     "AUTHOR": "Ajay Singh [Maya]",
-    "ICON": "assets/icon.ico"
+    "ICON": "assets/icon.ico",
+    "UI/app_size": QSize(1200, 700)
 }
 
 class LoadUI(QMainWindow):
