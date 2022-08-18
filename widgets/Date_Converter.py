@@ -6,16 +6,16 @@ from PyQt5.QtWidgets import QMessageBox as alert
 from PyQt5.QtWidgets import QWidget, QLabel, QPushButton, QLineEdit, QCheckBox
 
 class Date_Converter(QWidget):
-    def __init__(self, CONFIG):
+    def __init__(self, _settings):
         super().__init__()
         #load the ui file on the fly
         uic.loadUi("assets/UI/DateConverter.ui", self)
-        self.CONFIG = CONFIG
+        self.settings = _settings
         self.YEAR_DIVIDER = 2030
         
         #populating up app name and app info
-        self.title = f'Date Converter :: {self.CONFIG["APP_NAME"]} {self.CONFIG["VERSION"]}'
-        self.icon = self.CONFIG["ICON"]
+        self.title = f'Date Converter :: {self.settings.value("APP_NAME")} {self.settings.value("VERSION")}'
+        self.icon = self.settings.value("ICON")
         self.setWindowTitle(self.title)
         self.setWindowIcon(QtGui.QIcon(self.icon))
         

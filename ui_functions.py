@@ -149,13 +149,15 @@ class UI_Functions:
         if _pan == "":
             self.statusBar.setText("Enter the VAT/PAN number to search")
             return
+        pattern = self.settings.value('TAX/VAT_PAN_PATTERN')
         try:
-            if re.match(self.settings.value('VAT_PAN_PATTERN'), _pan) is None:
+            if re.match(pattern, _pan) is None:
                 raise ValueError("Number not in VAT/PAN Format!")
             _pan = int(_pan)
         except ValueError as v_err:
             self.statusBar.setText(f'Format Error: {str(v_err)}')
-        except:
+        except Exception as e:
+            print(e)
             self.statusBar.setText("Input Value Exception Occured!")
         else:
             self.statusUpdate(f'Update: searching details for {_pan}')

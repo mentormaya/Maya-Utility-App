@@ -932,9 +932,14 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.pan_table_output.sizePolicy().hasHeightForWidth())
         self.pan_table_output.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.pan_table_output.setFont(font)
         self.pan_table_output.setStyleSheet("QTableWidget{\n"
 "    background-color: rgb(47, 47, 47);\n"
 "    alternate-background-color: rgb(40, 40, 40);\n"
+"    font-size: 12pt;\n"
+"    border: 1px solid #fffff8;\n"
 "}\n"
 "\n"
 "QTableWidget QTableCornerButton::section {\n"
@@ -995,6 +1000,10 @@ class Ui_MainWindow(object):
         self.pan_table_output.setHorizontalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
         self.pan_table_output.setItem(0, 0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.pan_table_output.setItem(1, 0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.pan_table_output.setItem(2, 0, item)
         self.pan_table_output.horizontalHeader().setVisible(False)
         self.pan_table_output.horizontalHeader().setCascadingSectionResizes(False)
         self.pan_table_output.horizontalHeader().setDefaultSectionSize(100)
