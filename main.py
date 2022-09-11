@@ -30,7 +30,8 @@ CONFIG = {
     "CREDIT_TEXT": "Design Credit:",
     "AUTHOR": "Ajay Singh [Maya]",
     "ICON": "assets/icon.ico",
-    "UI/app_size": QSize(1200, 700)
+    "UI/app_size": QSize(1200, 700),
+    "BASE_API": "https://sapi.deta.dev"
 }
 
 class LoadUI(QMainWindow):

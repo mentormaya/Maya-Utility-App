@@ -1,8 +1,6 @@
 import requests
 from PyQt5.QtWidgets import QApplication
-from PyQt5.QtCore import QThread, pyqtSignal
-
-BASE_API = "https://sapi.deta.dev"
+from PyQt5.QtCore import QThread, pyqtSignal, QSettings
 
 REQ_HEADERS = {
     'User-Agent': ''
@@ -11,13 +9,18 @@ REQ_HEADERS = {
 class PAN(QThread):
     status = pyqtSignal(str)
     complete = pyqtSignal(dict)
-    def __init__(self, pan = 0):
+    def __init__(self, pan = 0, config = None):
         super(PAN, self).__init__()
         self.pan = pan
         self.is_running = True
+        self.config = config
+        self.initSettings()
+    
+    def initSettings(self):
+        self.settings = QSettings('BR Solutions', 'Maya_Utility_App')
     
     def run(self):
-        self.api_url = f'{BASE_API}/pan/v1/{self.pan}'
+        self.api_url = f'{self.settings.value("BASE_API")}/pan/v1/{self.pan}'
         QApplication.processEvents()
         self.resp = requests.get(self.api_url)
         QApplication.sendPostedEvents()
