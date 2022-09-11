@@ -2,7 +2,7 @@ import requests
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtCore import QThread, pyqtSignal
 
-BASE_API = "https://fastapi-production-c751.up.railway.app"
+BASE_API = "https://sapi.deta.dev"
 
 REQ_HEADERS = {
     'User-Agent': ''
