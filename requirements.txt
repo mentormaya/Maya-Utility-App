@@ -49,7 +49,7 @@ treq==22.2.0
 Twisted==22.10.0
 twisted-iocpsupport==1.0.2
 typing_extensions==4.3.0
-urllib3==1.26.10
+urllib3==1.26.17
 yarl==1.7.2
 zipp==3.8.1
 zope.interface==5.4.0
