@@ -42,7 +42,7 @@ pywin32-ctypes==0.2.0
 qt5-applications==5.15.2.2.2
 qt5-tools==5.15.2.1.2
 qt5reactor==0.6.3
-requests==2.31.0
+requests==2.32.0
 service-identity==21.1.0
 six==1.16.0
 treq==22.2.0
