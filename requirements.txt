@@ -51,5 +51,5 @@ twisted-iocpsupport==1.0.2
 typing_extensions==4.3.0
 urllib3==1.26.19
 yarl==1.7.2
-zipp==3.8.1
+zipp==3.19.1
 zope.interface==5.4.0
