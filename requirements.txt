@@ -46,7 +46,7 @@ requests==2.32.0
 service-identity==21.1.0
 six==1.16.0
 treq==22.2.0
-Twisted==23.10.0
+Twisted==24.7.0
 twisted-iocpsupport==1.0.2
 typing_extensions==4.3.0
 urllib3==1.26.19
